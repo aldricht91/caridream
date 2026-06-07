@@ -599,31 +599,33 @@ function flattenFallbackStories() {
 function hydrateSeriesFromStories(stories) {
   const groups = new Map();
   stories
-    .filter((story) => story?.title && story?.category && story?.island)
-    .sort((a, b) => (a.episodeNumber || 999) - (b.episodeNumber || 999) || a.title.localeCompare(b.title))
+    .filter((story) => story?.title)
+    .sort((a, b) => (a.episodeNumber || a.episode || 999) - (b.episodeNumber || b.episode || 999) || a.title.localeCompare(b.title))
     .forEach((story) => {
-      const seriesTitle = story.seriesTitle || `${story.island} ${story.category}`;
-      const seriesId = story.seriesId || slugify(`${story.island}-${story.category}-${seriesTitle}`);
+      const category = story.category || "Bedtime Stories";
+      const island = story.island || story.country || "Caribbean";
+      const seriesTitle = story.seriesTitle || story.series || `${island} ${category}`;
+      const seriesId = story.seriesId || slugify(`${island}-${category}-${seriesTitle}`);
       const existing = groups.get(seriesId) || {
         id: seriesId,
         title: seriesTitle,
-        category: story.category,
-        island: story.island,
+        category,
+        island,
         mood: story.mood || "Calm",
         narrator: story.narrator || "AI Calm Voice",
-        icon: story.icon || categoryIcon(story.category),
+        icon: story.icon || categoryIcon(category),
         package: "Free Listener",
-        summary: story.summary || story.description,
-        detail: story.seriesDescription || story.description,
+        summary: story.summary || story.description || "A calming CariDream story from the Firestore collection.",
+        detail: story.seriesDescription || story.description || "A calming CariDream story from the Firestore collection.",
         episodes: []
       };
       existing.episodes.push({
         id: story.id,
         title: story.title,
-        description: story.description,
-        duration: Number(story.duration) || 1,
+        description: story.description || "A calming CariDream story from the Firestore collection.",
+        duration: Number(story.duration) || 10,
         audioUrl: story.audioUrl || "",
-        free: story.free !== false,
+        free: story.free !== false && story.isPremium !== true,
         voice: story.narrator || "AI Calm Voice"
       });
       groups.set(seriesId, existing);
@@ -690,6 +692,8 @@ let voiceUtterance = null;
 let backendReady = false;
 let playbackStartedAt = 0;
 let progressFrame = null;
+let catalogSource = "Fallback stories";
+let catalogStoryCount = flattenFallbackStories().length;
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -769,8 +773,15 @@ async function loadFirebaseStories() {
       await window.CariDreamBackend.seedStories(flattenFallbackStories());
       cloudStories = await window.CariDreamBackend.loadStories();
     }
-    applyStoryCatalog(hydrateSeriesFromStories(cloudStories));
+    const firebaseSeries = hydrateSeriesFromStories(cloudStories);
+    if (firebaseSeries.length) {
+      catalogSource = "Firestore stories";
+      catalogStoryCount = cloudStories.length;
+      applyStoryCatalog(firebaseSeries);
+    }
   } catch (error) {
+    catalogSource = "Fallback stories";
+    catalogStoryCount = flattenFallbackStories().length;
     console.warn("Firebase stories unavailable, using fallback stories.", error);
   }
 }
@@ -1184,14 +1195,16 @@ function checklistCard(item) {
 }
 
 function renderHome() {
-  const featured = series[1];
+  const featured = series[1] || series[0];
   const freeCount = featured.episodes.filter((episode) => episode.free).length;
   $("#featuredCard").innerHTML = `
     <span class="chip">Featured series</span>
+    <span class="chip">${catalogSource}</span>
     <h3>${featured.title}</h3>
     <p>${featured.summary}</p>
     <div class="meta-row">
       <span class="chip">${featured.episodes.length} episodes</span>
+      <span class="chip">${catalogStoryCount} stories loaded</span>
       <span class="chip">${freeCount} free</span>
       <span class="chip">${featured.island}</span>
     </div>
@@ -1207,7 +1220,7 @@ function renderHome() {
 
   const list = filteredSeries();
   $("#storyListTitle").textContent = state.category || "Series";
-  $("#storyCount").textContent = `${list.length} series`;
+  $("#storyCount").textContent = `${list.length} series | ${catalogSource}`;
   $("#storyList").innerHTML = list.length ? list.map(seriesButton).join("") : `<div class="empty-state">No series found.</div>`;
   $("#greeting").textContent = state.user ? `Good evening, ${state.user.name}` : "Good evening";
 }
