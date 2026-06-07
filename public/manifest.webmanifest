@@ -1,0 +1,25 @@
+{
+  "name": "CariDream",
+  "short_name": "CariDream",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#10183a",
+  "theme_color": "#10183a",
+  "description": "A relaxing Caribbean storytelling platform for sleep and reflection.",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
