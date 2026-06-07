@@ -32,7 +32,8 @@ Each story document should include:
   category: "Bedtime Stories",
   island: "Aruba",
   duration: 14,
-  audioUrl: "https://..."
+  audioUrl: "https://...",
+  coverUrl: "https://..."
 }
 ```
 
@@ -47,9 +48,14 @@ Optional fields supported by the UI:
   free: true,
   narrator: "AI Calm Voice",
   mood: "Breezy",
-  icon: "C"
+  icon: "C",
+  imageUrl: "https://...",
+  coverImage: "https://...",
+  artUrl: "https://..."
 }
 ```
+
+Use `coverUrl` for story cover art when possible. The app also accepts `imageUrl`, `coverImage`, or `artUrl` as aliases. If no cover image is provided, CariDream falls back to the existing category icon.
 
 If Firebase is connected and the `stories` collection is empty, the app seeds it from the built-in fallback stories.
 

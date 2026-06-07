@@ -626,6 +626,34 @@ function categoryIcon(category) {
   return categories.find(([name]) => name === category)?.[1] || "C";
 }
 
+const countryOrder = ["Jamaica", "Haiti", "Dominican Republic", "Aruba", "Bahamas", "Saint Lucia"];
+const anansiEpisodeOrder = {
+  "the moonlight mango": 1,
+  "anansi and the moonlit tricks": 2,
+  "the firefly lantern": 3,
+  "the talking breadfruit": 4,
+  "moon over blue mountain peak": 5
+};
+
+function normalizedCountry(story) {
+  return story.country || story.island || "Caribbean";
+}
+
+function normalizedSeriesTitle(story, country, category) {
+  const rawSeries = story.series || story.seriesTitle || `${country} ${category}`;
+  const title = String(story.title || "").toLowerCase();
+  const seriesText = String(rawSeries).toLowerCase();
+  if (country === "Jamaica" && (seriesText.includes("anansi") || anansiEpisodeOrder[title])) {
+    return "Anansi Adventures";
+  }
+  return rawSeries;
+}
+
+function normalizedEpisodeNumber(story) {
+  const title = String(story.title || "").toLowerCase();
+  return Number(anansiEpisodeOrder[title] || story.episodeNumber || story.episode || 999);
+}
+
 function flattenFallbackStories() {
   return fallbackSeries.flatMap((item) => item.episodes.map((episode, index) => ({
     id: episode.id,
@@ -642,6 +670,7 @@ function flattenFallbackStories() {
     mood: item.mood,
     narrator: episode.voice || item.narrator || "AI Calm Voice",
     icon: item.icon,
+    coverUrl: episode.coverUrl || item.coverUrl || "",
     free: episode.free !== false,
     episodeNumber: index + 1
   })));
@@ -651,12 +680,22 @@ function hydrateSeriesFromStories(stories) {
   const groups = new Map();
   stories
     .filter((story) => story?.title)
-    .sort((a, b) => (a.episodeNumber || a.episode || 999) - (b.episodeNumber || b.episode || 999) || a.title.localeCompare(b.title))
+    .sort((a, b) => {
+      const countryA = normalizedCountry(a);
+      const countryB = normalizedCountry(b);
+      const countryCompare = (countryOrder.indexOf(countryA) === -1 ? 999 : countryOrder.indexOf(countryA))
+        - (countryOrder.indexOf(countryB) === -1 ? 999 : countryOrder.indexOf(countryB));
+      if (countryCompare) return countryCompare;
+      const seriesA = normalizedSeriesTitle(a, countryA, a.category || "Bedtime Stories");
+      const seriesB = normalizedSeriesTitle(b, countryB, b.category || "Bedtime Stories");
+      return seriesA.localeCompare(seriesB) || normalizedEpisodeNumber(a) - normalizedEpisodeNumber(b) || a.title.localeCompare(b.title);
+    })
     .forEach((story) => {
       const category = story.category || "Bedtime Stories";
-      const island = story.island || story.country || "Caribbean";
-      const seriesTitle = story.seriesTitle || story.series || `${island} ${category}`;
-      const seriesId = story.seriesId || slugify(`${island}-${category}-${seriesTitle}`);
+      const island = normalizedCountry(story);
+      const seriesTitle = normalizedSeriesTitle(story, island, category);
+      const seriesId = slugify(`${island}-${seriesTitle}`);
+      const coverUrl = story.coverUrl || story.imageUrl || story.coverImage || story.artUrl || "";
       const existing = groups.get(seriesId) || {
         id: seriesId,
         title: seriesTitle,
@@ -665,6 +704,7 @@ function hydrateSeriesFromStories(stories) {
         mood: story.mood || "Calm",
         narrator: story.narrator || "AI Calm Voice",
         icon: story.icon || categoryIcon(category),
+        coverUrl,
         package: "Free Listener",
         summary: story.summary || story.description || "A calming CariDream story from the Firestore collection.",
         detail: story.seriesDescription || story.description || "A calming CariDream story from the Firestore collection.",
@@ -672,16 +712,24 @@ function hydrateSeriesFromStories(stories) {
       };
       existing.episodes.push({
         id: story.id,
+        episodeNumber: normalizedEpisodeNumber(story),
         title: story.title,
         description: story.description || "A calming CariDream story from the Firestore collection.",
         duration: Number(story.duration) || 10,
         audioUrl: story.audioUrl || "",
+        coverUrl,
         free: story.free !== false && story.isPremium !== true,
         voice: story.narrator || "AI Calm Voice"
       });
+      if (!existing.coverUrl && coverUrl) {
+        existing.coverUrl = coverUrl;
+      }
       groups.set(seriesId, existing);
     });
-  return [...groups.values()];
+  return [...groups.values()].map((item) => ({
+    ...item,
+    episodes: item.episodes.sort((a, b) => (a.episodeNumber || 999) - (b.episodeNumber || 999) || a.title.localeCompare(b.title))
+  }));
 }
 
 function applyStoryCatalog(nextSeries) {
@@ -1143,11 +1191,26 @@ function filteredSeries() {
   });
 }
 
+function coverArtMarkup(item, className = "story-art") {
+  if (item.coverUrl) {
+    return `<span class="${className} has-cover"><img src="${item.coverUrl}" alt="" loading="lazy" /></span>`;
+  }
+  return `<span class="${className}">${item.icon}</span>`;
+}
+
+function detailArtMarkup(item, episode) {
+  const coverUrl = episode.coverUrl || item.coverUrl;
+  if (coverUrl) {
+    return `<div class="detail-art has-cover"><img src="${coverUrl}" alt="" /></div>`;
+  }
+  return `<div class="detail-art">${item.icon}</div>`;
+}
+
 function seriesButton(item) {
   const freeCount = item.episodes.filter((episode) => episode.free).length;
   return `
     <button class="story-card" type="button" data-series="${item.id}">
-      <span class="story-art">${item.icon}</span>
+      ${coverArtMarkup(item)}
       <span>
         <h4>${item.title}</h4>
         <p>${item.category} | ${item.episodes.length} episodes | ${freeCount} free listener episodes</p>
@@ -1156,6 +1219,40 @@ function seriesButton(item) {
       <span>></span>
     </button>
   `;
+}
+
+function countrySections(list) {
+  const groups = new Map();
+  list.forEach((item) => {
+    const country = item.island || "Caribbean";
+    if (!groups.has(country)) {
+      groups.set(country, []);
+    }
+    groups.get(country).push(item);
+  });
+  return [...groups.entries()]
+    .sort(([countryA], [countryB]) => {
+      const rankA = countryOrder.indexOf(countryA);
+      const rankB = countryOrder.indexOf(countryB);
+      return (rankA === -1 ? 999 : rankA) - (rankB === -1 ? 999 : rankB) || countryA.localeCompare(countryB);
+    })
+    .map(([country, countrySeries]) => {
+      const episodeCount = countrySeries.reduce((sum, item) => sum + item.episodes.length, 0);
+      return `
+        <section class="country-section">
+          <div class="country-head">
+            <div>
+              <p class="eyebrow">${country}</p>
+              <h4>${countrySeries.length} ${countrySeries.length === 1 ? "series" : "series"}</h4>
+            </div>
+            <span class="count">${episodeCount} episodes</span>
+          </div>
+          <div class="story-list">
+            ${countrySeries.map(seriesButton).join("")}
+          </div>
+        </section>
+      `;
+    }).join("");
 }
 
 function episodeButton(episode, item) {
@@ -1309,9 +1406,10 @@ function renderHome() {
   `).join("");
 
   const list = filteredSeries();
-  $("#storyListTitle").textContent = state.category || "Series";
-  $("#storyCount").textContent = `${list.length} series | ${catalogSource}`;
-  $("#storyList").innerHTML = list.length ? list.map(seriesButton).join("") : `<div class="empty-state">No series found.</div>`;
+  const countryCount = new Set(list.map((item) => item.island || "Caribbean")).size;
+  $("#storyListTitle").textContent = state.category ? `${state.category} by country` : "Countries";
+  $("#storyCount").textContent = `${countryCount} countries | ${list.length} series | ${catalogSource}`;
+  $("#storyList").innerHTML = list.length ? countrySections(list) : `<div class="empty-state">No stories found.</div>`;
   $("#greeting").textContent = state.user ? `Good evening, ${state.user.name}` : "Good evening";
 }
 
@@ -1323,7 +1421,7 @@ function renderDetail() {
   const comments = commentsForSeries(item.id);
   $("#favoriteBtn").textContent = state.favorites.includes(item.id) ? "♥" : "♡";
   $("#detailCard").innerHTML = `
-    <div class="detail-art">${item.icon}</div>
+    ${detailArtMarkup(item, episode)}
     <div class="meta-row">
       <span class="chip">${item.category}</span>
       <span class="chip">${item.episodes.length} episodes</span>
@@ -1750,7 +1848,10 @@ document.addEventListener("click", (event) => {
   const publishEpisodeButton = event.target.closest("[data-publish-episode]");
   const reviewPayoutButton = event.target.closest("[data-review-payout]");
 
-  if (navButton) navigate(navButton.dataset.nav);
+  if (navButton) {
+    navigate(navButton.dataset.nav);
+    return;
+  }
   if (seriesCard) openSeries(seriesCard.dataset.series);
   if (episodeCard) chooseEpisode(episodeCard.dataset.episode);
   if (resumeButton) {
@@ -1843,13 +1944,13 @@ document.addEventListener("submit", (event) => {
   render();
 });
 
-$("#favoriteBtn").addEventListener("click", () => {
+$("#favoriteBtn").addEventListener("click", async () => {
   const id = selectedSeries().id;
   state.favorites = state.favorites.includes(id)
     ? state.favorites.filter((favoriteId) => favoriteId !== id)
     : [...state.favorites, id];
-  saveFavoritesToFirestore();
   render();
+  await saveFavoritesToFirestore();
 });
 
 $("#subscribeBtn")?.addEventListener("click", () => {
