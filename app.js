@@ -558,6 +558,57 @@ const freeListenerLabels = {
   pap: "Oyente gratis"
 };
 
+function bedtimeNarration(episode, item, text) {
+  const scripts = {
+    en: [
+      `Tonight, we begin with ${text.title}.`,
+      "Let your shoulders soften... and let the room grow quiet around you.",
+      `This story comes from ${item.island}, from the heart of ${item.title}.`,
+      text.description,
+      "Listen as if someone who loves you is speaking near the window, with a gentle smile in their voice.",
+      "There is no hurry here. Only moonlight, memory, sea breeze, and rest.",
+      "Breathe in slowly... breathe out softly... and drift with the story."
+    ],
+    es: [
+      `Esta noche comenzamos con ${text.title}.`,
+      "Suelta los hombros... y deja que el cuarto se vuelva tranquilo.",
+      `Esta historia llega desde ${item.island}, con el calor suave de ${item.title}.`,
+      text.description,
+      "Escucha como si una voz querida te hablara bajito, con ternura y una sonrisa suave.",
+      "No hay prisa. Solo luna, mar, recuerdo, y descanso.",
+      "Respira despacio... suelta el dia... y dejate llevar por la historia."
+    ],
+    fr: [
+      `Ce soir, nous commencons avec ${text.title}.`,
+      "Relachez doucement les epaules... et laissez le silence entrer dans la piece.",
+      `Cette histoire vient de ${item.island}, portee par la douceur de ${item.title}.`,
+      text.description,
+      "Ecoutez comme si une voix familiere vous parlait tout pres, avec chaleur et tendresse.",
+      "Il n'y a aucune urgence ici. Seulement la lune, la mer, les souvenirs, et le repos.",
+      "Respirez lentement... laissez partir la journee... et suivez l'histoire."
+    ],
+    ht: [
+      `Aswe a, nou ap koumanse ak ${text.title}.`,
+      "Lage zepol ou dousman... kite kay la vin trankil.",
+      `Istwa sa a soti nan ${item.island}, ak chale dous ${item.title}.`,
+      text.description,
+      "Koute tankou yon moun lakay ap pale ave ou tou dousman, ak lanmou nan vwa li.",
+      "Pa gen prese isit la. Se selman lalin, lanme, memwa, ak repo.",
+      "Respire dousman... lage jounen an... epi kite istwa a pote ou."
+    ],
+    pap: [
+      `E anochi aki, nos ta kuminsa ku ${text.title}.`,
+      "Laga bo skouder baha poko poko... i laga e kamber bira trankil.",
+      `E kuenta aki ta bini for di ${item.island}, ku e kalor suave di ${item.title}.`,
+      text.description,
+      "Skucha manera un bos familiar ta papia ku bo suave, ku karino den kada palabra.",
+      "No tin prisa aki. Tin luna, laman, memoria, i sosiego.",
+      "Hala rosea poko poko... laga e dia bai... i sigui e kuenta."
+    ]
+  };
+  return (scripts[state.language] || scripts.en).join(" ");
+}
+
 let series = fallbackSeries;
 
 const allEpisodes = () => series.flatMap((item) => item.episodes.map((episode) => ({ ...episode, series: item })));
@@ -793,17 +844,56 @@ function currentLanguage() {
 function localizedEpisodeText(episode, item = selectedSeries()) {
   const copy = languageCopy[state.language] || languageCopy.en;
   const translatedTitle = episodeTitleTranslations[episode.id]?.[state.language] || episode.title;
+  const description = copy.description(episode, item);
+  const text = { title: translatedTitle, description };
   return {
     title: translatedTitle,
-    description: copy.description(episode, item),
+    description,
     free: freeListenerLabels[state.language] || freeListenerLabels.en,
     calmVoice: copy.calmVoice,
-    intro: copy.intro(episode, item, { title: translatedTitle, description: copy.description(episode, item) })
+    intro: bedtimeNarration(episode, item, text)
   };
 }
 
 function selectedShoutoutProduct() {
   return shoutoutProducts.find((product) => product.id === state.selectedShoutoutProductId) || shoutoutProducts[0];
+}
+
+function favoriteDetails() {
+  return series
+    .filter((item) => state.favorites.includes(item.id))
+    .map((item) => ({
+      id: item.id,
+      title: item.title,
+      category: item.category,
+      island: item.island,
+      episodeCount: item.episodes.length
+    }));
+}
+
+async function syncFavoritesFromFirestore() {
+  if (!backendReady) return;
+  try {
+    const firestoreFavorites = await window.CariDreamBackend.loadFavorites();
+    if (firestoreFavorites.length) {
+      state.favorites = firestoreFavorites;
+      return;
+    }
+    if (state.favorites.length) {
+      await window.CariDreamBackend.saveFavorites(state.favorites, favoriteDetails());
+    }
+  } catch (error) {
+    console.warn("Firestore favorites unavailable, using local favorites.", error);
+  }
+}
+
+async function saveFavoritesToFirestore() {
+  if (!backendReady) return;
+  try {
+    await window.CariDreamBackend.saveFavorites(state.favorites, favoriteDetails());
+  } catch (error) {
+    console.warn("Could not save favorites to Firestore.", error);
+  }
 }
 
 function saveLastPlayed() {
@@ -932,9 +1022,9 @@ function startVoiceover() {
 
   voiceUtterance = new SpeechSynthesisUtterance(narration);
   voiceUtterance.lang = currentLanguage().voiceLang;
-  voiceUtterance.rate = 0.78;
-  voiceUtterance.pitch = 0.86;
-  voiceUtterance.volume = 0.82;
+  voiceUtterance.rate = 0.7;
+  voiceUtterance.pitch = 0.9;
+  voiceUtterance.volume = 0.78;
 
   const voices = window.speechSynthesis.getVoices();
   const languageVoice = voices.find((voice) => voice.lang?.toLowerCase().startsWith(currentLanguage().voiceLang.toLowerCase().slice(0, 2)));
@@ -1281,7 +1371,7 @@ function renderFavorites() {
   const savedSeries = series.filter((item) => state.favorites.includes(item.id));
   $("#favoritesList").innerHTML = savedSeries.length
     ? savedSeries.map(seriesButton).join("")
-    : `<div class="empty-state">Favorite series will rest here.</div>`;
+    : `<div class="empty-state">Favorited stories will rest here after you tap the heart on a story page.</div>`;
 }
 
 function renderPremium() {
@@ -1758,6 +1848,7 @@ $("#favoriteBtn").addEventListener("click", () => {
   state.favorites = state.favorites.includes(id)
     ? state.favorites.filter((favoriteId) => favoriteId !== id)
     : [...state.favorites, id];
+  saveFavoritesToFirestore();
   render();
 });
 
@@ -1853,6 +1944,7 @@ async function startApp() {
         Object.assign(state, cloudState);
       }
       applyStoryCatalog(series);
+      await syncFavoritesFromFirestore();
       await refreshAdminAccess();
     }
   } catch (error) {

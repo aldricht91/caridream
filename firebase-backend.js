@@ -84,6 +84,45 @@
     }));
   }
 
+  async function loadFavorites() {
+    if (!enabled || !ready || !firebaseUser) return [];
+    const snapshot = await firestore.getDocs(firestore.collection(db, "users", firebaseUser.uid, "favorites"));
+    return snapshot.docs.map((docSnapshot) => docSnapshot.id);
+  }
+
+  async function saveFavorites(favorites, favoriteDetails = []) {
+    if (!enabled || !ready || !firebaseUser || !Array.isArray(favorites)) return;
+    const favoriteIds = new Set(favorites);
+    const details = new Map(favoriteDetails.map((item) => [item.id, item]));
+    const collectionRef = firestore.collection(db, "users", firebaseUser.uid, "favorites");
+    const snapshot = await firestore.getDocs(collectionRef);
+    const batch = firestore.writeBatch(db);
+
+    snapshot.docs.forEach((docSnapshot) => {
+      if (!favoriteIds.has(docSnapshot.id)) {
+        batch.delete(docSnapshot.ref);
+      }
+    });
+
+    favorites.forEach((id) => {
+      const item = details.get(id) || { id };
+      batch.set(
+        firestore.doc(db, "users", firebaseUser.uid, "favorites", id),
+        {
+          storyId: id,
+          title: item.title || "",
+          category: item.category || "",
+          island: item.island || "",
+          episodeCount: item.episodeCount || 0,
+          updatedAt: firestore.serverTimestamp()
+        },
+        { merge: true }
+      );
+    });
+
+    await batch.commit();
+  }
+
   async function seedStories(stories) {
     if (!enabled || !ready || !Array.isArray(stories)) return { seeded: false, count: 0 };
     const snapshot = await firestore.getDocs(firestore.collection(db, "stories"));
@@ -152,8 +191,10 @@
     init,
     loadState,
     loadAdminStatus,
+    loadFavorites,
     loadStories,
     seedStories,
+    saveFavorites,
     saveState,
     signInProfile,
     status,
