@@ -1,0 +1,9 @@
+server.log
+server.err.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+build/

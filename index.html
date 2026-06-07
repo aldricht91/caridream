@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10183a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CariDream" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="CariDream" />
+    <title>CariDream</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./assets/icon-180.png" />
+    <link rel="icon" sizes="192x192" href="./assets/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="phone" aria-label="CariDream mobile app">
+      <section class="screen" data-screen="auth">
+        <div class="auth-hero">
+          <img src="./assets/caridream-logo-banner.png" alt="" />
+          <div class="brand-lockup">
+            <span class="brand-mark logo-mark" aria-hidden="true"></span>
+            <div>
+              <h1>CariDream</h1>
+              <p>Series for softer nights.</p>
+            </div>
+          </div>
+        </div>
+        <form class="auth-card" id="authForm">
+          <label>
+            Name
+            <input id="nameInput" autocomplete="name" placeholder="Maya" required />
+          </label>
+          <label>
+            Email
+            <input id="emailInput" type="email" autocomplete="email" placeholder="maya@example.com" required />
+          </label>
+          <button class="primary-btn" type="submit">Enter CariDream</button>
+          <button class="text-btn" type="button" id="guestBtn">Continue as guest</button>
+        </form>
+      </section>
+
+      <section class="screen active" data-screen="home">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="greeting">Good evening</p>
+            <h2>Find your next series</h2>
+          </div>
+          <button class="icon-btn" data-nav="profile" aria-label="Open profile">◎</button>
+        </header>
+
+        <div class="search-wrap">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search series, episodes, islands" />
+        </div>
+
+        <article class="featured" id="featuredCard"></article>
+
+        <div class="section-head">
+          <h3>Categories</h3>
+          <button class="text-btn compact" id="clearCategoryBtn" type="button">All</button>
+        </div>
+        <div class="category-row" id="categoryRow"></div>
+
+        <div class="section-head">
+          <h3 id="storyListTitle">Series</h3>
+          <span class="count" id="storyCount"></span>
+        </div>
+        <div class="story-list" id="storyList"></div>
+      </section>
+
+      <section class="screen" data-screen="detail">
+        <header class="topbar">
+          <button class="icon-btn" data-nav="home" aria-label="Back to home">‹</button>
+          <button class="icon-btn" id="favoriteBtn" aria-label="Toggle favorite">♡</button>
+        </header>
+        <article class="detail-card" id="detailCard"></article>
+      </section>
+
+      <section class="screen" data-screen="favorites">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Saved</p>
+            <h2>Favorites</h2>
+          </div>
+        </header>
+        <div class="story-list" id="favoritesList"></div>
+      </section>
+
+      <section class="screen" data-screen="profile">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Account</p>
+            <h2>Your profile</h2>
+          </div>
+        </header>
+        <div class="profile-panel">
+          <div class="avatar" id="avatar">CD</div>
+          <h3 id="profileName">Guest listener</h3>
+          <p id="profileEmail">Not signed in</p>
+          <div class="profile-stats">
+            <span><strong id="favoriteCount">0</strong> favorites</span>
+            <span><strong id="listenCount">0</strong> plays</span>
+          </div>
+          <button class="secondary-btn" id="loginAgainBtn" type="button">Sign in</button>
+        </div>
+        <div class="settings-panel">
+          <h3>Continue Listening</h3>
+          <div id="continueListening"></div>
+        </div>
+        <div class="settings-panel">
+          <h3>Story language</h3>
+          <div class="language-options" id="languageOptions"></div>
+        </div>
+        <div class="settings-panel">
+          <h3>Listening History</h3>
+          <div class="story-list" id="listeningHistory"></div>
+        </div>
+        <div class="settings-panel">
+          <h3>Sleep timer</h3>
+          <div class="timer-options" id="timerOptions"></div>
+        </div>
+        <div class="settings-panel">
+          <h3>Data connection</h3>
+          <p id="dataStatus">Local prototype storage. Firebase is not connected yet.</p>
+        </div>
+        <div class="settings-panel hidden" id="ownerAccessPanel">
+          <h3>Owner access</h3>
+          <p id="ownerStatus">Admin tools are locked.</p>
+          <div class="admin-links hidden" id="ownerTools">
+            <button class="secondary-btn" data-nav="admin" type="button">Admin Dashboard</button>
+            <button class="secondary-btn" data-nav="legal" type="button">Legal Pages</button>
+            <button class="secondary-btn" data-nav="store" type="button">App Store Packaging</button>
+            <button class="secondary-btn" id="ownerLockBtn" type="button">Hide admin tools</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="admin">
+        <header class="topbar">
+          <button class="icon-btn" data-nav="profile" aria-label="Back to profile">‹</button>
+          <div>
+            <p class="eyebrow">Owner Only</p>
+            <h2>Admin Dashboard</h2>
+          </div>
+        </header>
+        <div class="settings-panel">
+          <h3>Moderation Queue</h3>
+          <div class="story-list" id="moderationQueue"></div>
+        </div>
+        <div class="settings-panel">
+          <h3>Episode Publishing</h3>
+          <div class="story-list" id="adminEpisodes"></div>
+        </div>
+        <div class="settings-panel">
+          <h3>Spam and child-safe rules</h3>
+          <div class="story-list" id="adminSafetyRules"></div>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="legal">
+        <header class="topbar">
+          <button class="icon-btn" data-nav="profile" aria-label="Back to profile">‹</button>
+          <div>
+            <p class="eyebrow">Policies</p>
+            <h2>Legal Pages</h2>
+          </div>
+        </header>
+        <div class="story-list" id="legalPages"></div>
+      </section>
+
+      <section class="screen" data-screen="store">
+        <header class="topbar">
+          <button class="icon-btn" data-nav="profile" aria-label="Back to profile">‹</button>
+          <div>
+            <p class="eyebrow">Launch</p>
+            <h2>App Store Packaging</h2>
+          </div>
+        </header>
+        <div class="story-list" id="storeChecklist"></div>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Primary">
+        <button class="active" data-nav="home" type="button"><span>⌂</span>Home</button>
+        <button data-nav="favorites" type="button"><span>♡</span>Saved</button>
+        <button data-nav="profile" type="button"><span>◎</span>Profile</button>
+      </nav>
+
+      <aside class="mini-player hidden" id="miniPlayer" aria-live="polite">
+        <button class="play-btn" id="playPauseBtn" type="button" aria-label="Play or pause">▶</button>
+        <div class="player-copy">
+          <strong id="playerTitle">No story selected</strong>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <small id="timerText">Sleep timer off</small>
+        </div>
+        <button class="icon-btn" id="replayBtn" type="button" aria-label="Replay episode">↻</button>
+        <button class="icon-btn" id="closePlayerBtn" type="button" aria-label="Close player">×</button>
+      </aside>
+    </main>
+
+    <script src="./firebase-config.js"></script>
+    <script src="./firebase-backend.js"></script>
+    <script src="./app.js"></script>
+    <script>
+      if ("serviceWorker" in navigator && location.protocol !== "file:") {
+        navigator.serviceWorker.register("./service-worker.js");
+      }
+    </script>
+  </body>
+</html>
