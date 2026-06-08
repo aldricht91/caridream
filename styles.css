@@ -422,9 +422,13 @@ button {
 
 .detail-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   margin-top: 18px;
+}
+
+.detail-actions button:first-child {
+  grid-column: 1 / -1;
 }
 
 .cliffhanger-note {
@@ -977,6 +981,24 @@ label textarea {
 .player-copy small {
   color: var(--muted);
   font-size: 0.74rem;
+}
+
+.player-next-btn {
+  min-height: 34px;
+  border: 1px solid rgba(255, 210, 122, 0.38);
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 7px;
+  color: var(--gold);
+  background: rgba(255, 210, 122, 0.1);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.player-next-btn:disabled,
+.secondary-btn:disabled {
+  cursor: default;
+  opacity: 0.58;
 }
 
 .progress-control {

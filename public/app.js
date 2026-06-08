@@ -1409,8 +1409,12 @@ function scheduleSleepTimer() {
 
 function nextEpisodeInSeries() {
   const item = selectedSeries();
-  const currentIndex = item.episodes.findIndex((episode) => episode.id === state.selectedEpisodeId);
-  return currentIndex >= 0 ? item.episodes[currentIndex + 1] : null;
+  const currentEpisode = selectedEpisode();
+  const currentNumber = Number(currentEpisode.episodeNumber || 0);
+  const orderedEpisodes = item.episodes
+    .slice()
+    .sort((a, b) => Number(a.episodeNumber || 999) - Number(b.episodeNumber || 999) || a.title.localeCompare(b.title));
+  return orderedEpisodes.find((episode) => Number(episode.episodeNumber || 999) > currentNumber) || null;
 }
 
 function beginSelectedEpisode({ incrementListen = true } = {}) {
@@ -1426,6 +1430,14 @@ function beginSelectedEpisode({ incrementListen = true } = {}) {
   scheduleSleepTimer();
   startProgressLoop();
   render();
+}
+
+function playNextEpisode() {
+  const nextEpisode = nextEpisodeInSeries();
+  if (!nextEpisode || !canPlay(nextEpisode)) return;
+  stopPlayback({ reset: true });
+  state.selectedEpisodeId = nextEpisode.id;
+  beginSelectedEpisode();
 }
 
 function handlePlaybackEnded() {
@@ -1837,6 +1849,7 @@ function renderHome() {
 function renderDetail() {
   const item = selectedSeries();
   const episode = selectedEpisode();
+  const nextEpisode = nextEpisodeInSeries();
   const episodeText = localizedEpisodeText(episode, item);
   const freeCount = item.episodes.filter((itemEpisode) => itemEpisode.free).length;
   const comments = commentsForSeries(item.id);
@@ -1882,6 +1895,7 @@ function renderDetail() {
     </div>
     <div class="detail-actions">
       <button class="primary-btn" id="detailPlayBtn" type="button">Play episode</button>
+      ${nextEpisode ? `<button class="secondary-btn" id="detailNextBtn" type="button">Next Episode</button>` : `<button class="secondary-btn" type="button" disabled>End of series</button>`}
       <button class="secondary-btn" id="detailTimerBtn" type="button">${state.timer ? `${state.timer} min timer` : "Timer off"}</button>
     </div>
   `;
@@ -2104,6 +2118,7 @@ function renderStore() {
 function renderPlayer() {
   const item = selectedSeries();
   const episode = selectedEpisode();
+  const nextEpisode = nextEpisodeInSeries();
   const text = localizedEpisodeText(episode, item);
   const duration = episodeDurationSeconds(episode);
   $("#miniPlayer").classList.toggle("hidden", !state.playing && state.elapsedSeconds === 0);
@@ -2119,6 +2134,9 @@ function renderPlayer() {
   const supportIssue = speechSupportIssue();
   $("#playerSpeechWarning").textContent = supportIssue;
   $("#playerSpeechWarning").classList.toggle("hidden", !supportIssue || Boolean(episode.audioUrl));
+  $("#nextEpisodeBtn").textContent = nextEpisode ? "Next Episode" : "End of series";
+  $("#nextEpisodeBtn").disabled = !nextEpisode;
+  $("#nextEpisodeBtn").classList.toggle("disabled", !nextEpisode);
 }
 
 function render() {
@@ -2415,6 +2433,7 @@ $("#subscribeBtn")?.addEventListener("click", () => {
 
 $("#playPauseBtn").addEventListener("click", togglePlayback);
 $("#replayBtn").addEventListener("click", replayEpisode);
+$("#nextEpisodeBtn").addEventListener("click", playNextEpisode);
 $("#closePlayerBtn").addEventListener("click", () => {
   stopPlayback({ reset: true });
 });
@@ -2441,6 +2460,7 @@ $("#autoplayPlayerBtn").addEventListener("click", () => {
 
 document.addEventListener("click", (event) => {
   if (event.target.id === "detailPlayBtn") togglePlayback();
+  if (event.target.id === "detailNextBtn") playNextEpisode();
   if (event.target.id === "detailTimerBtn") navigate("profile");
 });
 
