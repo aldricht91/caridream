@@ -715,6 +715,8 @@ function hydrateSeriesFromStories(stories) {
         episodeNumber: normalizedEpisodeNumber(story),
         title: story.title,
         description: story.description || "A calming CariDream story from the Firestore collection.",
+        story: story.story || "",
+        storyContent: story.storyContent || story.story || "",
         duration: Number(story.duration) || 10,
         audioUrl: story.audioUrl || "",
         coverUrl,
@@ -788,6 +790,18 @@ let sleepTimerTimeout = null;
 let audioEngine = null;
 let storyAudio = null;
 let voiceUtterance = null;
+let narrationChunks = [];
+let narrationChunkIndex = 0;
+let narrationChunkWeights = [];
+let narrationCompletedWeight = 0;
+let narrationChunkStartedAt = 0;
+let narrationEstimatedChunkSeconds = 1;
+let narrationGeneration = 0;
+let narrationManualStop = false;
+let narrationDone = false;
+let narrationWatchdog = null;
+let narrationLastActivityAt = 0;
+let narrationRetryCount = 0;
 let backendReady = false;
 let playbackStartedAt = 0;
 let progressFrame = null;
@@ -994,6 +1008,20 @@ function listenerName() {
   return state.user?.name || "Guest listener";
 }
 
+function hasValidSession() {
+  return Boolean(state.user?.name || state.user?.email || state.guest);
+}
+
+function preserveLocalSession(localSession) {
+  if (!hasValidSession() && (localSession.user || localSession.guest)) {
+    state.user = localSession.user;
+    state.guest = Boolean(localSession.guest);
+  }
+  if (state.user) {
+    state.guest = false;
+  }
+}
+
 function commentsForSeries(seriesId = selectedSeries().id) {
   return state.comments.filter((comment) => comment.seriesId === seriesId);
 }
@@ -1050,6 +1078,188 @@ function stopAudioBed() {
   audioEngine = null;
 }
 
+function cleanNarrationText(value) {
+  return String(value || "")
+    .replace(/^#+\s*/gm, "")
+    .replace(/\r/g, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .trim();
+}
+
+function episodeNarrationText(episode, item = selectedSeries()) {
+  const localized = localizedEpisodeText(episode, item);
+  const storyText = cleanNarrationText(episode.storyContent || episode.story || "");
+  if (!storyText) return localized.intro;
+  return `${localized.intro}\n\n${storyText}`;
+}
+
+function splitLongParagraph(paragraph, maxLength = 520) {
+  const sentences = paragraph
+    .replace(/\s+/g, " ")
+    .match(/[^.!?]+[.!?]+["']?|[^.!?]+$/g) || [paragraph];
+  const chunks = [];
+  let current = "";
+
+  sentences.forEach((sentence) => {
+    const next = sentence.trim();
+    if (!next) return;
+    if ((current + " " + next).trim().length > maxLength && current) {
+      chunks.push(current.trim());
+      current = next;
+      return;
+    }
+    current = `${current} ${next}`.trim();
+  });
+
+  if (current) chunks.push(current.trim());
+  return chunks;
+}
+
+function splitNarrationIntoChunks(text) {
+  const paragraphs = cleanNarrationText(text)
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+  const chunks = [];
+
+  paragraphs.forEach((paragraph) => {
+    if (paragraph.length <= 520) {
+      chunks.push(paragraph);
+      return;
+    }
+    chunks.push(...splitLongParagraph(paragraph));
+  });
+
+  return chunks.length ? chunks : splitLongParagraph(text);
+}
+
+function narrationTotalWeight() {
+  return Math.max(1, narrationChunkWeights.reduce((sum, value) => sum + value, 0));
+}
+
+function narrationElapsedSeconds() {
+  const duration = episodeDurationSeconds();
+  if (!narrationChunks.length) {
+    return Math.min(duration, Math.max(0, state.elapsedSeconds));
+  }
+  const currentWeight = narrationChunkWeights[narrationChunkIndex] || 0;
+  const chunkElapsed = state.playing && !narrationDone
+    ? Math.min(1, Math.max(0, (Date.now() - narrationChunkStartedAt) / 1000 / narrationEstimatedChunkSeconds))
+    : 0;
+  const spokenWeight = narrationCompletedWeight + currentWeight * chunkElapsed;
+  return Math.min(duration, Math.max(0, (spokenWeight / narrationTotalWeight()) * duration));
+}
+
+function seekNarrationToElapsed(seconds) {
+  const duration = episodeDurationSeconds();
+  const targetWeight = Math.min(1, Math.max(0, seconds / duration)) * narrationTotalWeight();
+  narrationCompletedWeight = 0;
+  narrationChunkIndex = 0;
+
+  while (
+    narrationChunkIndex < narrationChunkWeights.length - 1
+    && narrationCompletedWeight + narrationChunkWeights[narrationChunkIndex] < targetWeight
+  ) {
+    narrationCompletedWeight += narrationChunkWeights[narrationChunkIndex];
+    narrationChunkIndex += 1;
+  }
+}
+
+function selectedCalmVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  const voiceLang = currentLanguage().voiceLang.toLowerCase();
+  return voices.find((voice) => voice.lang?.toLowerCase().startsWith(voiceLang.slice(0, 2)))
+    || voices.find((voice) => /female|samantha|zira|aria|natural|serena/i.test(voice.name))
+    || voices.find((voice) => voice.lang?.startsWith("en"))
+    || voices[0];
+}
+
+function startNarrationWatchdog() {
+  clearInterval(narrationWatchdog);
+  narrationWatchdog = setInterval(() => {
+    if (!state.playing || storyAudio || narrationDone || !narrationChunks.length || !("speechSynthesis" in window)) return;
+    const engineIdle = !window.speechSynthesis.speaking && !window.speechSynthesis.pending;
+    const quietFor = Date.now() - narrationLastActivityAt;
+    if (engineIdle && quietFor > 2500) {
+      console.warn("Speech synthesis stopped unexpectedly. Recovering narration chunk.");
+      speakNarrationChunk(narrationGeneration, { recovery: true });
+    }
+  }, 1500);
+}
+
+function speakNarrationChunk(generation, { recovery = false } = {}) {
+  if (!state.playing || generation !== narrationGeneration || storyAudio || !("speechSynthesis" in window)) return;
+  if (narrationChunkIndex >= narrationChunks.length) {
+    narrationDone = true;
+    stopPlayback({ reset: true });
+    return;
+  }
+
+  if (recovery) {
+    narrationRetryCount += 1;
+    if (narrationRetryCount > 2) {
+      narrationCompletedWeight += narrationChunkWeights[narrationChunkIndex] || 0;
+      narrationChunkIndex += 1;
+      narrationRetryCount = 0;
+    }
+  } else {
+    narrationRetryCount = 0;
+  }
+
+  const chunk = narrationChunks[narrationChunkIndex];
+  if (!chunk) {
+    narrationChunkIndex += 1;
+    speakNarrationChunk(generation);
+    return;
+  }
+
+  narrationManualStop = false;
+  narrationChunkStartedAt = Date.now();
+  narrationLastActivityAt = Date.now();
+  narrationEstimatedChunkSeconds = Math.max(3, (chunk.split(/\s+/).length / 115) * 60);
+
+  try {
+    window.speechSynthesis.cancel();
+    voiceUtterance = new SpeechSynthesisUtterance(chunk);
+    voiceUtterance.lang = currentLanguage().voiceLang;
+    voiceUtterance.rate = 0.7;
+    voiceUtterance.pitch = 0.9;
+    voiceUtterance.volume = 0.78;
+
+    const calmVoice = selectedCalmVoice();
+    if (calmVoice) {
+      voiceUtterance.voice = calmVoice;
+    }
+
+    voiceUtterance.onstart = () => {
+      narrationLastActivityAt = Date.now();
+    };
+    voiceUtterance.onboundary = () => {
+      narrationLastActivityAt = Date.now();
+    };
+    voiceUtterance.onend = () => {
+      if (generation !== narrationGeneration || narrationManualStop || !state.playing) return;
+      narrationLastActivityAt = Date.now();
+      narrationCompletedWeight += narrationChunkWeights[narrationChunkIndex] || chunk.length;
+      narrationChunkIndex += 1;
+      narrationRetryCount = 0;
+      speakNarrationChunk(generation);
+    };
+    voiceUtterance.onerror = (event) => {
+      if (generation !== narrationGeneration || narrationManualStop || !state.playing) return;
+      const errorName = event?.error || "unknown";
+      if (["canceled", "interrupted"].includes(errorName)) return;
+      console.warn("Speech synthesis narration error.", errorName);
+      window.setTimeout(() => speakNarrationChunk(generation, { recovery: true }), 400);
+    };
+
+    window.speechSynthesis.speak(voiceUtterance);
+  } catch (error) {
+    console.warn("Speech synthesis chunk could not start.", error);
+    window.setTimeout(() => speakNarrationChunk(generation, { recovery: true }), 400);
+  }
+}
+
 function startVoiceover() {
   const episode = selectedEpisode();
   if (episode.audioUrl) {
@@ -1062,29 +1272,17 @@ function startVoiceover() {
   }
 
   if (!("speechSynthesis" in window)) return;
+  narrationGeneration += 1;
+  narrationManualStop = true;
   window.speechSynthesis.cancel();
 
-  const item = selectedSeries();
-  const text = localizedEpisodeText(episode, item);
-  const narration = text.intro;
-
-  voiceUtterance = new SpeechSynthesisUtterance(narration);
-  voiceUtterance.lang = currentLanguage().voiceLang;
-  voiceUtterance.rate = 0.7;
-  voiceUtterance.pitch = 0.9;
-  voiceUtterance.volume = 0.78;
-
-  const voices = window.speechSynthesis.getVoices();
-  const languageVoice = voices.find((voice) => voice.lang?.toLowerCase().startsWith(currentLanguage().voiceLang.toLowerCase().slice(0, 2)));
-  const calmVoice = languageVoice
-    || voices.find((voice) => /female|samantha|zira|aria|natural|serena/i.test(voice.name))
-    || voices.find((voice) => voice.lang?.startsWith("en"))
-    || voices[0];
-  if (calmVoice) {
-    voiceUtterance.voice = calmVoice;
-  }
-
-  window.speechSynthesis.speak(voiceUtterance);
+  const narration = episodeNarrationText(episode);
+  narrationChunks = splitNarrationIntoChunks(narration);
+  narrationChunkWeights = narrationChunks.map((chunk) => Math.max(1, chunk.length));
+  narrationDone = false;
+  seekNarrationToElapsed(state.elapsedSeconds);
+  startNarrationWatchdog();
+  speakNarrationChunk(narrationGeneration);
 }
 
 function stopVoiceover() {
@@ -1092,10 +1290,19 @@ function stopVoiceover() {
     storyAudio.pause();
     storyAudio = null;
   }
+  clearInterval(narrationWatchdog);
+  narrationWatchdog = null;
+  narrationGeneration += 1;
+  narrationManualStop = true;
   if ("speechSynthesis" in window) {
     window.speechSynthesis.cancel();
   }
   voiceUtterance = null;
+  narrationChunks = [];
+  narrationChunkWeights = [];
+  narrationChunkIndex = 0;
+  narrationCompletedWeight = 0;
+  narrationDone = false;
 }
 
 function scheduleSleepTimer() {
@@ -1111,7 +1318,9 @@ function updatePlaybackProgress() {
   const duration = episodeDurationSeconds();
   state.elapsedSeconds = storyAudio
     ? Math.min(duration, Math.max(0, storyAudio.currentTime || 0))
-    : Math.min(duration, Math.max(0, (Date.now() - playbackStartedAt) / 1000));
+    : narrationChunks.length
+      ? narrationElapsedSeconds()
+      : Math.min(duration, Math.max(0, state.elapsedSeconds));
   state.progress = Math.min(100, (state.elapsedSeconds / duration) * 100);
   saveLastPlayed();
 
@@ -2035,6 +2244,11 @@ $("#creatorForm")?.addEventListener("submit", (event) => {
 });
 
 async function startApp() {
+  const localSession = {
+    user: state.user,
+    guest: state.guest
+  };
+
   try {
     const backend = await window.CariDreamBackend?.init?.();
     backendReady = Boolean(backend?.enabled);
@@ -2044,15 +2258,17 @@ async function startApp() {
       if (cloudState) {
         Object.assign(state, cloudState);
       }
+      preserveLocalSession(localSession);
       applyStoryCatalog(series);
       await syncFavoritesFromFirestore();
       await refreshAdminAccess();
     }
   } catch (error) {
     console.warn("Firebase unavailable, using local storage.", error);
+    preserveLocalSession(localSession);
   }
 
-  if (!state.user && !state.guest) {
+  if (!hasValidSession()) {
     navigate("auth");
   } else {
     navigate("home");
