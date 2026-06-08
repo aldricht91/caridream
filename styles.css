@@ -466,12 +466,34 @@ button {
 
 .episode-card {
   min-height: 74px;
-  grid-template-columns: 34px 1fr auto;
+  grid-template-columns: 1fr auto;
   padding: 10px;
+}
+
+.episode-card.selected {
+  border-color: rgba(255, 210, 122, 0.48);
+  background: rgba(255, 210, 122, 0.11);
+}
+
+.episode-card.playing {
+  border-color: rgba(91, 211, 194, 0.66);
+  box-shadow: inset 3px 0 0 rgba(91, 211, 194, 0.82);
 }
 
 .episode-card.locked {
   opacity: 0.78;
+}
+
+.episode-main {
+  min-width: 0;
+  border: 0;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  background: transparent;
+  text-align: left;
 }
 
 .episode-number {
@@ -483,6 +505,24 @@ button {
   color: #082032;
   background: var(--reef);
   font-weight: 900;
+}
+
+.episode-play-btn {
+  min-width: 78px;
+  min-height: 42px;
+  border: 1px solid rgba(255, 210, 122, 0.42);
+  border-radius: 8px;
+  padding: 0 10px;
+  color: var(--gold);
+  background: rgba(255, 210, 122, 0.1);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.episode-card.playing .episode-play-btn {
+  border-color: rgba(91, 211, 194, 0.62);
+  color: #082032;
+  background: var(--reef);
 }
 
 .episode-card strong,
@@ -508,6 +548,11 @@ button {
 
 .active-episode h3 {
   margin: 10px 0 6px;
+}
+
+.now-playing-chip {
+  color: #082032;
+  background: var(--reef);
 }
 
 .comment-section {

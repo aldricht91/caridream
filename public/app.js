@@ -1690,15 +1690,22 @@ function countrySections(list) {
 
 function episodeButton(episode, item) {
   const text = localizedEpisodeText(episode, item);
+  const isSelected = episode.id === state.selectedEpisodeId;
+  const isPlaying = isSelected && state.playing;
+  const playLabel = isPlaying ? "Now Playing" : (isSelected && state.elapsedSeconds > 0 ? "Resume" : "Play");
   return `
-    <button class="episode-card" type="button" data-episode="${episode.id}">
-      <span class="episode-number">${item.episodes.indexOf(episode) + 1}</span>
-      <span>
-        <strong>${text.title}</strong>
-        <small>${text.description}</small>
-      </span>
-      <span class="chip">MVP</span>
-    </button>
+    <article class="episode-card ${isSelected ? "selected" : ""} ${isPlaying ? "playing" : ""}" data-episode-card="${episode.id}">
+      <button class="episode-main" type="button" data-episode="${episode.id}">
+        <span class="episode-number">${episode.episodeNumber || item.episodes.indexOf(episode) + 1}</span>
+        <span>
+          <strong>${text.title}</strong>
+          <small>${text.description}</small>
+        </span>
+      </button>
+      <button class="episode-play-btn" type="button" data-play-episode="${episode.id}">
+        ${playLabel}
+      </button>
+    </article>
   `;
 }
 
@@ -1876,8 +1883,14 @@ function renderDetail() {
       <span class="chip">${episodeText.free}</span>
       <span class="chip">${episodeText.calmVoice}</span>
       <span class="chip">${currentLanguage().label}</span>
+      ${state.playing ? `<span class="chip now-playing-chip">Now Playing</span>` : ""}
       <h3>${episodeText.title}</h3>
       <p>${episodeText.description}</p>
+    </div>
+    <div class="detail-actions">
+      <button class="primary-btn" id="detailPlayBtn" type="button">${state.playing ? "Pause episode" : (state.elapsedSeconds > 0 ? "Resume episode" : "Play episode")}</button>
+      ${nextEpisode ? `<button class="secondary-btn" id="detailNextBtn" type="button">Next Episode</button>` : `<button class="secondary-btn" type="button" disabled>End of series</button>`}
+      <button class="secondary-btn" id="detailTimerBtn" type="button">${state.timer ? `${state.timer} min timer` : "Timer off"}</button>
     </div>
     ${cliffhangerMarkup(episode)}
     <div class="comment-section">
@@ -1892,11 +1905,6 @@ function renderDetail() {
       <div class="comment-list">
         ${comments.length ? comments.map((comment) => commentCard(comment, false)).join("") : `<div class="empty-state">No comments yet.</div>`}
       </div>
-    </div>
-    <div class="detail-actions">
-      <button class="primary-btn" id="detailPlayBtn" type="button">Play episode</button>
-      ${nextEpisode ? `<button class="secondary-btn" id="detailNextBtn" type="button">Next Episode</button>` : `<button class="secondary-btn" type="button" disabled>End of series</button>`}
-      <button class="secondary-btn" id="detailTimerBtn" type="button">${state.timer ? `${state.timer} min timer` : "Timer off"}</button>
     </div>
   `;
 }
@@ -2181,6 +2189,30 @@ function chooseEpisode(id) {
   render();
 }
 
+function playEpisode(id) {
+  const item = selectedSeries();
+  const episode = item.episodes.find((itemEpisode) => itemEpisode.id === id);
+  if (!episode) return;
+
+  if (episode.id === state.selectedEpisodeId && state.playing) {
+    togglePlayback();
+    return;
+  }
+
+  if (state.playing) {
+    stopPlayback({ reset: true });
+  }
+
+  state.selectedEpisodeId = episode.id;
+  state.progress = 0;
+  state.elapsedSeconds = 0;
+  if (!canPlay(episode)) {
+    navigate("premium");
+    return;
+  }
+  beginSelectedEpisode();
+}
+
 function createShoutout(commentId) {
   const comment = state.comments.find((item) => item.id === commentId);
   if (!comment || state.shoutouts.some((shoutout) => shoutout.commentId === comment.id)) {
@@ -2296,6 +2328,7 @@ function togglePlayback() {
 document.addEventListener("click", (event) => {
   const navButton = event.target.closest("[data-nav]");
   const seriesCard = event.target.closest("[data-series]");
+  const episodePlayButton = event.target.closest("[data-play-episode]");
   const episodeCard = event.target.closest("[data-episode]");
   const category = event.target.closest("[data-category]");
   const timer = event.target.closest("[data-timer]");
@@ -2318,6 +2351,10 @@ document.addEventListener("click", (event) => {
     return;
   }
   if (seriesCard) openSeries(seriesCard.dataset.series);
+  if (episodePlayButton) {
+    playEpisode(episodePlayButton.dataset.playEpisode);
+    return;
+  }
   if (episodeCard) chooseEpisode(episodeCard.dataset.episode);
   if (resumeButton) {
     const [seriesId, episodeId, elapsed = "0"] = resumeButton.dataset.resumeEpisode.split("|");
