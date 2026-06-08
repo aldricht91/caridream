@@ -104,7 +104,28 @@
             <span><strong id="favoriteCount">0</strong> favorites</span>
             <span><strong id="listenCount">0</strong> plays</span>
           </div>
-          <button class="secondary-btn" id="loginAgainBtn" type="button">Sign in</button>
+          <div class="profile-actions">
+            <button class="secondary-btn" id="editProfileBtn" type="button">Edit Profile</button>
+            <button class="secondary-btn" id="loginAgainBtn" type="button">Sign in</button>
+          </div>
+          <form class="profile-edit-form hidden" id="profileEditForm">
+            <label>
+              Display name
+              <input id="profileNameInput" autocomplete="name" placeholder="CariDream listener" required />
+            </label>
+            <label>
+              Email
+              <input id="profileEmailInput" type="email" autocomplete="email" placeholder="Not signed in" disabled />
+            </label>
+            <label>
+              Profile picture URL
+              <input id="profileAvatarInput" type="url" placeholder="Optional image URL for later" />
+            </label>
+            <div class="action-row">
+              <button class="primary-btn" type="submit">Save</button>
+              <button class="secondary-btn" id="cancelProfileEditBtn" type="button">Cancel</button>
+            </div>
+          </form>
         </div>
         <div class="settings-panel">
           <h3>Continue Listening</h3>
@@ -133,7 +154,7 @@
           </button>
           <p class="compat-warning hidden" id="speechSupportNotice"></p>
         </div>
-        <div class="settings-panel">
+        <div class="settings-panel hidden" id="developerStatusPanel">
           <h3>Data connection</h3>
           <p id="dataStatus">Local prototype storage. Firebase is not connected yet.</p>
         </div>

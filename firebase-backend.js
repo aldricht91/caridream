@@ -49,6 +49,7 @@
       {
         name: profile?.name || "CariDream listener",
         email: profile?.email || "",
+        avatarUrl: profile?.avatarUrl || "",
         updatedAt: firestore.serverTimestamp()
       },
       { merge: true }
@@ -182,6 +183,7 @@
         listeningHistory: state.listeningHistory,
         language: state.language,
         autoplayNext: state.autoplayNext,
+        profileAvatarUrl: state.profileAvatarUrl,
         elapsedSeconds: state.elapsedSeconds,
         progress: state.progress,
         lastPlayed: state.lastPlayed,

@@ -627,6 +627,11 @@ function categoryIcon(category) {
 }
 
 const countryOrder = ["Jamaica", "Haiti", "Dominican Republic", "Aruba", "Bahamas", "Saint Lucia"];
+const backgroundThemes = {
+  "Bedtime Stories": { className: "bg-bedtime", image: "" },
+  "Island History": { className: "bg-history", image: "" },
+  "Caribbean Folktales": { className: "bg-folktales", image: "" }
+};
 const anansiEpisodeOrder = {
   "the moonlight mango": 1,
   "anansi and the moonlit tricks": 2,
@@ -788,6 +793,8 @@ const state = {
   lastPlayed: JSON.parse(localStorage.getItem("caridream:lastPlayed") || "null"),
   listeningHistory: JSON.parse(localStorage.getItem("caridream:listeningHistory") || "[]"),
   language: localStorage.getItem("caridream:language") || "en",
+  profileAvatarUrl: localStorage.getItem("caridream:profileAvatarUrl") || "",
+  editingProfile: false,
   autoplayNext: JSON.parse(localStorage.getItem("caridream:autoplayNext") || "false"),
   playing: false,
   progress: 0,
@@ -841,6 +848,7 @@ function save() {
   localStorage.setItem("caridream:lastPlayed", JSON.stringify(state.lastPlayed));
   localStorage.setItem("caridream:listeningHistory", JSON.stringify(state.listeningHistory));
   localStorage.setItem("caridream:language", state.language);
+  localStorage.setItem("caridream:profileAvatarUrl", state.profileAvatarUrl);
   localStorage.setItem("caridream:autoplayNext", JSON.stringify(state.autoplayNext));
   if (backendReady) {
     window.CariDreamBackend?.saveState(state);
@@ -858,6 +866,25 @@ function selectedEpisode() {
 
 function canPlay(episode = selectedEpisode()) {
   return true;
+}
+
+function currentBackgroundTheme() {
+  const item = selectedSeries();
+  const key = state.category || (state.screen === "detail" ? item.category : "");
+  return backgroundThemes[key] || backgroundThemes[item.category] || backgroundThemes["Bedtime Stories"];
+}
+
+function applyBackgroundTheme() {
+  const phone = $(".phone");
+  if (!phone) return;
+  const theme = currentBackgroundTheme();
+  Object.values(backgroundThemes).forEach((item) => phone.classList.remove(item.className));
+  phone.classList.add(theme.className);
+  if (theme.image) {
+    phone.style.setProperty("--category-background-image", `url("${theme.image}")`);
+  } else {
+    phone.style.removeProperty("--category-background-image");
+  }
 }
 
 function totalMinutes(item) {
@@ -1049,6 +1076,8 @@ function clearSessionProfile() {
   state.guest = false;
   state.isAdmin = false;
   state.ownerUnlocked = false;
+  state.editingProfile = false;
+  state.profileAvatarUrl = "";
   state.subscribed = false;
   state.packageId = "";
   state.selectedPackId = "";
@@ -1061,6 +1090,7 @@ function clearSessionProfile() {
   localStorage.removeItem("caridream:selectedPack");
   localStorage.removeItem("caridream:selectedOffer");
   localStorage.removeItem("caridream:selectedShoutoutProduct");
+  localStorage.removeItem("caridream:profileAvatarUrl");
 }
 
 async function switchAccount() {
@@ -1925,15 +1955,27 @@ function renderCommunity() {
 function renderProfile() {
   const user = state.user || { name: "Guest listener", email: "Not signed in" };
   $("#profileName").textContent = user.name;
-  $("#profileEmail").textContent = `${user.email} | ${packageName()}`;
-  $("#avatar").textContent = user.name.split(" ").map((part) => part[0]).join("").slice(0, 2).toUpperCase();
+  $("#profileEmail").textContent = user.email;
+  const initials = user.name.split(" ").map((part) => part[0]).join("").slice(0, 2).toUpperCase() || "CD";
+  $("#avatar").classList.toggle("has-photo", Boolean(state.profileAvatarUrl));
+  $("#avatar").innerHTML = state.profileAvatarUrl
+    ? `<img src="${state.profileAvatarUrl}" alt="" />`
+    : initials;
   $("#favoriteCount").textContent = state.favorites.length;
   $("#listenCount").textContent = state.listens;
   renderContinueListening();
   renderLanguageOptions();
   renderListeningHistory();
   $("#loginAgainBtn").textContent = state.user ? "Switch account" : "Sign in";
-  $("#dataStatus").textContent = window.CariDreamBackend?.status?.() || "Local prototype storage. Firebase is not connected yet.";
+  $("#editProfileBtn").classList.toggle("hidden", !hasValidSession());
+  $("#profileEditForm").classList.toggle("hidden", !state.editingProfile);
+  $("#profileNameInput").value = user.name;
+  $("#profileEmailInput").value = user.email === "Not signed in" ? "" : user.email;
+  $("#profileAvatarInput").value = state.profileAvatarUrl;
+  $("#developerStatusPanel").classList.toggle("hidden", !state.isAdmin);
+  $("#dataStatus").textContent = state.isAdmin
+    ? (window.CariDreamBackend?.status?.() || "Local prototype storage. Firebase is not connected yet.")
+    : "";
   $("#ownerAccessPanel").classList.toggle("hidden", !state.isAdmin);
   $("#ownerStatus").textContent = state.isAdmin
     ? "Admin account verified. Owner tools are available."
@@ -2039,6 +2081,7 @@ function renderPlayer() {
 }
 
 function render() {
+  applyBackgroundTheme();
   renderHome();
   renderDetail();
   renderFavorites();
@@ -2361,17 +2404,51 @@ document.addEventListener("error", (event) => {
   const image = event.target;
   if (!(image instanceof HTMLImageElement)) return;
   const fallback = image.closest("[data-fallback-icon]");
-  if (!fallback) return;
+  if (!fallback) {
+    if (image.closest("#avatar")) {
+      state.profileAvatarUrl = "";
+      renderProfile();
+    }
+    return;
+  }
   fallback.classList.remove("has-cover");
   fallback.textContent = fallback.dataset.fallbackIcon || "C";
 }, true);
+
+$("#editProfileBtn").addEventListener("click", () => {
+  state.editingProfile = true;
+  renderProfile();
+});
+
+$("#cancelProfileEditBtn").addEventListener("click", () => {
+  state.editingProfile = false;
+  renderProfile();
+});
+
+$("#profileEditForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const name = $("#profileNameInput").value.trim() || "CariDream listener";
+  const email = state.user?.email || "";
+  state.user = {
+    name,
+    email,
+    avatarUrl: $("#profileAvatarInput").value.trim()
+  };
+  state.profileAvatarUrl = state.user.avatarUrl;
+  state.editingProfile = false;
+  if (!state.guest) {
+    await window.CariDreamBackend?.signInProfile?.(state.user);
+  }
+  render();
+});
 
 $("#authForm").addEventListener("submit", async (event) => {
   event.preventDefault();
   await window.CariDreamBackend?.ensureSession?.();
   state.user = {
     name: $("#nameInput").value.trim(),
-    email: $("#emailInput").value.trim()
+    email: $("#emailInput").value.trim(),
+    avatarUrl: state.profileAvatarUrl
   };
   state.guest = false;
   await window.CariDreamBackend?.signInProfile?.(state.user);

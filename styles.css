@@ -49,9 +49,29 @@ button {
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(7, 16, 34, 0.22), rgba(7, 16, 34, 0.68) 38%, rgba(7, 16, 34, 0.97) 100%),
-    url("./assets/moonlit-caribbean.png") center top / cover no-repeat;
+    var(--category-background-image, url("./assets/moonlit-caribbean.png")) center top / cover no-repeat;
   background-blend-mode: normal, normal;
   box-shadow: var(--shadow);
+}
+
+.phone.bg-history {
+  background:
+    linear-gradient(180deg, rgba(5, 9, 20, 0.38), rgba(7, 16, 34, 0.78) 38%, rgba(7, 16, 34, 0.98) 100%),
+    radial-gradient(circle at 18% 28%, rgba(255, 210, 122, 0.24), transparent 13rem),
+    var(--category-background-image, url("./assets/moonlit-caribbean.png")) center top / cover no-repeat;
+}
+
+.phone.bg-folktales {
+  background:
+    linear-gradient(180deg, rgba(23, 7, 43, 0.26), rgba(7, 16, 34, 0.7) 42%, rgba(7, 16, 34, 0.98) 100%),
+    radial-gradient(circle at 82% 20%, rgba(117, 198, 109, 0.2), transparent 12rem),
+    var(--category-background-image, url("./assets/moonlit-caribbean.png")) center top / cover no-repeat;
+}
+
+.phone.bg-bedtime {
+  background:
+    linear-gradient(180deg, rgba(7, 16, 34, 0.22), rgba(7, 16, 34, 0.68) 38%, rgba(7, 16, 34, 0.97) 100%),
+    var(--category-background-image, url("./assets/moonlit-caribbean.png")) center top / cover no-repeat;
 }
 
 .phone::before {
@@ -757,6 +777,29 @@ label textarea {
   height: 74px;
   margin-bottom: 12px;
   font-size: 1.35rem;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.avatar.has-photo {
+  background: rgba(7, 16, 34, 0.7);
+}
+
+.profile-actions,
+.profile-edit-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.profile-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .profile-stats {
