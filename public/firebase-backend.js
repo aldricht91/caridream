@@ -167,6 +167,7 @@
         listens: state.listens,
         listeningHistory: state.listeningHistory,
         language: state.language,
+        autoplayNext: state.autoplayNext,
         elapsedSeconds: state.elapsedSeconds,
         progress: state.progress,
         lastPlayed: state.lastPlayed,

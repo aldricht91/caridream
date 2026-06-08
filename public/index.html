@@ -123,6 +123,17 @@
           <div class="timer-options" id="timerOptions"></div>
         </div>
         <div class="settings-panel">
+          <h3>Player settings</h3>
+          <button class="setting-toggle" id="autoplayToggle" type="button" aria-pressed="false">
+            <span>
+              <strong>Autoplay Next Episode</strong>
+              <small>Off by default for sleep-focused listening.</small>
+            </span>
+            <span class="toggle-pill" aria-hidden="true"></span>
+          </button>
+          <p class="compat-warning hidden" id="speechSupportNotice"></p>
+        </div>
+        <div class="settings-panel">
           <h3>Data connection</h3>
           <p id="dataStatus">Local prototype storage. Firebase is not connected yet.</p>
         </div>
@@ -192,9 +203,14 @@
         <button class="play-btn" id="playPauseBtn" type="button" aria-label="Play or pause">▶</button>
         <div class="player-copy">
           <strong id="playerTitle">No story selected</strong>
-          <div class="progress-track"><span id="progressBar"></span></div>
+          <label class="progress-control" aria-label="Story playback position">
+            <input id="progressSeek" type="range" min="0" max="1" value="0" step="1" />
+            <span class="progress-track" aria-hidden="true"><span id="progressBar"></span></span>
+          </label>
           <small id="timerText">Sleep timer off</small>
+          <small class="compat-warning hidden" id="playerSpeechWarning"></small>
         </div>
+        <button class="icon-btn" id="autoplayPlayerBtn" type="button" aria-label="Autoplay next episode off">A</button>
         <button class="icon-btn" id="replayBtn" type="button" aria-label="Replay episode">↻</button>
         <button class="icon-btn" id="closePlayerBtn" type="button" aria-label="Close player">×</button>
       </aside>

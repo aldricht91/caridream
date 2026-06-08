@@ -780,6 +780,7 @@ const state = {
   lastPlayed: JSON.parse(localStorage.getItem("caridream:lastPlayed") || "null"),
   listeningHistory: JSON.parse(localStorage.getItem("caridream:listeningHistory") || "[]"),
   language: localStorage.getItem("caridream:language") || "en",
+  autoplayNext: JSON.parse(localStorage.getItem("caridream:autoplayNext") || "false"),
   playing: false,
   progress: 0,
   elapsedSeconds: 0
@@ -832,6 +833,7 @@ function save() {
   localStorage.setItem("caridream:lastPlayed", JSON.stringify(state.lastPlayed));
   localStorage.setItem("caridream:listeningHistory", JSON.stringify(state.listeningHistory));
   localStorage.setItem("caridream:language", state.language);
+  localStorage.setItem("caridream:autoplayNext", JSON.stringify(state.autoplayNext));
   if (backendReady) {
     window.CariDreamBackend?.saveState(state);
   }
@@ -1022,6 +1024,18 @@ function preserveLocalSession(localSession) {
   }
 }
 
+function speechSupportIssue() {
+  const userAgent = navigator.userAgent || "";
+  const isDuckDuckGo = /DuckDuckGo|DDG/i.test(userAgent) || Boolean(navigator.duckduckgo);
+  if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+    return "Voice narration is not supported in this browser. For beta testing, please use Chrome, Safari, or Edge.";
+  }
+  if (isDuckDuckGo) {
+    return "DuckDuckGo may block or limit browser voice narration. If you do not hear audio, please use Chrome for the best beta experience.";
+  }
+  return "";
+}
+
 function commentsForSeries(seriesId = selectedSeries().id) {
   return state.comments.filter((comment) => comment.seriesId === seriesId);
 }
@@ -1191,7 +1205,7 @@ function speakNarrationChunk(generation, { recovery = false } = {}) {
   if (!state.playing || generation !== narrationGeneration || storyAudio || !("speechSynthesis" in window)) return;
   if (narrationChunkIndex >= narrationChunks.length) {
     narrationDone = true;
-    stopPlayback({ reset: true });
+    handlePlaybackEnded();
     return;
   }
 
@@ -1267,11 +1281,14 @@ function startVoiceover() {
     storyAudio.currentTime = Math.min(state.elapsedSeconds, episodeDurationSeconds(episode) - 1);
     storyAudio.volume = 0.9;
     storyAudio.play().catch((error) => console.warn("Story audio could not start.", error));
-    storyAudio.addEventListener("ended", () => stopPlayback({ reset: true }), { once: true });
+    storyAudio.addEventListener("ended", handlePlaybackEnded, { once: true });
     return;
   }
 
-  if (!("speechSynthesis" in window)) return;
+  if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+    console.warn("Speech synthesis is not available in this browser.");
+    return;
+  }
   narrationGeneration += 1;
   narrationManualStop = true;
   window.speechSynthesis.cancel();
@@ -1313,6 +1330,48 @@ function scheduleSleepTimer() {
   }, state.timer * 60 * 1000);
 }
 
+function nextEpisodeInSeries() {
+  const item = selectedSeries();
+  const currentIndex = item.episodes.findIndex((episode) => episode.id === state.selectedEpisodeId);
+  return currentIndex >= 0 ? item.episodes[currentIndex + 1] : null;
+}
+
+function beginSelectedEpisode({ incrementListen = true } = {}) {
+  state.progress = 0;
+  state.elapsedSeconds = 0;
+  state.playing = true;
+  if (incrementListen) {
+    state.listens += 1;
+  }
+  recordListeningHistory();
+  startAudioBed();
+  startVoiceover();
+  scheduleSleepTimer();
+  startProgressLoop();
+  render();
+}
+
+function handlePlaybackEnded() {
+  state.playing = false;
+  clearInterval(progressInterval);
+  cancelAnimationFrame(progressFrame);
+  clearTimeout(sleepTimerTimeout);
+  stopAudioBed();
+  stopVoiceover();
+
+  const nextEpisode = state.autoplayNext ? nextEpisodeInSeries() : null;
+  if (nextEpisode && canPlay(nextEpisode)) {
+    state.selectedEpisodeId = nextEpisode.id;
+    beginSelectedEpisode();
+    return;
+  }
+
+  state.progress = 0;
+  state.elapsedSeconds = 0;
+  saveLastPlayed();
+  render();
+}
+
 function updatePlaybackProgress() {
   if (!state.playing) return;
   const duration = episodeDurationSeconds();
@@ -1325,7 +1384,7 @@ function updatePlaybackProgress() {
   saveLastPlayed();
 
   if (state.elapsedSeconds >= duration) {
-    stopPlayback({ reset: true });
+    handlePlaybackEnded();
     return;
   }
 
@@ -1378,6 +1437,33 @@ function replayEpisode() {
   scheduleSleepTimer();
   startProgressLoop();
   render();
+}
+
+function seekPlayback(seconds) {
+  const duration = episodeDurationSeconds();
+  state.elapsedSeconds = Math.min(duration - 1, Math.max(0, Number(seconds) || 0));
+  state.progress = Math.min(100, (state.elapsedSeconds / duration) * 100);
+  saveLastPlayed();
+
+  if (storyAudio) {
+    storyAudio.currentTime = state.elapsedSeconds;
+  }
+
+  if (state.playing && !storyAudio) {
+    stopVoiceover();
+    startVoiceover();
+    startProgressLoop();
+  }
+
+  renderPlayer();
+  save();
+}
+
+function updateSeekPreview(seconds) {
+  const duration = episodeDurationSeconds();
+  state.elapsedSeconds = Math.min(duration - 1, Math.max(0, Number(seconds) || 0));
+  state.progress = Math.min(100, (state.elapsedSeconds / duration) * 100);
+  renderPlayer();
 }
 
 function navigate(screen) {
@@ -1797,6 +1883,11 @@ function renderProfile() {
     ? "Admin account verified. Owner tools are available."
     : "Admin tools are hidden.";
   $("#ownerTools").classList.toggle("hidden", !state.isAdmin);
+  $("#autoplayToggle").classList.toggle("active", state.autoplayNext);
+  $("#autoplayToggle").setAttribute("aria-pressed", String(state.autoplayNext));
+  const supportIssue = speechSupportIssue();
+  $("#speechSupportNotice").textContent = supportIssue;
+  $("#speechSupportNotice").classList.toggle("hidden", !supportIssue);
   $("#timerOptions").innerHTML = timers.map((minutes) => `
     <button class="${state.timer === minutes ? "active" : ""}" type="button" data-timer="${minutes}">
       ${minutes ? `${minutes}m` : "Off"}
@@ -1881,7 +1972,14 @@ function renderPlayer() {
   $("#playerTitle").textContent = `${text.title} - ${item.title}`;
   const visibleProgress = state.elapsedSeconds > 0 ? Math.max(state.progress, 1.25) : 0;
   $("#progressBar").style.width = `${visibleProgress}%`;
+  $("#progressSeek").max = String(duration);
+  $("#progressSeek").value = String(Math.min(duration, Math.max(0, Math.floor(state.elapsedSeconds))));
   $("#timerText").textContent = `${formatTime(state.elapsedSeconds)} / ${formatTime(duration)}${state.timer ? ` | Sleep timer: ${state.timer}m` : ""}`;
+  $("#autoplayPlayerBtn").classList.toggle("active", state.autoplayNext);
+  $("#autoplayPlayerBtn").setAttribute("aria-label", `Autoplay next episode ${state.autoplayNext ? "on" : "off"}`);
+  const supportIssue = speechSupportIssue();
+  $("#playerSpeechWarning").textContent = supportIssue;
+  $("#playerSpeechWarning").classList.toggle("hidden", !supportIssue || Boolean(episode.audioUrl));
 }
 
 function render() {
@@ -2179,6 +2277,23 @@ $("#playPauseBtn").addEventListener("click", togglePlayback);
 $("#replayBtn").addEventListener("click", replayEpisode);
 $("#closePlayerBtn").addEventListener("click", () => {
   stopPlayback({ reset: true });
+});
+$("#progressSeek").addEventListener("input", (event) => {
+  updateSeekPreview(event.target.value);
+});
+$("#progressSeek").addEventListener("change", (event) => {
+  seekPlayback(event.target.value);
+});
+$("#progressSeek").addEventListener("pointerup", (event) => {
+  seekPlayback(event.target.value);
+});
+$("#autoplayToggle").addEventListener("click", () => {
+  state.autoplayNext = !state.autoplayNext;
+  render();
+});
+$("#autoplayPlayerBtn").addEventListener("click", () => {
+  state.autoplayNext = !state.autoplayNext;
+  render();
 });
 
 document.addEventListener("click", (event) => {
