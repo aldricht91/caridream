@@ -224,8 +224,8 @@
         <button class="play-btn" id="playPauseBtn" type="button" aria-label="Play or pause">▶</button>
         <div class="player-copy">
           <strong id="playerTitle">No story selected</strong>
-          <label class="progress-control" aria-label="Story playback position">
-            <input id="progressSeek" type="range" min="0" max="1" value="0" step="1" />
+          <label class="progress-control" id="progressControl" aria-label="Story playback position">
+            <input id="progressSeek" type="range" min="0" max="1" value="0" step="1" aria-label="Story playback position" />
             <span class="progress-track" aria-hidden="true"><span id="progressBar"></span></span>
           </label>
           <small id="timerText">Sleep timer off</small>

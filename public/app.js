@@ -821,6 +821,8 @@ let narrationRetryCount = 0;
 let backendReady = false;
 let playbackStartedAt = 0;
 let progressFrame = null;
+let isSeekingPlayback = false;
+let activeSeekPointerId = null;
 let catalogSource = "Fallback stories";
 let catalogStoryCount = flattenFallbackStories().length;
 
@@ -1450,6 +1452,11 @@ function handlePlaybackEnded() {
 function updatePlaybackProgress() {
   if (!state.playing) return;
   const duration = episodeDurationSeconds();
+  if (isSeekingPlayback) {
+    renderPlayer();
+    progressFrame = requestAnimationFrame(updatePlaybackProgress);
+    return;
+  }
   state.elapsedSeconds = storyAudio
     ? Math.min(duration, Math.max(0, storyAudio.currentTime || 0))
     : narrationChunks.length
@@ -1512,6 +1519,40 @@ function replayEpisode() {
   scheduleSleepTimer();
   startProgressLoop();
   render();
+}
+
+function seekSecondsFromPointer(event) {
+  const control = $("#progressControl");
+  if (!control) return state.elapsedSeconds;
+  const rect = control.getBoundingClientRect();
+  const x = Math.min(rect.right, Math.max(rect.left, event.clientX || rect.left));
+  const ratio = rect.width ? (x - rect.left) / rect.width : 0;
+  return Math.round(ratio * episodeDurationSeconds());
+}
+
+function beginProgressSeek(event) {
+  if (event.button !== undefined && event.button !== 0) return;
+  event.preventDefault();
+  isSeekingPlayback = true;
+  activeSeekPointerId = event.pointerId;
+  event.currentTarget.setPointerCapture?.(event.pointerId);
+  updateSeekPreview(seekSecondsFromPointer(event));
+}
+
+function moveProgressSeek(event) {
+  if (!isSeekingPlayback || event.pointerId !== activeSeekPointerId) return;
+  event.preventDefault();
+  updateSeekPreview(seekSecondsFromPointer(event));
+}
+
+function finishProgressSeek(event) {
+  if (!isSeekingPlayback || event.pointerId !== activeSeekPointerId) return;
+  event.preventDefault();
+  const nextSeconds = seekSecondsFromPointer(event);
+  isSeekingPlayback = false;
+  activeSeekPointerId = null;
+  event.currentTarget.releasePointerCapture?.(event.pointerId);
+  seekPlayback(nextSeconds);
 }
 
 function seekPlayback(seconds) {
@@ -2378,14 +2419,17 @@ $("#closePlayerBtn").addEventListener("click", () => {
   stopPlayback({ reset: true });
 });
 $("#progressSeek").addEventListener("input", (event) => {
+  isSeekingPlayback = true;
   updateSeekPreview(event.target.value);
 });
 $("#progressSeek").addEventListener("change", (event) => {
+  isSeekingPlayback = false;
   seekPlayback(event.target.value);
 });
-$("#progressSeek").addEventListener("pointerup", (event) => {
-  seekPlayback(event.target.value);
-});
+$("#progressControl").addEventListener("pointerdown", beginProgressSeek);
+$("#progressControl").addEventListener("pointermove", moveProgressSeek);
+$("#progressControl").addEventListener("pointerup", finishProgressSeek);
+$("#progressControl").addEventListener("pointercancel", finishProgressSeek);
 $("#autoplayToggle").addEventListener("click", () => {
   state.autoplayNext = !state.autoplayNext;
   render();
