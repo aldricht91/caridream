@@ -1044,6 +1044,43 @@ function speechSupportIssue() {
   return "";
 }
 
+function clearSessionProfile() {
+  state.user = null;
+  state.guest = false;
+  state.isAdmin = false;
+  state.ownerUnlocked = false;
+  state.subscribed = false;
+  state.packageId = "";
+  state.selectedPackId = "";
+  state.selectedOfferId = "";
+  state.selectedShoutoutProductId = "";
+  localStorage.removeItem("caridream:user");
+  localStorage.removeItem("caridream:guest");
+  localStorage.removeItem("caridream:subscribed");
+  localStorage.removeItem("caridream:package");
+  localStorage.removeItem("caridream:selectedPack");
+  localStorage.removeItem("caridream:selectedOffer");
+  localStorage.removeItem("caridream:selectedShoutoutProduct");
+}
+
+async function switchAccount() {
+  const confirmed = window.confirm("Switch account or sign out?");
+  if (!confirmed) return;
+
+  stopPlayback({ reset: true });
+  clearSessionProfile();
+
+  try {
+    await window.CariDreamBackend?.signOut?.();
+  } catch (error) {
+    console.warn("Firebase sign out failed; local session was cleared.", error);
+  }
+
+  $("#authForm").reset();
+  save();
+  navigate("auth");
+}
+
 function commentsForSeries(seriesId = selectedSeries().id) {
   return state.comments.filter((comment) => comment.seriesId === seriesId);
 }
@@ -2331,6 +2368,7 @@ document.addEventListener("error", (event) => {
 
 $("#authForm").addEventListener("submit", async (event) => {
   event.preventDefault();
+  await window.CariDreamBackend?.ensureSession?.();
   state.user = {
     name: $("#nameInput").value.trim(),
     email: $("#emailInput").value.trim()
@@ -2341,7 +2379,8 @@ $("#authForm").addEventListener("submit", async (event) => {
   navigate("home");
 });
 
-$("#guestBtn").addEventListener("click", () => {
+$("#guestBtn").addEventListener("click", async () => {
+  await window.CariDreamBackend?.ensureSession?.();
   state.user = null;
   state.guest = true;
   state.isAdmin = false;
@@ -2349,7 +2388,7 @@ $("#guestBtn").addEventListener("click", () => {
   navigate("home");
 });
 
-$("#loginAgainBtn").addEventListener("click", () => navigate("auth"));
+$("#loginAgainBtn").addEventListener("click", switchAccount);
 
 $("#ownerLockBtn").addEventListener("click", () => {
   state.ownerUnlocked = false;

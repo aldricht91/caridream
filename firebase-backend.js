@@ -56,6 +56,20 @@
     return firebaseUser.uid;
   }
 
+  async function ensureSession() {
+    if (!enabled || !ready) return null;
+    firebaseUser = auth.currentUser || (await authFns.signInAnonymously(auth)).user;
+    return firebaseUser.uid;
+  }
+
+  async function signOut() {
+    if (!enabled || !ready || !auth) return;
+    clearTimeout(saveTimer);
+    saveTimer = null;
+    await authFns.signOut(auth);
+    firebaseUser = null;
+  }
+
   async function loadState() {
     if (!enabled || !ready || !firebaseUser) return null;
     const snapshot = await firestore.getDoc(firestore.doc(db, "appState", firebaseUser.uid));
@@ -195,8 +209,10 @@
     loadFavorites,
     loadStories,
     seedStories,
+    ensureSession,
     saveFavorites,
     saveState,
+    signOut,
     signInProfile,
     status,
     isEnabled: () => enabled
