@@ -860,7 +860,8 @@ label textarea {
 
 .profile-stats span,
 .timer-options button,
-.language-options button {
+.language-options button,
+.narrator-options button {
   min-height: 54px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -886,15 +887,37 @@ label textarea {
   gap: 8px;
 }
 
-.language-options button {
+.narrator-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.language-options button,
+.narrator-options button {
   min-height: 48px;
   padding: 8px;
 }
 
+.narrator-options button {
+  place-items: start;
+  text-align: left;
+}
+
+.narrator-options small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
 .timer-options button.active,
-.language-options button.active {
+.language-options button.active,
+.narrator-options button.active {
   color: #082032;
   background: var(--reef);
+}
+
+.narrator-options button.active small {
+  color: rgba(8, 32, 50, 0.76);
 }
 
 .setting-toggle {

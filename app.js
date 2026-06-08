@@ -507,6 +507,12 @@ const languages = [
   { code: "pap", label: "Papiamento", voiceLang: "nl-NL" }
 ];
 
+const narratorPreferences = [
+  { id: "moonlight", label: "Moonlight Narrator", voiceProvider: "elevenlabs", voiceName: "CariDream Moonlight Narrator" },
+  { id: "island", label: "Island Storyteller", voiceProvider: "elevenlabs", voiceName: "CariDream Island Storyteller" },
+  { id: "browser", label: "Browser Voice", voiceProvider: "browser", voiceName: "Browser Voice" }
+];
+
 const languageCopy = {
   en: {
     free: "Free Listener",
@@ -678,6 +684,9 @@ function flattenFallbackStories() {
     summary: item.summary,
     mood: item.mood,
     narrator: episode.voice || item.narrator || "AI Calm Voice",
+    narratorType: episode.narratorType || "browser",
+    voiceProvider: episode.voiceProvider || "browser",
+    voiceName: episode.voiceName || episode.voice || item.narrator || "Browser Voice",
     icon: item.icon,
     coverUrl: storyCoverUrl(episode) || storyCoverUrl(item),
     free: episode.free !== false,
@@ -714,6 +723,9 @@ function hydrateSeriesFromStories(stories) {
         island,
         mood: story.mood || "Calm",
         narrator: story.narrator || "AI Calm Voice",
+        narratorType: story.narratorType || "browser",
+        voiceProvider: story.voiceProvider || (story.audioUrl ? "elevenlabs" : "browser"),
+        voiceName: story.voiceName || story.narrator || (story.audioUrl ? "ElevenLabs Narrator" : "Browser Voice"),
         icon: story.icon || categoryIcon(category),
         coverUrl,
         package: "Free Listener",
@@ -733,6 +745,10 @@ function hydrateSeriesFromStories(stories) {
         coverUrl,
         free: story.free !== false && story.isPremium !== true,
         voice: story.narrator || "AI Calm Voice",
+        narrator: story.narrator || "AI Calm Voice",
+        narratorType: story.narratorType || "browser",
+        voiceProvider: story.voiceProvider || (story.audioUrl ? "elevenlabs" : "browser"),
+        voiceName: story.voiceName || story.narrator || (story.audioUrl ? "ElevenLabs Narrator" : "Browser Voice"),
         hasCliffhanger: story.hasCliffhanger === true,
         nextEpisodeHint: story.nextEpisodeHint || ""
       });
@@ -793,6 +809,7 @@ const state = {
   lastPlayed: JSON.parse(localStorage.getItem("caridream:lastPlayed") || "null"),
   listeningHistory: JSON.parse(localStorage.getItem("caridream:listeningHistory") || "[]"),
   language: localStorage.getItem("caridream:language") || "en",
+  narratorPreference: localStorage.getItem("caridream:narratorPreference") || "moonlight",
   profileAvatarUrl: localStorage.getItem("caridream:profileAvatarUrl") || "",
   editingProfile: false,
   autoplayNext: JSON.parse(localStorage.getItem("caridream:autoplayNext") || "false"),
@@ -850,6 +867,7 @@ function save() {
   localStorage.setItem("caridream:lastPlayed", JSON.stringify(state.lastPlayed));
   localStorage.setItem("caridream:listeningHistory", JSON.stringify(state.listeningHistory));
   localStorage.setItem("caridream:language", state.language);
+  localStorage.setItem("caridream:narratorPreference", state.narratorPreference);
   localStorage.setItem("caridream:profileAvatarUrl", state.profileAvatarUrl);
   localStorage.setItem("caridream:autoplayNext", JSON.stringify(state.autoplayNext));
   if (backendReady) {
@@ -940,6 +958,17 @@ async function loadFirebaseStories() {
 
 function currentLanguage() {
   return languages.find((language) => language.code === state.language) || languages[0];
+}
+
+function currentNarratorPreference() {
+  return narratorPreferences.find((narrator) => narrator.id === state.narratorPreference) || narratorPreferences[0];
+}
+
+function episodeNarratorLabel(episode, item = selectedSeries()) {
+  if (episode.audioUrl) {
+    return episode.voiceName || episode.narrator || item.voiceName || item.narrator || "ElevenLabs Narrator";
+  }
+  return "Browser Voice";
 }
 
 function localizedEpisodeText(episode, item = selectedSeries()) {
@@ -1353,30 +1382,47 @@ function speakNarrationChunk(generation, { recovery = false } = {}) {
 
 function startVoiceover() {
   const episode = selectedEpisode();
-  if (episode.audioUrl) {
-    storyAudio = new Audio(episode.audioUrl);
-    storyAudio.currentTime = Math.min(state.elapsedSeconds, episodeDurationSeconds(episode) - 1);
-    storyAudio.volume = 0.9;
-    storyAudio.play().catch((error) => console.warn("Story audio could not start.", error));
-    storyAudio.addEventListener("ended", handlePlaybackEnded, { once: true });
+  const startBrowserNarration = () => {
+    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+      console.warn("Speech synthesis is not available in this browser.");
+      return;
+    }
+    narrationGeneration += 1;
+    narrationManualStop = true;
+    window.speechSynthesis.cancel();
+
+    const narration = episodeNarrationText(episode);
+    narrationChunks = splitNarrationIntoChunks(narration);
+    narrationChunkWeights = narrationChunks.map((chunk) => Math.max(1, chunk.length));
+    narrationDone = false;
+    seekNarrationToElapsed(state.elapsedSeconds);
+    startNarrationWatchdog();
+    speakNarrationChunk(narrationGeneration);
+  };
+
+  if (!episode.audioUrl) {
+    startBrowserNarration();
     return;
   }
 
-  if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-    console.warn("Speech synthesis is not available in this browser.");
-    return;
-  }
-  narrationGeneration += 1;
-  narrationManualStop = true;
-  window.speechSynthesis.cancel();
-
-  const narration = episodeNarrationText(episode);
-  narrationChunks = splitNarrationIntoChunks(narration);
-  narrationChunkWeights = narrationChunks.map((chunk) => Math.max(1, chunk.length));
-  narrationDone = false;
-  seekNarrationToElapsed(state.elapsedSeconds);
-  startNarrationWatchdog();
-  speakNarrationChunk(narrationGeneration);
+  storyAudio = new Audio(episode.audioUrl);
+  let audioFallbackStarted = false;
+  const fallBackToBrowserNarration = (message, error = null) => {
+    if (audioFallbackStarted) return;
+    audioFallbackStarted = true;
+    console.warn(message, error || "");
+    storyAudio = null;
+    startBrowserNarration();
+  };
+  storyAudio.currentTime = Math.min(state.elapsedSeconds, episodeDurationSeconds(episode) - 1);
+  storyAudio.volume = 0.9;
+  storyAudio.addEventListener("ended", handlePlaybackEnded, { once: true });
+  storyAudio.addEventListener("error", () => {
+    fallBackToBrowserNarration("Story audio could not load. Falling back to browser narration.");
+  }, { once: true });
+  storyAudio.play().catch((error) => {
+    fallBackToBrowserNarration("Story audio could not start. Falling back to browser narration.", error);
+  });
 }
 
 function stopVoiceover() {
@@ -1874,7 +1920,7 @@ function renderDetail() {
     <div class="meta-row">
       <span class="chip">${item.island}</span>
       <span class="chip">${item.mood}</span>
-      <span class="chip">${item.narrator}</span>
+      <span class="chip">${episodeNarratorLabel(episode, item)}</span>
     </div>
     <div class="episode-list">
       ${item.episodes.map((itemEpisode) => episodeButton(itemEpisode, item)).join("")}
@@ -1883,6 +1929,7 @@ function renderDetail() {
       <span class="chip">${episodeText.free}</span>
       <span class="chip">${episodeText.calmVoice}</span>
       <span class="chip">${currentLanguage().label}</span>
+      <span class="chip">${episode.audioUrl ? "MP3 audio" : "Browser voice"}</span>
       ${state.playing ? `<span class="chip now-playing-chip">Now Playing</span>` : ""}
       <h3>${episodeText.title}</h3>
       <p>${episodeText.description}</p>
@@ -2028,6 +2075,7 @@ function renderProfile() {
   $("#listenCount").textContent = state.listens;
   renderContinueListening();
   renderLanguageOptions();
+  renderNarratorOptions();
   renderListeningHistory();
   $("#loginAgainBtn").textContent = state.user ? "Switch account" : "Sign in";
   $("#editProfileBtn").classList.toggle("hidden", !hasValidSession());
@@ -2079,6 +2127,15 @@ function renderLanguageOptions() {
   $("#languageOptions").innerHTML = languages.map((language) => `
     <button class="${state.language === language.code ? "active" : ""}" type="button" data-language="${language.code}">
       ${language.label}
+    </button>
+  `).join("");
+}
+
+function renderNarratorOptions() {
+  $("#narratorOptions").innerHTML = narratorPreferences.map((narrator) => `
+    <button class="${state.narratorPreference === narrator.id ? "active" : ""}" type="button" data-narrator-preference="${narrator.id}">
+      <strong>${narrator.label}</strong>
+      <small>${narrator.voiceProvider === "elevenlabs" ? "MP3-ready" : "Fallback"}</small>
     </button>
   `).join("");
 }
@@ -2339,6 +2396,7 @@ document.addEventListener("click", (event) => {
   const shoutoutButton = event.target.closest("[data-shoutout]");
   const resumeButton = event.target.closest("[data-resume-episode]");
   const languageButton = event.target.closest("[data-language]");
+  const narratorPreferenceButton = event.target.closest("[data-narrator-preference]");
   const reportButton = event.target.closest("[data-report]");
   const resolveReportButton = event.target.closest("[data-resolve-report]");
   const escalateReportButton = event.target.closest("[data-escalate-report]");
@@ -2383,6 +2441,11 @@ document.addEventListener("click", (event) => {
       startVoiceover();
     }
     render();
+  }
+  if (narratorPreferenceButton) {
+    state.narratorPreference = narratorPreferenceButton.dataset.narratorPreference;
+    render();
+    return;
   }
   if (category) {
     state.category = category.dataset.category;

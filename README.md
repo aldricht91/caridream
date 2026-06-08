@@ -33,6 +33,8 @@ Each story document should include:
   island: "Aruba",
   duration: 14,
   audioUrl: "https://...",
+  voiceProvider: "elevenlabs",
+  voiceName: "CariDream Moonlight Narrator",
   coverUrl: "https://..."
 }
 ```
@@ -53,6 +55,9 @@ Optional fields supported by the UI:
   episodeNumber: 1,
   free: true,
   narrator: "AI Calm Voice",
+  narratorType: "female",
+  voiceProvider: "elevenlabs",
+  voiceName: "CariDream Moonlight Narrator",
   mood: "Breezy",
   icon: "C",
   imageUrl: "https://...",
@@ -66,6 +71,24 @@ Optional fields supported by the UI:
 Use `coverUrl` for story cover art when possible. The app also accepts `imageUrl`, `coverImage`, or `artUrl` as aliases. If no cover image is provided, CariDream falls back to the existing category icon.
 
 For bedtime-friendly cliffhanger endings, keep the ending calm and low-stress. Use `hasCliffhanger: true` and a soft `nextEpisodeHint` with language such as "for another night" or "tomorrow's dream." The app displays the hint at the bottom of the story detail page when both fields are present.
+
+## ElevenLabs Audio Workflow
+
+CariDream does not expose an ElevenLabs API key in browser code. Generate narration outside the public frontend, upload the MP3 to Firebase Storage or another public file host, then paste the public download URL into `audioUrl`.
+
+Supported voice metadata:
+
+```js
+{
+  audioUrl: "https://firebasestorage.googleapis.com/...",
+  narrator: "AI Calm Voice",
+  narratorType: "female",
+  voiceProvider: "elevenlabs",
+  voiceName: "CariDream Moonlight Narrator"
+}
+```
+
+The app plays `audioUrl` MP3 files when present. If `audioUrl` is empty or missing, CariDream falls back to browser SpeechSynthesis.
 
 If Firebase is connected and the `stories` collection is empty, the app seeds it from the built-in fallback stories.
 
