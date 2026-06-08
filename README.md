@@ -37,6 +37,12 @@ Each story document should include:
 }
 ```
 
+Use `coverUrl` for story or series cover art:
+
+```js
+coverUrl: "https://example.com/image.jpg"
+```
+
 Optional fields supported by the UI:
 
 ```js
@@ -51,11 +57,15 @@ Optional fields supported by the UI:
   icon: "C",
   imageUrl: "https://...",
   coverImage: "https://...",
-  artUrl: "https://..."
+  artUrl: "https://...",
+  hasCliffhanger: true,
+  nextEpisodeHint: "Tomorrow's dream may reveal where the moonlit path leads next."
 }
 ```
 
 Use `coverUrl` for story cover art when possible. The app also accepts `imageUrl`, `coverImage`, or `artUrl` as aliases. If no cover image is provided, CariDream falls back to the existing category icon.
+
+For bedtime-friendly cliffhanger endings, keep the ending calm and low-stress. Use `hasCliffhanger: true` and a soft `nextEpisodeHint` with language such as "for another night" or "tomorrow's dream." The app displays the hint at the bottom of the story detail page when both fields are present.
 
 If Firebase is connected and the `stories` collection is empty, the app seeds it from the built-in fallback stories.
 

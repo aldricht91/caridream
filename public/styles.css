@@ -407,6 +407,20 @@ button {
   margin-top: 18px;
 }
 
+.cliffhanger-note {
+  border: 1px solid rgba(255, 210, 122, 0.32);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  background: rgba(255, 210, 122, 0.08);
+}
+
+.cliffhanger-note p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
 .episode-list {
   display: grid;
   gap: 9px;

@@ -654,6 +654,10 @@ function normalizedEpisodeNumber(story) {
   return Number(anansiEpisodeOrder[title] || story.episodeNumber || story.episode || 999);
 }
 
+function storyCoverUrl(story = {}) {
+  return story.coverUrl || story.imageUrl || story.coverImage || story.artUrl || "";
+}
+
 function flattenFallbackStories() {
   return fallbackSeries.flatMap((item) => item.episodes.map((episode, index) => ({
     id: episode.id,
@@ -670,9 +674,11 @@ function flattenFallbackStories() {
     mood: item.mood,
     narrator: episode.voice || item.narrator || "AI Calm Voice",
     icon: item.icon,
-    coverUrl: episode.coverUrl || item.coverUrl || "",
+    coverUrl: storyCoverUrl(episode) || storyCoverUrl(item),
     free: episode.free !== false,
-    episodeNumber: index + 1
+    episodeNumber: index + 1,
+    hasCliffhanger: episode.hasCliffhanger === true,
+    nextEpisodeHint: episode.nextEpisodeHint || ""
   })));
 }
 
@@ -695,7 +701,7 @@ function hydrateSeriesFromStories(stories) {
       const island = normalizedCountry(story);
       const seriesTitle = normalizedSeriesTitle(story, island, category);
       const seriesId = slugify(`${island}-${seriesTitle}`);
-      const coverUrl = story.coverUrl || story.imageUrl || story.coverImage || story.artUrl || "";
+      const coverUrl = storyCoverUrl(story);
       const existing = groups.get(seriesId) || {
         id: seriesId,
         title: seriesTitle,
@@ -721,7 +727,9 @@ function hydrateSeriesFromStories(stories) {
         audioUrl: story.audioUrl || "",
         coverUrl,
         free: story.free !== false && story.isPremium !== true,
-        voice: story.narrator || "AI Calm Voice"
+        voice: story.narrator || "AI Calm Voice",
+        hasCliffhanger: story.hasCliffhanger === true,
+        nextEpisodeHint: story.nextEpisodeHint || ""
       });
       if (!existing.coverUrl && coverUrl) {
         existing.coverUrl = coverUrl;
@@ -1488,7 +1496,7 @@ function filteredSeries() {
 
 function coverArtMarkup(item, className = "story-art") {
   if (item.coverUrl) {
-    return `<span class="${className} has-cover"><img src="${item.coverUrl}" alt="" loading="lazy" /></span>`;
+    return `<span class="${className} has-cover" data-fallback-icon="${item.icon}"><img src="${item.coverUrl}" alt="" loading="lazy" /></span>`;
   }
   return `<span class="${className}">${item.icon}</span>`;
 }
@@ -1496,9 +1504,19 @@ function coverArtMarkup(item, className = "story-art") {
 function detailArtMarkup(item, episode) {
   const coverUrl = episode.coverUrl || item.coverUrl;
   if (coverUrl) {
-    return `<div class="detail-art has-cover"><img src="${coverUrl}" alt="" /></div>`;
+    return `<div class="detail-art has-cover" data-fallback-icon="${item.icon}"><img src="${coverUrl}" alt="" /></div>`;
   }
   return `<div class="detail-art">${item.icon}</div>`;
+}
+
+function cliffhangerMarkup(episode) {
+  if (!episode.hasCliffhanger || !episode.nextEpisodeHint) return "";
+  return `
+    <div class="cliffhanger-note">
+      <span class="chip">For another night</span>
+      <p>${episode.nextEpisodeHint}</p>
+    </div>
+  `;
 }
 
 function seriesButton(item) {
@@ -1740,6 +1758,7 @@ function renderDetail() {
       <h3>${episodeText.title}</h3>
       <p>${episodeText.description}</p>
     </div>
+    ${cliffhangerMarkup(episode)}
     <div class="comment-section">
       <div class="section-head">
         <h3>Listener Comments</h3>
@@ -2300,6 +2319,15 @@ document.addEventListener("click", (event) => {
   if (event.target.id === "detailPlayBtn") togglePlayback();
   if (event.target.id === "detailTimerBtn") navigate("profile");
 });
+
+document.addEventListener("error", (event) => {
+  const image = event.target;
+  if (!(image instanceof HTMLImageElement)) return;
+  const fallback = image.closest("[data-fallback-icon]");
+  if (!fallback) return;
+  fallback.classList.remove("has-cover");
+  fallback.textContent = fallback.dataset.fallbackIcon || "C";
+}, true);
 
 $("#authForm").addEventListener("submit", async (event) => {
   event.preventDefault();
