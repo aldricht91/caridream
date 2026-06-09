@@ -1,5 +1,6 @@
 const categories = [
   ["Caribbean Folktales", "*"],
+  ["Folktales & Legends", "L"],
   ["Island History", "O"],
   ["Bedtime Stories", "C"],
   ["Inspirational Stories", "+"],
@@ -637,7 +638,8 @@ const countryOrder = ["Jamaica", "Haiti", "Dominican Republic", "Aruba", "Bahama
 const backgroundThemes = {
   "Bedtime Stories": { className: "bg-bedtime", image: "" },
   "Island History": { className: "bg-history", image: "" },
-  "Caribbean Folktales": { className: "bg-folktales", image: "" }
+  "Caribbean Folktales": { className: "bg-folktales", image: "" },
+  "Folktales & Legends": { className: "bg-folktales", image: "" }
 };
 const anansiEpisodeOrder = {
   "the moonlight mango": 1,
