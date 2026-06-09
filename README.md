@@ -92,6 +92,21 @@ The app plays `audioUrl` MP3 files when present. If `audioUrl` is empty or missi
 
 Story and series cards display narrator names from Firestore. Use `voiceName` or `narrator` with values such as `CariDream Moonlight Narrator`, `CariDream Island Storyteller`, or `CariDream Twilight Storyteller`.
 
+Optional language audio can be added without replacing the default English audio. Keep `audioUrl` as the default fallback, then add either an `audioUrls` map or individual fields:
+
+```js
+{
+  audioUrl: "https://...english-or-default.mp3",
+  audioUrls: {
+    en: "https://...english.mp3",
+    es: "https://...spanish.mp3",
+    fr: "https://...french.mp3"
+  }
+}
+```
+
+The player uses the selected language audio when present. If that language is missing, it falls back to `audioUrl`.
+
 If Firebase is connected and the `stories` collection is empty, the app seeds it from the built-in fallback stories.
 
 ## Local Audio Generation

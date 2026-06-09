@@ -670,6 +670,33 @@ function storyCoverUrl(story = {}) {
   return story.coverUrl || story.imageUrl || story.coverImage || story.artUrl || "";
 }
 
+function languageAudioFields(code) {
+  const fields = {
+    en: ["audioUrl", "audioUrl_en", "englishAudioUrl", "audioUrlEnglish"],
+    es: ["audioUrl_es", "spanishAudioUrl", "audioUrlSpanish"],
+    fr: ["audioUrl_fr", "frenchAudioUrl", "audioUrlFrench"],
+    ht: ["audioUrl_ht", "haitianCreoleAudioUrl", "audioUrlHaitianCreole"],
+    pap: ["audioUrl_pap", "papiamentoAudioUrl", "audioUrlPapiamento"]
+  };
+  return fields[code] || [];
+}
+
+function audioUrlForLanguage(source = {}, code = state.language) {
+  const localizedMap = source.audioUrls || source.localizedAudioUrls || {};
+  const mappedUrl = localizedMap[code] || localizedMap[code?.toLowerCase?.()];
+  if (mappedUrl) return mappedUrl;
+
+  for (const field of languageAudioFields(code)) {
+    if (source[field]) return source[field];
+  }
+
+  return localizedMap.en || source.audioUrl_en || source.englishAudioUrl || source.audioUrl || "";
+}
+
+function selectedEpisodeAudioUrl(episode = selectedEpisode()) {
+  return audioUrlForLanguage(episode, state.language);
+}
+
 function usableNarratorName(value) {
   const name = String(value || "").trim();
   if (!name || name.toLowerCase() === "ai calm voice") return "";
@@ -693,6 +720,12 @@ function flattenFallbackStories() {
     island: item.island,
     duration: episode.duration,
     audioUrl: episode.audioUrl || "",
+    audioUrls: episode.audioUrls || {},
+    audioUrl_en: episode.audioUrl_en || "",
+    audioUrl_es: episode.audioUrl_es || "",
+    audioUrl_fr: episode.audioUrl_fr || "",
+    audioUrl_ht: episode.audioUrl_ht || "",
+    audioUrl_pap: episode.audioUrl_pap || "",
     seriesId: item.id,
     seriesTitle: item.title,
     seriesDescription: item.detail || item.summary,
@@ -758,6 +791,16 @@ function hydrateSeriesFromStories(stories) {
         storyContent: story.storyContent || story.story || "",
         duration: Number(story.duration) || 10,
         audioUrl: story.audioUrl || "",
+        audioUrls: story.audioUrls || {},
+        audioUrl_en: story.audioUrl_en || "",
+        audioUrl_es: story.audioUrl_es || "",
+        audioUrl_fr: story.audioUrl_fr || "",
+        audioUrl_ht: story.audioUrl_ht || "",
+        audioUrl_pap: story.audioUrl_pap || "",
+        spanishAudioUrl: story.spanishAudioUrl || "",
+        frenchAudioUrl: story.frenchAudioUrl || "",
+        haitianCreoleAudioUrl: story.haitianCreoleAudioUrl || "",
+        papiamentoAudioUrl: story.papiamentoAudioUrl || "",
         coverUrl,
         free: story.free !== false && story.isPremium !== true,
         voice: storyNarrator,
@@ -1415,6 +1458,7 @@ function speakNarrationChunk(generation, { recovery = false } = {}) {
 
 function startVoiceover() {
   const episode = selectedEpisode();
+  const audioUrl = selectedEpisodeAudioUrl(episode);
   const startBrowserNarration = () => {
     if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
       console.warn("Speech synthesis is not available in this browser.");
@@ -1433,12 +1477,12 @@ function startVoiceover() {
     speakNarrationChunk(narrationGeneration);
   };
 
-  if (!episode.audioUrl) {
+  if (!audioUrl) {
     startBrowserNarration();
     return;
   }
 
-  storyAudio = new Audio(episode.audioUrl);
+  storyAudio = new Audio(audioUrl);
   let audioFallbackStarted = false;
   const fallBackToBrowserNarration = (message, error = null) => {
     if (audioFallbackStarted) return;
@@ -1964,7 +2008,7 @@ function renderDetail() {
       <span class="chip">${episodeText.free}</span>
       <span class="chip">${episodeNarratorLabel(episode, item)}</span>
       <span class="chip">${currentLanguage().label}</span>
-      <span class="chip">${episode.audioUrl ? "Recorded narration" : "Browser voice"}</span>
+      <span class="chip">${selectedEpisodeAudioUrl(episode) ? "Recorded narration" : "Browser voice"}</span>
       ${state.playing ? `<span class="chip now-playing-chip">Now Playing</span>` : ""}
       <h3>${episodeText.title}</h3>
       <p>${episodeText.description}</p>
@@ -2233,7 +2277,7 @@ function renderPlayer() {
   $("#autoplayPlayerBtn").setAttribute("aria-label", `Autoplay next episode ${state.autoplayNext ? "on" : "off"}`);
   const supportIssue = speechSupportIssue();
   $("#playerSpeechWarning").textContent = supportIssue;
-  $("#playerSpeechWarning").classList.toggle("hidden", !supportIssue || Boolean(episode.audioUrl));
+  $("#playerSpeechWarning").classList.toggle("hidden", !supportIssue || Boolean(selectedEpisodeAudioUrl(episode)));
   $("#nextEpisodeBtn").textContent = nextEpisode ? "Next Episode" : "End of series";
   $("#nextEpisodeBtn").disabled = !nextEpisode;
   $("#nextEpisodeBtn").classList.toggle("disabled", !nextEpisode);

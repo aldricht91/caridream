@@ -1,4 +1,4 @@
-const CACHE_NAME = "caridream-pwa-v34";
+const CACHE_NAME = "caridream-pwa-v35";
 const APP_SHELL = [
   "./",
   "./index.html",
