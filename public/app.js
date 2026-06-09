@@ -125,9 +125,9 @@ const fallbackSeries = [
     summary: "Meditative stories about roots, tides, and beginning again after a hard day.",
     detail: "Part guided reflection and part nature story, designed for adults who want a calm reset before sleep.",
     episodes: [
-      { id: "mangrove-ep1", title: "Roots Below the Water", duration: 16, free: true, voice: "AI Calm Voice", description: "A grounding story with slow breathing cues." },
-      { id: "mangrove-ep2", title: "The Tide Comes Softly", duration: 20, free: false, voice: "AI Calm Voice", description: "A premium meditation on change and rest." },
-      { id: "mangrove-ep3", title: "Morning Can Wait", duration: 25, free: false, voice: "AI Calm Voice", description: "A longer wind-down episode for anxious nights." }
+      { id: "mangrove-ep1", title: "Roots Below the Water", duration: 16, free: true, voice: "Browser Voice", description: "A grounding story with slow breathing cues." },
+      { id: "mangrove-ep2", title: "The Tide Comes Softly", duration: 20, free: false, voice: "Browser Voice", description: "A premium meditation on change and rest." },
+      { id: "mangrove-ep3", title: "Morning Can Wait", duration: 25, free: false, voice: "Browser Voice", description: "A longer wind-down episode for anxious nights." }
     ]
   },
   {
@@ -136,15 +136,15 @@ const fallbackSeries = [
     category: "Island History",
     island: "Haiti",
     mood: "Majestic",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "O",
     package: "Heritage Premium",
     summary: "Quiet historical journeys through Haitian resilience, mountain air, and moonlit stone.",
     detail: "A calm history series that honors Haiti's strength while keeping the tone restful and accessible.",
     episodes: [
-      { id: "haiti-ep1", title: "Steps Toward the Citadel", duration: 18, free: true, voice: "AI Calm Voice", description: "A soft introduction to a mountain path and the stories held in stone." },
-      { id: "haiti-ep2", title: "Lanterns of Cap-Haitien", duration: 24, free: false, voice: "AI Calm Voice", description: "A premium night walk through memory, sea breeze, and historic streets." },
-      { id: "haiti-ep3", title: "Drums Beneath the Stars", duration: 28, free: false, voice: "AI Calm Voice", description: "A reflective episode about freedom, rhythm, and remembrance." }
+      { id: "haiti-ep1", title: "Steps Toward the Citadel", duration: 18, free: true, voice: "Browser Voice", description: "A soft introduction to a mountain path and the stories held in stone." },
+      { id: "haiti-ep2", title: "Lanterns of Cap-Haitien", duration: 24, free: false, voice: "Browser Voice", description: "A premium night walk through memory, sea breeze, and historic streets." },
+      { id: "haiti-ep3", title: "Drums Beneath the Stars", duration: 28, free: false, voice: "Browser Voice", description: "A reflective episode about freedom, rhythm, and remembrance." }
     ]
   },
   {
@@ -153,15 +153,15 @@ const fallbackSeries = [
     category: "Bedtime Stories",
     island: "Dominican Republic",
     mood: "Restful",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "C",
     package: "Dreamer Plus",
     summary: "Gentle bedtime stories carried by river sounds, palms, and warm Dominican nights.",
     detail: "A Spanish Caribbean-inspired sleep series with soft pacing, family warmth, and calm nature imagery.",
     episodes: [
-      { id: "dr-ep1", title: "The River That Hummed", duration: 15, free: true, voice: "AI Calm Voice", description: "A child follows a humming river toward a peaceful dream." },
-      { id: "dr-ep2", title: "Mangoes on the Windowsill", duration: 19, free: false, voice: "AI Calm Voice", description: "A premium family story about gratitude and sleepy summer rain." },
-      { id: "dr-ep3", title: "The Soft Road to Samana", duration: 23, free: false, voice: "AI Calm Voice", description: "A long, soothing coastal journey designed for winding down." }
+      { id: "dr-ep1", title: "The River That Hummed", duration: 15, free: true, voice: "Browser Voice", description: "A child follows a humming river toward a peaceful dream." },
+      { id: "dr-ep2", title: "Mangoes on the Windowsill", duration: 19, free: false, voice: "Browser Voice", description: "A premium family story about gratitude and sleepy summer rain." },
+      { id: "dr-ep3", title: "The Soft Road to Samana", duration: 23, free: false, voice: "Browser Voice", description: "A long, soothing coastal journey designed for winding down." }
     ]
   },
   {
@@ -170,15 +170,15 @@ const fallbackSeries = [
     category: "Family Stories",
     island: "Puerto Rico",
     mood: "Tender",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "&",
     package: "Family Premium",
     summary: "Family bedtime stories where coqui songs, abuelas, and moonlit balconies bring everyone close.",
     detail: "A gentle Puerto Rican family series for children, adults, and diaspora listeners missing familiar night sounds.",
     episodes: [
-      { id: "pr-ep1", title: "The First Coqui Song", duration: 14, free: true, voice: "AI Calm Voice", description: "A small coqui helps a child feel safe away from home." },
-      { id: "pr-ep2", title: "Abuela's Blue Balcony", duration: 20, free: false, voice: "AI Calm Voice", description: "A premium episode about stories passed down in the evening air." },
-      { id: "pr-ep3", title: "Rain Over El Yunque", duration: 25, free: false, voice: "AI Calm Voice", description: "A dreamy rainforest episode with a slow, sleepy cadence." }
+      { id: "pr-ep1", title: "The First Coqui Song", duration: 14, free: true, voice: "Browser Voice", description: "A small coqui helps a child feel safe away from home." },
+      { id: "pr-ep2", title: "Abuela's Blue Balcony", duration: 20, free: false, voice: "Browser Voice", description: "A premium episode about stories passed down in the evening air." },
+      { id: "pr-ep3", title: "Rain Over El Yunque", duration: 25, free: false, voice: "Browser Voice", description: "A dreamy rainforest episode with a slow, sleepy cadence." }
     ]
   },
   {
@@ -187,15 +187,15 @@ const fallbackSeries = [
     category: "Inspirational Stories",
     island: "Cuba",
     mood: "Hopeful",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "+",
     package: "Dreamer Plus",
     summary: "Reflective stories about sea walls, music drifting at night, and beginning again.",
     detail: "A soothing Cuban-inspired series for adults who want calm encouragement before sleep.",
     episodes: [
-      { id: "cuba-ep1", title: "The Wall That Listened", duration: 16, free: true, voice: "AI Calm Voice", description: "A quiet sea wall receives the worries of the day." },
-      { id: "cuba-ep2", title: "Guitar in the Courtyard", duration: 21, free: false, voice: "AI Calm Voice", description: "A premium episode about music, patience, and softer mornings." },
-      { id: "cuba-ep3", title: "Salt Air Promise", duration: 24, free: false, voice: "AI Calm Voice", description: "A calming story about hope arriving slowly." }
+      { id: "cuba-ep1", title: "The Wall That Listened", duration: 16, free: true, voice: "Browser Voice", description: "A quiet sea wall receives the worries of the day." },
+      { id: "cuba-ep2", title: "Guitar in the Courtyard", duration: 21, free: false, voice: "Browser Voice", description: "A premium episode about music, patience, and softer mornings." },
+      { id: "cuba-ep3", title: "Salt Air Promise", duration: 24, free: false, voice: "Browser Voice", description: "A calming story about hope arriving slowly." }
     ]
   },
   {
@@ -204,15 +204,15 @@ const fallbackSeries = [
     category: "Bedtime Stories",
     island: "Grenada",
     mood: "Warm",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "C",
     package: "Dreamer Plus",
     summary: "Nutmeg, cocoa, rain, and gentle market memories become cozy bedtime episodes.",
     detail: "A Grenadian sleep series filled with warm sensory details and soft family rhythms.",
     episodes: [
-      { id: "grenada-ep1", title: "Nutmeg Under the Pillow", duration: 13, free: true, voice: "AI Calm Voice", description: "A gentle bedtime tale scented with nutmeg and rain." },
-      { id: "grenada-ep2", title: "The Cocoa House at Dusk", duration: 20, free: false, voice: "AI Calm Voice", description: "A premium story about patience, sweetness, and rest." },
-      { id: "grenada-ep3", title: "Market Baskets Sleeping", duration: 22, free: false, voice: "AI Calm Voice", description: "A quiet market closes under a soft island moon." }
+      { id: "grenada-ep1", title: "Nutmeg Under the Pillow", duration: 13, free: true, voice: "Browser Voice", description: "A gentle bedtime tale scented with nutmeg and rain." },
+      { id: "grenada-ep2", title: "The Cocoa House at Dusk", duration: 20, free: false, voice: "Browser Voice", description: "A premium story about patience, sweetness, and rest." },
+      { id: "grenada-ep3", title: "Market Baskets Sleeping", duration: 22, free: false, voice: "Browser Voice", description: "A quiet market closes under a soft island moon." }
     ]
   },
   {
@@ -221,15 +221,15 @@ const fallbackSeries = [
     category: "Inspirational Stories",
     island: "Dominica",
     mood: "Grounding",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "+",
     package: "Dreamer Plus",
     summary: "Nature Island meditations about waterfalls, rainforests, and breathing with the earth.",
     detail: "A calm Dominica-inspired series for stress relief, sleep preparation, and emotional reset.",
     episodes: [
-      { id: "dominica-ep1", title: "Waterfall Breath", duration: 15, free: true, voice: "AI Calm Voice", description: "A waterfall teaches a tired listener to breathe slowly." },
-      { id: "dominica-ep2", title: "The Fern Path", duration: 19, free: false, voice: "AI Calm Voice", description: "A premium guided story through a cooling green path." },
-      { id: "dominica-ep3", title: "Clouds Rest on Morne Trois Pitons", duration: 26, free: false, voice: "AI Calm Voice", description: "A longer sleep episode for deep calm." }
+      { id: "dominica-ep1", title: "Waterfall Breath", duration: 15, free: true, voice: "Browser Voice", description: "A waterfall teaches a tired listener to breathe slowly." },
+      { id: "dominica-ep2", title: "The Fern Path", duration: 19, free: false, voice: "Browser Voice", description: "A premium guided story through a cooling green path." },
+      { id: "dominica-ep3", title: "Clouds Rest on Morne Trois Pitons", duration: 26, free: false, voice: "Browser Voice", description: "A longer sleep episode for deep calm." }
     ]
   },
   {
@@ -238,15 +238,15 @@ const fallbackSeries = [
     category: "Island History",
     island: "Antigua and Barbuda",
     mood: "Reflective",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "O",
     package: "Heritage Premium",
     summary: "Soft historical walks through harbors, trade winds, and stories of endurance.",
     detail: "A reflective island history series that keeps learning gentle enough for nighttime listening.",
     episodes: [
-      { id: "antigua-ep1", title: "A Harbor Goes Quiet", duration: 17, free: true, voice: "AI Calm Voice", description: "A calm introduction to moonlit harbor history." },
-      { id: "antigua-ep2", title: "Wind Through Old Stone", duration: 24, free: false, voice: "AI Calm Voice", description: "A premium episode about memory, labor, and sea wind." },
-      { id: "antigua-ep3", title: "Barbuda's Pink Sand Dream", duration: 23, free: false, voice: "AI Calm Voice", description: "A soft coastal story about quiet beauty and protection." }
+      { id: "antigua-ep1", title: "A Harbor Goes Quiet", duration: 17, free: true, voice: "Browser Voice", description: "A calm introduction to moonlit harbor history." },
+      { id: "antigua-ep2", title: "Wind Through Old Stone", duration: 24, free: false, voice: "Browser Voice", description: "A premium episode about memory, labor, and sea wind." },
+      { id: "antigua-ep3", title: "Barbuda's Pink Sand Dream", duration: 23, free: false, voice: "Browser Voice", description: "A soft coastal story about quiet beauty and protection." }
     ]
   },
   {
@@ -255,15 +255,15 @@ const fallbackSeries = [
     category: "Funny Stories",
     island: "The Bahamas",
     mood: "Joyful",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: ":)",
     package: "Family Premium",
     summary: "Gentle, funny stories where parade colors, cousins, and sleepy drums become bedtime fun.",
     detail: "A Bahamas-inspired family series that keeps the joy soft enough for bedtime.",
     episodes: [
-      { id: "bahamas-ep1", title: "The Feather That Wouldn't Sleep", duration: 12, free: true, voice: "AI Calm Voice", description: "A playful costume feather keeps floating through bedtime." },
-      { id: "bahamas-ep2", title: "Cousin Milo's Quiet Drum", duration: 16, free: false, voice: "AI Calm Voice", description: "A premium funny story about learning when to soften the rhythm." },
-      { id: "bahamas-ep3", title: "Conch Shell Wishes", duration: 20, free: false, voice: "AI Calm Voice", description: "A family story that ends with a sleepy seaside wish." }
+      { id: "bahamas-ep1", title: "The Feather That Wouldn't Sleep", duration: 12, free: true, voice: "Browser Voice", description: "A playful costume feather keeps floating through bedtime." },
+      { id: "bahamas-ep2", title: "Cousin Milo's Quiet Drum", duration: 16, free: false, voice: "Browser Voice", description: "A premium funny story about learning when to soften the rhythm." },
+      { id: "bahamas-ep3", title: "Conch Shell Wishes", duration: 20, free: false, voice: "Browser Voice", description: "A family story that ends with a sleepy seaside wish." }
     ]
   },
   {
@@ -272,15 +272,15 @@ const fallbackSeries = [
     category: "Cultural Legends",
     island: "Guyana",
     mood: "Wondering",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "<>",
     package: "Heritage Premium",
     summary: "River legends and rainforest memories from the Caribbean coast of South America.",
     detail: "A calm Guyanese legend series with river journeys, night birds, and respectful wonder.",
     episodes: [
-      { id: "guyana-ep1", title: "The Moon in the River", duration: 17, free: true, voice: "AI Calm Voice", description: "A child sees the moon floating in dark water and learns to listen." },
-      { id: "guyana-ep2", title: "Kaieteur's Evening Mist", duration: 25, free: false, voice: "AI Calm Voice", description: "A premium story inspired by waterfall mist and ancestral memory." },
-      { id: "guyana-ep3", title: "The Boat That Knew the Stars", duration: 27, free: false, voice: "AI Calm Voice", description: "A slow river journey toward sleep." }
+      { id: "guyana-ep1", title: "The Moon in the River", duration: 17, free: true, voice: "Browser Voice", description: "A child sees the moon floating in dark water and learns to listen." },
+      { id: "guyana-ep2", title: "Kaieteur's Evening Mist", duration: 25, free: false, voice: "Browser Voice", description: "A premium story inspired by waterfall mist and ancestral memory." },
+      { id: "guyana-ep3", title: "The Boat That Knew the Stars", duration: 27, free: false, voice: "Browser Voice", description: "A slow river journey toward sleep." }
     ]
   },
   {
@@ -289,15 +289,15 @@ const fallbackSeries = [
     category: "Bedtime Stories",
     island: "Aruba",
     mood: "Breezy",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "C",
     package: "Dreamer Plus",
     summary: "Soft desert-island bedtime stories with trade winds, stars, and calm shorelines.",
     detail: "An Aruba-inspired sleep series with spacious pacing and quiet coastal imagery.",
     episodes: [
-      { id: "aruba-ep1", title: "The Wind Finds a Hummingbird", duration: 14, free: true, voice: "AI Calm Voice", description: "A trade wind guides a tired hummingbird toward a moonlit garden." },
-      { id: "aruba-ep2", title: "Cactus Shadows at Dusk", duration: 19, free: false, voice: "AI Calm Voice", description: "A premium episode about quiet desert shapes and rest." },
-      { id: "aruba-ep3", title: "Palm Beach After Midnight", duration: 22, free: false, voice: "AI Calm Voice", description: "A soft shoreline walk designed for sleep." }
+      { id: "aruba-ep1", title: "The Wind Finds a Hummingbird", duration: 14, free: true, voice: "Browser Voice", description: "A trade wind guides a tired hummingbird toward a moonlit garden." },
+      { id: "aruba-ep2", title: "Cactus Shadows at Dusk", duration: 19, free: false, voice: "Browser Voice", description: "A premium episode about quiet desert shapes and rest." },
+      { id: "aruba-ep3", title: "Palm Beach After Midnight", duration: 22, free: false, voice: "Browser Voice", description: "A soft shoreline walk designed for sleep." }
     ]
   },
   {
@@ -306,15 +306,15 @@ const fallbackSeries = [
     category: "Family Stories",
     island: "Curacao",
     mood: "Bright",
-    narrator: "AI Calm Voice",
+    narrator: "Browser Voice",
     icon: "&",
     package: "Family Premium",
     summary: "Colorful family stories that slow down into gentle dreams beside the harbor.",
     detail: "A Curacao-inspired family series about color, language, belonging, and bedtime calm.",
     episodes: [
-      { id: "curacao-ep1", title: "The Yellow House Dream", duration: 15, free: true, voice: "AI Calm Voice", description: "A child imagines each bright house closing its eyes for sleep." },
-      { id: "curacao-ep2", title: "Papiamentu Goodnight", duration: 18, free: false, voice: "AI Calm Voice", description: "A premium family episode about language and love at bedtime." },
-      { id: "curacao-ep3", title: "Harbor Colors Fade Softly", duration: 23, free: false, voice: "AI Calm Voice", description: "A sleepy walk through color, water, and moonlight." }
+      { id: "curacao-ep1", title: "The Yellow House Dream", duration: 15, free: true, voice: "Browser Voice", description: "A child imagines each bright house closing its eyes for sleep." },
+      { id: "curacao-ep2", title: "Papiamentu Goodnight", duration: 18, free: false, voice: "Browser Voice", description: "A premium family episode about language and love at bedtime." },
+      { id: "curacao-ep3", title: "Harbor Colors Fade Softly", duration: 23, free: false, voice: "Browser Voice", description: "A sleepy walk through color, water, and moonlight." }
     ]
   }
 ];
@@ -510,13 +510,14 @@ const languages = [
 const narratorPreferences = [
   { id: "moonlight", label: "Moonlight Narrator", voiceProvider: "elevenlabs", voiceName: "CariDream Moonlight Narrator" },
   { id: "island", label: "Island Storyteller", voiceProvider: "elevenlabs", voiceName: "CariDream Island Storyteller" },
+  { id: "twilight", label: "Twilight Storyteller", voiceProvider: "elevenlabs", voiceName: "CariDream Twilight Storyteller" },
   { id: "browser", label: "Browser Voice", voiceProvider: "browser", voiceName: "Browser Voice" }
 ];
 
 const languageCopy = {
   en: {
     free: "Free Listener",
-    calmVoice: "AI Calm Voice",
+    calmVoice: "Browser Voice",
     intro: (episode, item) => `${episode.title}. ${episode.description} From ${item.title}, a ${item.island} ${item.category.toLowerCase()} series. Settle in, breathe slowly, and let the story carry you toward rest.`,
     description: (episode) => episode.description
   },
@@ -669,6 +670,20 @@ function storyCoverUrl(story = {}) {
   return story.coverUrl || story.imageUrl || story.coverImage || story.artUrl || "";
 }
 
+function usableNarratorName(value) {
+  const name = String(value || "").trim();
+  if (!name || name.toLowerCase() === "ai calm voice") return "";
+  return name;
+}
+
+function narratorNameFrom(...sources) {
+  for (const source of sources) {
+    const name = usableNarratorName(source);
+    if (name) return name;
+  }
+  return "";
+}
+
 function flattenFallbackStories() {
   return fallbackSeries.flatMap((item) => item.episodes.map((episode, index) => ({
     id: episode.id,
@@ -683,10 +698,10 @@ function flattenFallbackStories() {
     seriesDescription: item.detail || item.summary,
     summary: item.summary,
     mood: item.mood,
-    narrator: episode.voice || item.narrator || "AI Calm Voice",
+    narrator: narratorNameFrom(episode.voiceName, episode.voice, item.voiceName, item.narrator) || "Browser Voice",
     narratorType: episode.narratorType || "browser",
     voiceProvider: episode.voiceProvider || "browser",
-    voiceName: episode.voiceName || episode.voice || item.narrator || "Browser Voice",
+    voiceName: narratorNameFrom(episode.voiceName, episode.voice, item.voiceName, item.narrator) || "Browser Voice",
     icon: item.icon,
     coverUrl: storyCoverUrl(episode) || storyCoverUrl(item),
     free: episode.free !== false,
@@ -716,16 +731,17 @@ function hydrateSeriesFromStories(stories) {
       const seriesTitle = normalizedSeriesTitle(story, island, category);
       const seriesId = slugify(`${island}-${seriesTitle}`);
       const coverUrl = storyCoverUrl(story);
+      const storyNarrator = narratorNameFrom(story.voiceName, story.narrator, story.voice) || "Browser Voice";
       const existing = groups.get(seriesId) || {
         id: seriesId,
         title: seriesTitle,
         category,
         island,
         mood: story.mood || "Calm",
-        narrator: story.narrator || "AI Calm Voice",
+        narrator: storyNarrator,
         narratorType: story.narratorType || "browser",
         voiceProvider: story.voiceProvider || (story.audioUrl ? "elevenlabs" : "browser"),
-        voiceName: story.voiceName || story.narrator || (story.audioUrl ? "ElevenLabs Narrator" : "Browser Voice"),
+        voiceName: storyNarrator,
         icon: story.icon || categoryIcon(category),
         coverUrl,
         package: "Free Listener",
@@ -744,16 +760,20 @@ function hydrateSeriesFromStories(stories) {
         audioUrl: story.audioUrl || "",
         coverUrl,
         free: story.free !== false && story.isPremium !== true,
-        voice: story.narrator || "AI Calm Voice",
-        narrator: story.narrator || "AI Calm Voice",
+        voice: storyNarrator,
+        narrator: storyNarrator,
         narratorType: story.narratorType || "browser",
         voiceProvider: story.voiceProvider || (story.audioUrl ? "elevenlabs" : "browser"),
-        voiceName: story.voiceName || story.narrator || (story.audioUrl ? "ElevenLabs Narrator" : "Browser Voice"),
+        voiceName: storyNarrator,
         hasCliffhanger: story.hasCliffhanger === true,
         nextEpisodeHint: story.nextEpisodeHint || ""
       });
       if (!existing.coverUrl && coverUrl) {
         existing.coverUrl = coverUrl;
+      }
+      if (existing.narrator === "Browser Voice" && storyNarrator !== "Browser Voice") {
+        existing.narrator = storyNarrator;
+        existing.voiceName = storyNarrator;
       }
       groups.set(seriesId, existing);
     });
@@ -965,10 +985,23 @@ function currentNarratorPreference() {
 }
 
 function episodeNarratorLabel(episode, item = selectedSeries()) {
-  if (episode.audioUrl) {
-    return episode.voiceName || episode.narrator || item.voiceName || item.narrator || "ElevenLabs Narrator";
-  }
-  return "Browser Voice";
+  return narratorNameFrom(
+    episode?.voiceName,
+    episode?.narrator,
+    episode?.voice,
+    item?.voiceName,
+    item?.narrator
+  ) || "Browser Voice";
+}
+
+function seriesNarratorLabel(item) {
+  return narratorNameFrom(
+    item?.voiceName,
+    item?.narrator,
+    item?.episodes?.[0]?.voiceName,
+    item?.episodes?.[0]?.narrator,
+    item?.episodes?.[0]?.voice
+  ) || "Browser Voice";
 }
 
 function localizedEpisodeText(episode, item = selectedSeries()) {
@@ -1687,13 +1720,14 @@ function cliffhangerMarkup(episode) {
 
 function seriesButton(item) {
   const freeCount = item.episodes.filter((episode) => episode.free).length;
+  const narrator = seriesNarratorLabel(item);
   return `
     <button class="story-card" type="button" data-series="${item.id}">
       ${coverArtMarkup(item)}
       <span>
         <h4>${item.title}</h4>
         <p>${item.category} | ${item.episodes.length} episodes | ${freeCount} free listener episodes</p>
-        <small>Free listener preview</small>
+        <small>Narrator: ${narrator}</small>
       </span>
       <span>></span>
     </button>
@@ -1746,6 +1780,7 @@ function episodeButton(episode, item) {
         <span>
           <strong>${text.title}</strong>
           <small>${text.description}</small>
+          <small>Narrator: ${episodeNarratorLabel(episode, item)}</small>
         </span>
       </button>
       <button class="episode-play-btn" type="button" data-play-episode="${episode.id}">
@@ -1927,7 +1962,7 @@ function renderDetail() {
     </div>
     <div class="active-episode">
       <span class="chip">${episodeText.free}</span>
-      <span class="chip">${episodeText.calmVoice}</span>
+      <span class="chip">${episodeNarratorLabel(episode, item)}</span>
       <span class="chip">${currentLanguage().label}</span>
       <span class="chip">${episode.audioUrl ? "MP3 audio" : "Browser voice"}</span>
       ${state.playing ? `<span class="chip now-playing-chip">Now Playing</span>` : ""}

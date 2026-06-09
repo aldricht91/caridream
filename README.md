@@ -54,7 +54,7 @@ Optional fields supported by the UI:
   seriesDescription: "Soft desert-island bedtime stories...",
   episodeNumber: 1,
   free: true,
-  narrator: "AI Calm Voice",
+  narrator: "CariDream Moonlight Narrator",
   narratorType: "female",
   voiceProvider: "elevenlabs",
   voiceName: "CariDream Moonlight Narrator",
@@ -81,7 +81,7 @@ Supported voice metadata:
 ```js
 {
   audioUrl: "https://firebasestorage.googleapis.com/...",
-  narrator: "AI Calm Voice",
+  narrator: "CariDream Moonlight Narrator",
   narratorType: "female",
   voiceProvider: "elevenlabs",
   voiceName: "CariDream Moonlight Narrator"
@@ -89,6 +89,8 @@ Supported voice metadata:
 ```
 
 The app plays `audioUrl` MP3 files when present. If `audioUrl` is empty or missing, CariDream falls back to browser SpeechSynthesis.
+
+Story and series cards display narrator names from Firestore. Use `voiceName` or `narrator` with values such as `CariDream Moonlight Narrator`, `CariDream Island Storyteller`, or `CariDream Twilight Storyteller`.
 
 If Firebase is connected and the `stories` collection is empty, the app seeds it from the built-in fallback stories.
 
