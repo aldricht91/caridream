@@ -508,10 +508,10 @@ const languages = [
 ];
 
 const narratorPreferences = [
-  { id: "moonlight", label: "Moonlight Narrator", voiceProvider: "elevenlabs", voiceName: "CariDream Moonlight Narrator" },
-  { id: "island", label: "Island Storyteller", voiceProvider: "elevenlabs", voiceName: "CariDream Island Storyteller" },
-  { id: "twilight", label: "Twilight Storyteller", voiceProvider: "elevenlabs", voiceName: "CariDream Twilight Storyteller" },
-  { id: "browser", label: "Browser Voice", voiceProvider: "browser", voiceName: "Browser Voice" }
+  { id: "moonlight", label: "Moonlight Narrator", description: "Gentle bedtime storyteller", voiceProvider: "elevenlabs", voiceName: "CariDream Moonlight Narrator" },
+  { id: "island", label: "Island Storyteller", description: "Warm Caribbean narrator", voiceProvider: "elevenlabs", voiceName: "CariDream Island Storyteller" },
+  { id: "twilight", label: "Twilight Storyteller", description: "Relaxed humor and folktales", voiceProvider: "elevenlabs", voiceName: "CariDream Twilight Storyteller" },
+  { id: "browser", label: "Browser Voice", description: "Basic fallback voice", voiceProvider: "browser", voiceName: "Browser Voice" }
 ];
 
 const languageCopy = {
@@ -860,7 +860,7 @@ let playbackStartedAt = 0;
 let progressFrame = null;
 let isSeekingPlayback = false;
 let activeSeekPointerId = null;
-let catalogSource = "Fallback stories";
+let catalogSource = "Offline library";
 let catalogStoryCount = flattenFallbackStories().length;
 
 const $ = (selector) => document.querySelector(selector);
@@ -965,12 +965,12 @@ async function loadFirebaseStories() {
     }
     const firebaseSeries = hydrateSeriesFromStories(cloudStories);
     if (firebaseSeries.length) {
-      catalogSource = "Firestore stories";
+      catalogSource = "Live library";
       catalogStoryCount = cloudStories.length;
       applyStoryCatalog(firebaseSeries);
     }
   } catch (error) {
-    catalogSource = "Fallback stories";
+    catalogSource = "Offline library";
     catalogStoryCount = flattenFallbackStories().length;
     console.warn("Firebase stories unavailable, using fallback stories.", error);
   }
@@ -1964,7 +1964,7 @@ function renderDetail() {
       <span class="chip">${episodeText.free}</span>
       <span class="chip">${episodeNarratorLabel(episode, item)}</span>
       <span class="chip">${currentLanguage().label}</span>
-      <span class="chip">${episode.audioUrl ? "MP3 audio" : "Browser voice"}</span>
+      <span class="chip">${episode.audioUrl ? "Recorded narration" : "Browser voice"}</span>
       ${state.playing ? `<span class="chip now-playing-chip">Now Playing</span>` : ""}
       <h3>${episodeText.title}</h3>
       <p>${episodeText.description}</p>
@@ -2170,7 +2170,7 @@ function renderNarratorOptions() {
   $("#narratorOptions").innerHTML = narratorPreferences.map((narrator) => `
     <button class="${state.narratorPreference === narrator.id ? "active" : ""}" type="button" data-narrator-preference="${narrator.id}">
       <strong>${narrator.label}</strong>
-      <small>${narrator.voiceProvider === "elevenlabs" ? "MP3-ready" : "Fallback"}</small>
+      <small>${narrator.description}</small>
     </button>
   `).join("");
 }
