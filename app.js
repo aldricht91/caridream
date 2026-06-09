@@ -903,6 +903,9 @@ let playbackStartedAt = 0;
 let progressFrame = null;
 let isSeekingPlayback = false;
 let activeSeekPointerId = null;
+let audioSeekInProgress = false;
+let audioSeekResumeAfter = false;
+let pendingAudioSeekSeconds = null;
 let catalogSource = "Offline library";
 let catalogStoryCount = flattenFallbackStories().length;
 
@@ -1493,6 +1496,27 @@ function startVoiceover() {
   };
   storyAudio.currentTime = Math.min(state.elapsedSeconds, episodeDurationSeconds(episode) - 1);
   storyAudio.volume = 0.9;
+  storyAudio.preload = "auto";
+  storyAudio.addEventListener("loadedmetadata", () => {
+    if (pendingAudioSeekSeconds !== null) {
+      applyAudioSeek(pendingAudioSeekSeconds);
+      pendingAudioSeekSeconds = null;
+    }
+  });
+  storyAudio.addEventListener("seeked", finishAudioSeek);
+  storyAudio.addEventListener("canplay", finishAudioSeek);
+  storyAudio.addEventListener("playing", () => {
+    audioSeekInProgress = false;
+    audioSeekResumeAfter = false;
+  });
+  storyAudio.addEventListener("stalled", () => {
+    console.warn("Story audio stalled while loading or seeking.");
+  });
+  storyAudio.addEventListener("waiting", () => {
+    if (audioSeekInProgress) {
+      console.warn("Story audio is buffering after seek.");
+    }
+  });
   storyAudio.addEventListener("ended", handlePlaybackEnded, { once: true });
   storyAudio.addEventListener("error", () => {
     fallBackToBrowserNarration("Story audio could not load. Falling back to browser narration.");
@@ -1507,6 +1531,9 @@ function stopVoiceover() {
     storyAudio.pause();
     storyAudio = null;
   }
+  audioSeekInProgress = false;
+  audioSeekResumeAfter = false;
+  pendingAudioSeekSeconds = null;
   clearInterval(narrationWatchdog);
   narrationWatchdog = null;
   narrationGeneration += 1;
@@ -1587,7 +1614,7 @@ function handlePlaybackEnded() {
 function updatePlaybackProgress() {
   if (!state.playing) return;
   const duration = episodeDurationSeconds();
-  if (isSeekingPlayback) {
+  if (isSeekingPlayback || audioSeekInProgress) {
     renderPlayer();
     progressFrame = requestAnimationFrame(updatePlaybackProgress);
     return;
@@ -1690,14 +1717,63 @@ function finishProgressSeek(event) {
   seekPlayback(nextSeconds);
 }
 
+function audioReadyForSeek(audio = storyAudio) {
+  return Boolean(audio && Number.isFinite(audio.duration) && audio.readyState >= 1);
+}
+
+function finishAudioSeek() {
+  if (!storyAudio || !audioSeekInProgress) return;
+  audioSeekInProgress = false;
+  if (audioSeekResumeAfter && state.playing && storyAudio.paused) {
+    storyAudio.play().catch((error) => {
+      console.warn("Story audio could not resume after seeking.", error);
+    });
+  }
+  audioSeekResumeAfter = false;
+  startProgressLoop();
+  renderPlayer();
+}
+
+function applyAudioSeek(seconds) {
+  if (!storyAudio) return false;
+  if (!audioReadyForSeek(storyAudio)) {
+    pendingAudioSeekSeconds = seconds;
+    storyAudio.load();
+    return false;
+  }
+
+  const duration = episodeDurationSeconds();
+  const target = Math.min(duration - 0.25, Math.max(0, Number(seconds) || 0));
+  audioSeekInProgress = true;
+  audioSeekResumeAfter = state.playing && !storyAudio.paused;
+  clearInterval(progressInterval);
+  cancelAnimationFrame(progressFrame);
+
+  if (audioSeekResumeAfter) {
+    storyAudio.pause();
+  }
+
+  try {
+    storyAudio.currentTime = target;
+  } catch (error) {
+    audioSeekInProgress = false;
+    audioSeekResumeAfter = false;
+    console.warn("Story audio seek failed.", error);
+    return false;
+  }
+
+  window.setTimeout(finishAudioSeek, 1600);
+  return true;
+}
+
 function seekPlayback(seconds) {
   const duration = episodeDurationSeconds();
-  state.elapsedSeconds = Math.min(duration - 1, Math.max(0, Number(seconds) || 0));
+  state.elapsedSeconds = Math.min(duration - 0.25, Math.max(0, Number(seconds) || 0));
   state.progress = Math.min(100, (state.elapsedSeconds / duration) * 100);
   saveLastPlayed();
 
   if (storyAudio) {
-    storyAudio.currentTime = state.elapsedSeconds;
+    applyAudioSeek(state.elapsedSeconds);
   }
 
   if (state.playing && !storyAudio) {
@@ -1712,7 +1788,7 @@ function seekPlayback(seconds) {
 
 function updateSeekPreview(seconds) {
   const duration = episodeDurationSeconds();
-  state.elapsedSeconds = Math.min(duration - 1, Math.max(0, Number(seconds) || 0));
+  state.elapsedSeconds = Math.min(duration - 0.25, Math.max(0, Number(seconds) || 0));
   state.progress = Math.min(100, (state.elapsedSeconds / duration) * 100);
   renderPlayer();
 }
