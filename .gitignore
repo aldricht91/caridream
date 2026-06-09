@@ -9,3 +9,9 @@ dist/
 build/
 firebase.exe
 .firebase/
+.env
+.env.*
+!.env.example
+*.service-account.json
+*serviceAccount*.json
+service-account*.json

@@ -94,6 +94,20 @@ Story and series cards display narrator names from Firestore. Use `voiceName` or
 
 If Firebase is connected and the `stories` collection is empty, the app seeds it from the built-in fallback stories.
 
+## Local Audio Generation
+
+CariDream includes a private local admin command for generating pending story narration. It uses Firebase Admin SDK and ElevenLabs, so it must run only from your own machine with private environment variables.
+
+1. Copy `.env.example` to `.env`.
+2. Fill in `ELEVENLABS_API_KEY`, `ELEVENLABS_MOONLIGHT_VOICE_ID`, and `FIREBASE_SERVICE_ACCOUNT_PATH`.
+3. Run:
+
+```bash
+npm run generate-audio
+```
+
+The command processes pending stories one at a time. Set `MAX_AUDIO_STORIES_PER_RUN` when you want to throttle a run; otherwise it processes all pending stories without a valid `audioUrl`. It skips stories with an existing valid `audioUrl`, uploads MP3 files to Firebase Storage, and updates Firestore with `audioUrl`, `voiceName`, `voiceProvider`, `narrationStatus`, and `narrationUpdatedAt`.
+
 ## Admin Access
 
 Owner tools are hidden from normal users. To show admin tools, either:

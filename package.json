@@ -1,0 +1,16 @@
+{
+  "name": "caridream",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CariDream PWA and local admin tooling.",
+  "scripts": {
+    "generate-audio": "node scripts/generate-audio.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "firebase-admin": "^13.0.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
