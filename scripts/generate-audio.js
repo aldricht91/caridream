@@ -214,15 +214,18 @@ async function processStory({ doc, bucket, retryAttempts }) {
 
 async function main() {
   const maxStories = optionalLimit("MAX_AUDIO_STORIES_PER_RUN");
+  const storyId = String(process.env.AUDIO_STORY_ID || "").trim();
   const retryAttempts = optionalInt("ELEVENLABS_RETRY_ATTEMPTS", DEFAULT_RETRIES);
   const { db, bucket, bucketName } = initFirebase();
 
   console.log(`CariDream audio generator`);
   console.log(`Storage bucket: ${bucketName}`);
+  console.log(`Story filter: ${storyId || "all pending stories"}`);
   console.log(`Run limit: ${maxStories || "all pending stories"}${maxStories ? " stories" : ""}`);
 
   const snapshot = await db.collection("stories").get();
   const allCandidates = snapshot.docs
+    .filter((doc) => !storyId || doc.id === storyId)
     .filter((doc) => needsNarration(doc.data()))
     .filter((doc) => !hasValidAudioUrl(doc.data()))
     .sort((a, b) => {
