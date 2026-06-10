@@ -904,10 +904,11 @@ let backendReady = false;
 let playbackStartedAt = 0;
 let progressFrame = null;
 let isSeekingPlayback = false;
-let activeSeekPointerId = null;
 let audioSeekInProgress = false;
 let audioSeekResumeAfter = false;
 let pendingAudioSeekSeconds = null;
+let audioSeekTimeout = null;
+let audioSeekRecoveryCount = 0;
 let catalogSource = "Offline library";
 let catalogStoryCount = flattenFallbackStories().length;
 
@@ -981,6 +982,13 @@ function totalMinutes(item) {
 
 function episodeDurationSeconds(episode = selectedEpisode()) {
   return Math.max(1, episode.duration * 60);
+}
+
+function playbackDurationSeconds(episode = selectedEpisode()) {
+  if (storyAudio && Number.isFinite(storyAudio.duration) && storyAudio.duration > 0) {
+    return storyAudio.duration;
+  }
+  return episodeDurationSeconds(episode);
 }
 
 function formatTime(totalSeconds) {
@@ -1487,45 +1495,68 @@ function startVoiceover() {
     return;
   }
 
-  storyAudio = new Audio(audioUrl);
+  const audio = new Audio(audioUrl);
+  storyAudio = audio;
+  const initialAudioPosition = Math.min(
+    Math.max(0, state.elapsedSeconds),
+    Math.max(0, episodeDurationSeconds(episode) - 0.25)
+  );
   let audioFallbackStarted = false;
   const fallBackToBrowserNarration = (message, error = null) => {
-    if (audioFallbackStarted) return;
+    if (audioFallbackStarted || storyAudio !== audio) return;
     audioFallbackStarted = true;
     console.warn(message, error || "");
+    audio.pause();
     storyAudio = null;
     startBrowserNarration();
   };
-  storyAudio.currentTime = Math.min(state.elapsedSeconds, episodeDurationSeconds(episode) - 1);
-  storyAudio.volume = 0.9;
-  storyAudio.preload = "auto";
-  storyAudio.addEventListener("loadedmetadata", () => {
+  const playAudio = () => {
+    if (storyAudio !== audio) return;
+    audio.play().catch((error) => {
+      fallBackToBrowserNarration("Story audio could not start. Falling back to browser narration.", error);
+    });
+  };
+  audio.volume = 0.9;
+  audio.preload = "auto";
+  pendingAudioSeekSeconds = initialAudioPosition > 0 ? initialAudioPosition : null;
+  audio.addEventListener("loadedmetadata", () => {
+    if (storyAudio !== audio) return;
     if (pendingAudioSeekSeconds !== null) {
-      applyAudioSeek(pendingAudioSeekSeconds);
+      const target = pendingAudioSeekSeconds;
       pendingAudioSeekSeconds = null;
+      applyAudioSeek(target);
     }
   });
-  storyAudio.addEventListener("seeked", finishAudioSeek);
-  storyAudio.addEventListener("canplay", finishAudioSeek);
-  storyAudio.addEventListener("playing", () => {
+  audio.addEventListener("seeked", finishAudioSeek);
+  audio.addEventListener("canplay", () => {
+    if (storyAudio === audio && audioSeekInProgress && !audio.seeking) {
+      finishAudioSeek();
+    }
+  });
+  audio.addEventListener("playing", () => {
+    if (storyAudio !== audio) return;
+    clearTimeout(audioSeekTimeout);
     audioSeekInProgress = false;
     audioSeekResumeAfter = false;
+    audioSeekRecoveryCount = 0;
   });
-  storyAudio.addEventListener("stalled", () => {
+  audio.addEventListener("stalled", () => {
     console.warn("Story audio stalled while loading or seeking.");
   });
-  storyAudio.addEventListener("waiting", () => {
+  audio.addEventListener("waiting", () => {
     if (audioSeekInProgress) {
       console.warn("Story audio is buffering after seek.");
     }
   });
-  storyAudio.addEventListener("ended", handlePlaybackEnded, { once: true });
-  storyAudio.addEventListener("error", () => {
+  audio.addEventListener("ended", handlePlaybackEnded, { once: true });
+  audio.addEventListener("error", () => {
     fallBackToBrowserNarration("Story audio could not load. Falling back to browser narration.");
   }, { once: true });
-  storyAudio.play().catch((error) => {
-    fallBackToBrowserNarration("Story audio could not start. Falling back to browser narration.", error);
-  });
+  if (initialAudioPosition > 0) {
+    audio.load();
+  } else {
+    playAudio();
+  }
 }
 
 function stopVoiceover() {
@@ -1536,6 +1567,9 @@ function stopVoiceover() {
   audioSeekInProgress = false;
   audioSeekResumeAfter = false;
   pendingAudioSeekSeconds = null;
+  clearTimeout(audioSeekTimeout);
+  audioSeekTimeout = null;
+  audioSeekRecoveryCount = 0;
   clearInterval(narrationWatchdog);
   narrationWatchdog = null;
   narrationGeneration += 1;
@@ -1615,7 +1649,7 @@ function handlePlaybackEnded() {
 
 function updatePlaybackProgress() {
   if (!state.playing) return;
-  const duration = episodeDurationSeconds();
+  const duration = playbackDurationSeconds();
   if (isSeekingPlayback || audioSeekInProgress) {
     renderPlayer();
     progressFrame = requestAnimationFrame(updatePlaybackProgress);
@@ -1685,73 +1719,82 @@ function replayEpisode() {
   render();
 }
 
-function seekSecondsFromPointer(event) {
-  const control = $("#progressControl");
-  if (!control) return state.elapsedSeconds;
-  const rect = control.getBoundingClientRect();
-  const x = Math.min(rect.right, Math.max(rect.left, event.clientX || rect.left));
-  const ratio = rect.width ? (x - rect.left) / rect.width : 0;
-  return Math.round(ratio * episodeDurationSeconds());
-}
-
-function beginProgressSeek(event) {
-  if (event.button !== undefined && event.button !== 0) return;
-  event.preventDefault();
-  isSeekingPlayback = true;
-  activeSeekPointerId = event.pointerId;
-  event.currentTarget.setPointerCapture?.(event.pointerId);
-  updateSeekPreview(seekSecondsFromPointer(event));
-}
-
-function moveProgressSeek(event) {
-  if (!isSeekingPlayback || event.pointerId !== activeSeekPointerId) return;
-  event.preventDefault();
-  updateSeekPreview(seekSecondsFromPointer(event));
-}
-
-function finishProgressSeek(event) {
-  if (!isSeekingPlayback || event.pointerId !== activeSeekPointerId) return;
-  event.preventDefault();
-  const nextSeconds = seekSecondsFromPointer(event);
-  isSeekingPlayback = false;
-  activeSeekPointerId = null;
-  event.currentTarget.releasePointerCapture?.(event.pointerId);
-  seekPlayback(nextSeconds);
-}
-
 function audioReadyForSeek(audio = storyAudio) {
   return Boolean(audio && Number.isFinite(audio.duration) && audio.readyState >= 1);
 }
 
 function finishAudioSeek() {
-  if (!storyAudio || !audioSeekInProgress) return;
+  if (!storyAudio || !audioSeekInProgress || storyAudio.seeking) return;
+  clearTimeout(audioSeekTimeout);
+  audioSeekTimeout = null;
+  const shouldResume = audioSeekResumeAfter && state.playing;
   audioSeekInProgress = false;
-  if (audioSeekResumeAfter && state.playing && storyAudio.paused) {
-    storyAudio.play().catch((error) => {
-      console.warn("Story audio could not resume after seeking.", error);
-    });
-  }
   audioSeekResumeAfter = false;
+  state.elapsedSeconds = Math.max(0, storyAudio.currentTime || state.elapsedSeconds);
+  state.progress = Math.min(100, (state.elapsedSeconds / playbackDurationSeconds()) * 100);
+
+  if (shouldResume && storyAudio.paused) {
+    storyAudio.play()
+      .then(() => {
+        startProgressLoop();
+        renderPlayer();
+      })
+      .catch((error) => recoverAudioAfterSeek(error));
+    return;
+  }
+
   startProgressLoop();
   renderPlayer();
+}
+
+function recoverAudioAfterSeek(error) {
+  console.warn("Story audio seek recovery started.", error || "");
+  clearTimeout(audioSeekTimeout);
+  audioSeekTimeout = null;
+
+  const target = state.elapsedSeconds;
+  const shouldResume = state.playing;
+  const failedAudio = storyAudio;
+  storyAudio = null;
+  if (failedAudio) {
+    failedAudio.pause();
+    failedAudio.removeAttribute("src");
+    failedAudio.load();
+  }
+  audioSeekInProgress = false;
+  audioSeekResumeAfter = false;
+  pendingAudioSeekSeconds = target;
+
+  if (shouldResume && audioSeekRecoveryCount < 1) {
+    audioSeekRecoveryCount += 1;
+    startVoiceover();
+    return;
+  }
+
+  state.playing = false;
+  stopAudioBed();
+  saveLastPlayed();
+  render();
 }
 
 function applyAudioSeek(seconds) {
   if (!storyAudio) return false;
   if (!audioReadyForSeek(storyAudio)) {
     pendingAudioSeekSeconds = seconds;
-    storyAudio.load();
+    if (storyAudio.networkState === HTMLMediaElement.NETWORK_EMPTY) {
+      storyAudio.load();
+    }
     return false;
   }
 
-  const duration = episodeDurationSeconds();
+  const duration = playbackDurationSeconds();
   const target = Math.min(duration - 0.25, Math.max(0, Number(seconds) || 0));
   audioSeekInProgress = true;
-  audioSeekResumeAfter = state.playing && !storyAudio.paused;
+  audioSeekResumeAfter = audioSeekResumeAfter || state.playing;
   clearInterval(progressInterval);
   cancelAnimationFrame(progressFrame);
 
-  if (audioSeekResumeAfter) {
+  if (!storyAudio.paused) {
     storyAudio.pause();
   }
 
@@ -1761,15 +1804,24 @@ function applyAudioSeek(seconds) {
     audioSeekInProgress = false;
     audioSeekResumeAfter = false;
     console.warn("Story audio seek failed.", error);
+    recoverAudioAfterSeek(error);
     return false;
   }
 
-  window.setTimeout(finishAudioSeek, 1600);
+  clearTimeout(audioSeekTimeout);
+  audioSeekTimeout = window.setTimeout(() => {
+    if (!audioSeekInProgress) return;
+    if (!storyAudio?.seeking && storyAudio?.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      finishAudioSeek();
+      return;
+    }
+    recoverAudioAfterSeek(new Error("Audio seek timed out."));
+  }, 5000);
   return true;
 }
 
 function seekPlayback(seconds) {
-  const duration = episodeDurationSeconds();
+  const duration = playbackDurationSeconds();
   state.elapsedSeconds = Math.min(duration - 0.25, Math.max(0, Number(seconds) || 0));
   state.progress = Math.min(100, (state.elapsedSeconds / duration) * 100);
   saveLastPlayed();
@@ -1789,7 +1841,7 @@ function seekPlayback(seconds) {
 }
 
 function updateSeekPreview(seconds) {
-  const duration = episodeDurationSeconds();
+  const duration = playbackDurationSeconds();
   state.elapsedSeconds = Math.min(duration - 0.25, Math.max(0, Number(seconds) || 0));
   state.progress = Math.min(100, (state.elapsedSeconds / duration) * 100);
   renderPlayer();
@@ -2342,7 +2394,7 @@ function renderPlayer() {
   const episode = selectedEpisode();
   const nextEpisode = nextEpisodeInSeries();
   const text = localizedEpisodeText(episode, item);
-  const duration = episodeDurationSeconds(episode);
+  const duration = playbackDurationSeconds(episode);
   $("#miniPlayer").classList.toggle("hidden", !state.playing && state.elapsedSeconds === 0);
   $("#playPauseBtn").textContent = state.playing ? "II" : ">";
   $("#playerTitle").textContent = `${text.title} - ${item.title}`;
@@ -2702,10 +2754,12 @@ $("#progressSeek").addEventListener("change", (event) => {
   isSeekingPlayback = false;
   seekPlayback(event.target.value);
 });
-$("#progressControl").addEventListener("pointerdown", beginProgressSeek);
-$("#progressControl").addEventListener("pointermove", moveProgressSeek);
-$("#progressControl").addEventListener("pointerup", finishProgressSeek);
-$("#progressControl").addEventListener("pointercancel", finishProgressSeek);
+$("#progressSeek").addEventListener("pointerdown", () => {
+  isSeekingPlayback = true;
+});
+$("#progressSeek").addEventListener("pointercancel", () => {
+  isSeekingPlayback = false;
+});
 $("#autoplayToggle").addEventListener("click", () => {
   state.autoplayNext = !state.autoplayNext;
   render();
