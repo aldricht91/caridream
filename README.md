@@ -134,6 +134,28 @@ npm run generate-audio
 
 The command processes pending stories one at a time. Set `MAX_AUDIO_STORIES_PER_RUN` when you want to throttle a run; otherwise it processes all pending stories without a valid `audioUrl`. It skips stories with an existing valid `audioUrl`, uploads MP3 files to Firebase Storage, and updates Firestore with `audioUrl`, `voiceName`, `voiceProvider`, `narrationStatus`, and `narrationUpdatedAt`.
 
+To replace narration after an approved story-text revision, provide an explicit story filter:
+
+```bash
+AUDIO_STORY_ID="story-document-id" FORCE_REGENERATE=true npm run generate-audio
+```
+
+Multiple IDs may be supplied through comma-separated `AUDIO_STORY_IDS`. Forced regeneration is blocked unless an explicit ID filter is present. New MP3s use versioned Storage paths, and the previous download URL is retained in `previousAudioUrls`.
+
+## Canon Story Maintenance
+
+Preview the Canon Edition v2.4 remediation without writing:
+
+```bash
+npm run remediate-canon
+```
+
+Apply the reviewed changes by setting `CANON_REMEDIATION_APPLY=true`. The command creates a timestamped local backup under the ignored `backups/` directory before writing. Verify Firestore fields, series order, narration status, MP3 access, content type, and byte-range seeking with:
+
+```bash
+npm run verify-canon
+```
+
 ## Admin Access
 
 Owner tools are hidden from normal users. To show admin tools, either:

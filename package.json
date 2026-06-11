@@ -4,7 +4,9 @@
   "private": true,
   "description": "CariDream PWA and local admin tooling.",
   "scripts": {
-    "generate-audio": "node scripts/generate-audio.js"
+    "generate-audio": "node scripts/generate-audio.js",
+    "remediate-canon": "node scripts/remediate-canon-stories.js",
+    "verify-canon": "node scripts/verify-canon-remediation.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

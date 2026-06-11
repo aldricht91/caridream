@@ -15,3 +15,4 @@ firebase.exe
 *.service-account.json
 *serviceAccount*.json
 service-account*.json
+backups/

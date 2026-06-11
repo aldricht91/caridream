@@ -29,6 +29,12 @@ function optionalLimit(name) {
   return Number.isFinite(value) && value > 0 ? value : null;
 }
 
+function optionalBoolean(name, fallback = false) {
+  const value = String(process.env[name] || "").trim().toLowerCase();
+  if (!value) return fallback;
+  return ["1", "true", "yes", "on"].includes(value);
+}
+
 function loadServiceAccount() {
   if (process.env.FIREBASE_SERVICE_ACCOUNT_JSON) {
     return JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
@@ -138,10 +144,11 @@ async function generateElevenLabsMp3(text) {
   return Buffer.from(await response.arrayBuffer());
 }
 
-async function uploadMp3(bucket, docId, story, mp3Buffer) {
+async function uploadMp3(bucket, docId, story, text, mp3Buffer) {
   const token = crypto.randomUUID();
   const titleSlug = safeFileName(story.title || docId);
-  const filePath = `story-audio/${docId}/${titleSlug}-moonlight-narrator.mp3`;
+  const contentHash = crypto.createHash("sha256").update(text).digest("hex").slice(0, 12);
+  const filePath = `story-audio/${docId}/${titleSlug}-moonlight-narrator-${contentHash}-${Date.now()}.mp3`;
   const file = bucket.file(filePath);
 
   await file.save(mp3Buffer, {
@@ -170,11 +177,12 @@ async function markFailed(docRef, error) {
   });
 }
 
-async function processStory({ doc, bucket, retryAttempts }) {
+async function processStory({ doc, bucket, retryAttempts, forceRegenerate }) {
   const story = doc.data();
   const docId = doc.id;
+  const previousAudioUrl = typeof story.audioUrl === "string" ? story.audioUrl.trim() : "";
 
-  if (hasValidAudioUrl(story)) {
+  if (hasValidAudioUrl(story) && !forceRegenerate) {
     return { id: docId, title: story.title || "", status: "skipped", reason: "Existing audioUrl" };
   }
 
@@ -194,16 +202,24 @@ async function processStory({ doc, bucket, retryAttempts }) {
     });
 
     const mp3Buffer = await withRetry("ElevenLabs generation", retryAttempts, () => generateElevenLabsMp3(text));
-    const audioUrl = await withRetry("Firebase Storage upload", retryAttempts, () => uploadMp3(bucket, docId, story, mp3Buffer));
+    const audioUrl = await withRetry(
+      "Firebase Storage upload",
+      retryAttempts,
+      () => uploadMp3(bucket, docId, story, text, mp3Buffer)
+    );
 
-    await doc.ref.update({
+    const completedUpdate = {
       audioUrl,
       voiceName: VOICE_NAME,
       voiceProvider: VOICE_PROVIDER,
       narrationStatus: "completed",
       narrationError: admin.firestore.FieldValue.delete(),
       narrationUpdatedAt: admin.firestore.FieldValue.serverTimestamp()
-    });
+    };
+    if (previousAudioUrl && previousAudioUrl !== audioUrl) {
+      completedUpdate.previousAudioUrls = admin.firestore.FieldValue.arrayUnion(previousAudioUrl);
+    }
+    await doc.ref.update(completedUpdate);
 
     return { id: docId, title: story.title || "", status: "completed", reason: "" };
   } catch (error) {
@@ -214,20 +230,29 @@ async function processStory({ doc, bucket, retryAttempts }) {
 
 async function main() {
   const maxStories = optionalLimit("MAX_AUDIO_STORIES_PER_RUN");
-  const storyId = String(process.env.AUDIO_STORY_ID || "").trim();
+  const storyIds = String(process.env.AUDIO_STORY_IDS || process.env.AUDIO_STORY_ID || "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  const storyIdSet = new Set(storyIds);
+  const forceRegenerate = optionalBoolean("FORCE_REGENERATE");
+  if (forceRegenerate && !storyIdSet.size) {
+    throw new Error("FORCE_REGENERATE requires AUDIO_STORY_ID or AUDIO_STORY_IDS.");
+  }
   const retryAttempts = optionalInt("ELEVENLABS_RETRY_ATTEMPTS", DEFAULT_RETRIES);
   const { db, bucket, bucketName } = initFirebase();
 
   console.log(`CariDream audio generator`);
   console.log(`Storage bucket: ${bucketName}`);
-  console.log(`Story filter: ${storyId || "all pending stories"}`);
+  console.log(`Story filter: ${storyIds.join(", ") || "all pending stories"}`);
+  console.log(`Force regeneration: ${forceRegenerate ? "yes" : "no"}`);
   console.log(`Run limit: ${maxStories || "all pending stories"}${maxStories ? " stories" : ""}`);
 
   const snapshot = await db.collection("stories").get();
   const allCandidates = snapshot.docs
-    .filter((doc) => !storyId || doc.id === storyId)
-    .filter((doc) => needsNarration(doc.data()))
-    .filter((doc) => !hasValidAudioUrl(doc.data()))
+    .filter((doc) => !storyIdSet.size || storyIdSet.has(doc.id))
+    .filter((doc) => forceRegenerate || needsNarration(doc.data()))
+    .filter((doc) => forceRegenerate || !hasValidAudioUrl(doc.data()))
     .sort((a, b) => {
       const countryA = String(a.data().country || a.data().island || "");
       const countryB = String(b.data().country || b.data().island || "");
@@ -245,7 +270,7 @@ async function main() {
 
   const results = [];
   for (const doc of candidates) {
-    results.push(await processStory({ doc, bucket, retryAttempts }));
+    results.push(await processStory({ doc, bucket, retryAttempts, forceRegenerate }));
   }
 
   const completed = results.filter((item) => item.status === "completed").length;
