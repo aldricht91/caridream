@@ -2,7 +2,7 @@
 
 **Status:** Research Archive  
 **Canon authority:** None until explicit promotion  
-**Governed by:** [CariDream World Bible v2.1](./CARIDREAM-WORLD-BIBLE.md)  
+**Governed by:** [CariDream World Bible Canon Edition v2.4](./CARIDREAM-WORLD-BIBLE.md)
 **Initialized:** June 10, 2026
 
 ## Purpose
@@ -156,7 +156,12 @@ New discoveries should be added below using the research entry template and the 
 
 | Vault ID | Entry | Decision | World Bible Version | Date |
 |---|---|---|---|---|
-| - | No promotions recorded | - | - | - |
+| LV-P001 | The Old Walker | Promoted as a protected Great Mystery | 2.4 | June 11, 2026 |
+| LV-P002 | The Gatekeeper | Promoted as a protected Great Mystery | 2.4 | June 11, 2026 |
+| LV-P003 | Felix, the Reluctant Helper | Promoted as a Folk Figure | 2.4 | June 11, 2026 |
+| LV-P004 | Zim, the Unexpected Friend | Promoted as a Folk Figure with an unresolved connection to the Old Walker | 2.4 | June 11, 2026 |
+
+These four entries were explicitly approved through the v2.1 and v2.3 canon merge. Their role boundaries and protected ambiguities are defined in World Bible v2.4.
 
 ## Archive Principle
 

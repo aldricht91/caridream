@@ -1,13 +1,19 @@
 # CariDream World Bible
 
-**Version:** 2.1  
+## Canon Edition v2.4
+
 **Status:** Canon  
 **Authority:** Official source of truth for the Caribbean Dreamworld  
-**Effective:** June 10, 2026
+**Effective:** June 11, 2026
+**Supersedes:** World Bible v2.1 and proposed Active Canon Beta v2.3
+
+---
+
+# Part I: The Heart of CariDream
 
 ## Core Purpose
 
-CariDream is a peaceful Caribbean Dreamworld where stories, folklore, dreams, nature, and wisdom are preserved for future generations.
+CariDream is a peaceful Caribbean Dreamworld where stories, folklore, dreams, memories, nature, history, culture, and wisdom are preserved for future generations.
 
 The goal is not to teach.
 
@@ -28,33 +34,52 @@ The Dreamworld exists between:
 - Folklore
 - Nature
 - Moonlight
+- History
+- Culture
 - Storytelling
 
 Every island carries its own whispers.
 
-Every whisper carries a lesson.
+Every whisper carries meaning.
 
-Every lesson is discovered naturally.
+Meaning is discovered naturally through the journey.
 
 ## The CariDream Philosophy
 
 ### Never Teach the Lesson
 
-The listener should discover the lesson through the story.
+The listener should discover meaning through action, imagery, emotion, wonder, and reflection.
+
+Characters may share wisdom, but a story must not lecture the listener or announce its lesson.
 
 ### Wonder Over Fear
 
 Folklore may be mysterious.
 
-It should never be frightening.
+It should never become frightening.
+
+Wonder must always outweigh fear.
 
 ### Sleep First
 
-Every story should end with peace, comfort, reflection, or rest.
+Every story should leave the listener feeling calmer than before.
+
+Gentle uncertainty or conflict may exist, but it must never overwhelm the listener.
+
+Stories should end with one or more of the following:
+
+- Peace
+- Comfort
+- Reflection
+- Wonder
+- Belonging
+- Rest
 
 ### Caribbean First
 
-Every story should celebrate Caribbean culture, landscapes, traditions, and wisdom.
+Every story should celebrate specific Caribbean cultures, landscapes, traditions, folklore, wildlife, memories, and wisdom.
+
+Caribbean identity is not decoration. It is the living heart of the story.
 
 ### The Island Rule
 
@@ -62,37 +87,62 @@ Every island contributes something unique to the Dreamworld.
 
 No island should duplicate another.
 
-Every island adds a new perspective.
+No island should overshadow the others.
 
-## The Cycle of Whispers
+Every culture, landscape, tradition, legend, and whisper must add a distinct perspective to the larger Caribbean journey.
 
-The Cycle of Whispers is the heartbeat of the Dreamworld.
+Pan-Caribbean characters may connect islands, but they must never erase local identity.
 
-Long ago, Manman Mirwa taught a simple truth:
+---
+
+# Part II: The Cycle of Whispers
+
+## The Heartbeat of the Dreamworld
+
+The Cycle of Whispers is the heartbeat of CariDream.
+
+Long ago, Manman Mirwa shared a simple truth:
 
 > Every whisper deserves to be remembered.
 
-The Moonlight Wanderer travels from island to island collecting whispers:
+A whisper may be born through:
 
-- Stories
-- Dreams
-- Acts of kindness
-- Moments of wonder
-- Lessons discovered along the way
+- Story
+- Dream
+- Memory
+- Nature
+- Kindness
+- Laughter
+- Beauty
+- Wonder
+- Discovery
+- A lesson quietly understood
 
-The Moon Conch carries and remembers these whispers.
+The Moonlight Wanderer travels throughout the Caribbean gathering these whispers.
 
-At the end of every journey, the Wanderer returns to Manman Mirwa.
+The Moon Conch listens to them, remembers them, and carries them home.
+
+At the end of a journey, the Wanderer returns beneath the moonlight to Manman Mirwa.
 
 The Moon Mother listens.
 
-When a whisper fills her heart with joy, laughter, beauty, or wonder, a silver tear falls into the Dreamworld.
+When a whisper fills her heart with joy, laughter, pride, beauty, compassion, or cherished memory, a silver tear falls into the Dreamworld.
 
-From these tears:
+Her tears are never tears of sorrow.
+
+They are tears of remembrance and wonder.
+
+From these silver tears:
 
 - New stories are born.
 - New dreams awaken.
+- New paths appear.
 - New adventures begin.
+- Forgotten beauty is remembered.
+
+New whispers become new stories.
+
+New stories become new journeys.
 
 The Wanderer gathers.
 
@@ -104,46 +154,74 @@ The cycle continues forever.
 
 No whisper is ever truly lost beneath the Caribbean moon.
 
-## Tier 1: Celestial Guardians
+## Fixed Responsibilities
+
+The Cycle depends on three distinct responsibilities:
+
+- **The Moonlight Wanderer gathers.** The Wanderer travels, listens, discovers, and connects.
+- **The Moon Conch remembers.** The Conch receives and preserves memory but cannot command.
+- **Manman Mirwa preserves.** The Moon Mother receives the gathered whispers and renews wonder through joyful remembrance.
+
+These responsibilities may not be transferred, merged, or replaced.
+
+---
+
+# Part III: The Lore Hierarchy
+
+The hierarchy describes narrative responsibility, not power or superiority.
+
+Higher tiers shape the Dreamworld broadly.
+
+Lower tiers bring its wonders into particular places, communities, and stories.
+
+No tier is less important to the Cycle of Whispers.
+
+## Tier 1: Celestial Heart
 
 ### Manman Mirwa
 
 **Title:** The Moon Mother
 
+**Home:** The Moonlit Sky above the Caribbean
+**Symbol:** Moonlight reflected upon still water
+
 **Domains:**
 
 - Love
-- Joy
 - Beauty
 - Wonder
+- Joy
 - Compassion
+- Remembrance
 
-**Role:** The spiritual heart of the Dreamworld.
+**Role:** Spiritual heart of the Dreamworld and Preserver of Whispers.
 
 Her joy preserves stories.
 
 Her laughter creates moments of wonder.
 
-Her tears create new stories.
+Her silver tears create new stories, dreams, paths, and possibilities.
 
-She inspired the Moonlight Wanderer to listen.
+She inspired the Moonlight Wanderer to travel, listen, and learn.
 
-**Symbol:** Moonlight reflected upon still water.
+**Boundaries:**
 
-**Home:** The Moonlit Sky above the Caribbean.
+- Manman Mirwa does not gather whispers herself.
+- She does not command island guardians or determine the choices of story characters.
+- Her role is preservation, compassion, renewal, and wonder.
+- Her joyful tears must never be portrayed as sorrow, punishment, or loss.
 
-## Tier 2: Keeper of Whispers
+## Tier 2: Keepers of Whispers
 
 ### The Moonlight Wanderer
 
-**Domains:**
+**Title:** Collector of Whispers
 
-- Listening
-- Discovery
-- Curiosity
-- Connection
+**Domains:** Listening, discovery, curiosity, connection
 
-**Role:** Collector of whispers, bridge between islands, and guide for the audience.
+**Role:** Traveler between islands, bridge between stories, and audience guide.
+
+The Wanderer gathers stories, dreams, traditions, legends, memories, and moments of wisdom throughout the Caribbean.
 
 The Wanderer is not the hero.
 
@@ -151,37 +229,172 @@ The Wanderer is the listener.
 
 The audience experiences the Dreamworld through the Wanderer's journeys.
 
+**Boundaries:**
+
+- The Wanderer may witness, ask, listen, and gently connect.
+- The Wanderer must not solve every problem or replace a story's local character.
+- The Wanderer must never overshadow an island's people, traditions, guardians, or identity.
+- The Wanderer gathers whispers but does not preserve them alone.
+
 ### The Moon Conch
 
-**Domains:**
+**Title:** The Living Memory
 
-- Memory
-- Gathering
-- Connection
+**Domains:** Memory, gathering, connection
 
 **Role:** Living memory of the Dreamworld.
 
-Inspired by Caribbean conch traditions, it hears whispers carried by:
+The Moon Conch is a magical conch connected to every island and inspired in part by Caribbean traditions in which the conch gathers communities through sound.
+
+It hears whispers carried by:
 
 - Islands
 - Oceans
 - Forests
 - Spirits
 - Travelers
+- Dreams
+- Memories
 
-The Moon Conch cannot command.
+The Moon Conch remembers whispers and carries them home.
 
-The Moon Conch can only listen.
+**Boundaries:**
 
-## Tier 3: Great Spirits
+- The Moon Conch cannot command.
+- The Moon Conch cannot create a whisper.
+- It may listen, remember, resonate, and reveal what it has faithfully heard.
+- It must never replace Manman Mirwa as Preserver of Whispers.
 
-- **Fire Spirit:** Guidance
-- **Star Spirit:** Hope
-- **Water Spirit:** Adaptability
-- **Forest Spirit:** Wisdom
-- **Dream Spirit:** Imagination
+## Tier 3: Great Mysteries
 
-## Tier 4: Guardians
+Great Mysteries are recurring uncertainties woven through the Dreamworld.
+
+They are not rulers, guardians, or universal forces.
+
+Their purpose is to deepen wonder without demanding an answer.
+
+### The Old Walker
+
+**Title:** The Great Mystery
+
+The Old Walker is a legendary traveler remembered differently throughout the Caribbean.
+
+Some remember an old traveler.
+
+Others remember a child.
+
+Others remember a storyteller.
+
+Others remember a fisherman.
+
+Nobody agrees on who the Old Walker truly is.
+
+Nobody knows where the journey began.
+
+Nobody knows where it will end.
+
+The Old Walker may appear briefly across stories but never remains long.
+
+**Boundaries:**
+
+- The Old Walker does not collect whispers for the Cycle.
+- The Old Walker must not replace the Moonlight Wanderer as audience guide.
+- The Old Walker's true identity, origin, and destination must never be fully explained.
+- Different islands may remember the figure differently without one account becoming definitive.
+
+### The Gatekeeper
+
+**Title:** The Whisper Behind the Whisper
+
+The Gatekeeper is rarely seen, rarely mentioned, and almost never understood.
+
+Stories connect the Gatekeeper to:
+
+- Pathways
+- Thresholds
+- Crossings
+- Roads
+- Tides
+- Journeys
+
+Different islands use different names:
+
+- The Keeper of Crossings
+- The Lantern Bearer
+- The Watcher of Roads
+- The Keeper of Tides
+- The One Who Opens Paths
+
+Nobody knows whether these names describe one figure, several figures, a spirit, a memory, or only a story.
+
+**Boundaries:**
+
+- The Gatekeeper does not command travelers or determine their destination.
+- The Gatekeeper's possible connection to thresholds is symbolic and mysterious, not administrative authority over the Dreamworld.
+- The Gatekeeper must not duplicate the Divi-Divi Spirits, who offer local guidance to travelers in Aruba.
+- The Gatekeeper's existence and identity must never receive a final official answer.
+
+### The Unresolved Mystery
+
+Stories may occasionally connect:
+
+- The Old Walker
+- The Gatekeeper
+- Zim
+- Other unnamed travelers
+
+Some listeners may believe these figures are connected.
+
+Others may believe they are separate.
+
+No official answer exists.
+
+No official answer should ever exist.
+
+The uncertainty is intentional and permanently protected.
+
+## Tier 4: Great Spirits
+
+Great Spirits are universal forces expressed through nature.
+
+They guide.
+
+They do not command.
+
+They may be experienced differently from island to island, but their universal domains remain consistent.
+
+### Fire Spirit
+
+**Domain:** Guidance
+
+### Water Spirit
+
+**Domain:** Adaptability
+
+### Forest Spirit
+
+**Domain:** Wisdom
+
+### Star Spirit
+
+**Domain:** Hope
+
+### Dream Spirit
+
+**Domain:** Imagination
+
+**Boundaries for all Great Spirits:**
+
+- They embody universal qualities rather than governing specific islands.
+- They do not replace regional guardians.
+- They do not command people, creatures, or other spirits.
+- Their appearances should reflect the landscape and culture of the island in which a story occurs.
+
+## Tier 5: Regional Guardians
+
+Guardians are caretakers connected to particular environments, islands, traditions, or recurring story realms.
+
+They protect balance through presence, wisdom, care, and example rather than force.
 
 ### Papa Bois
 
@@ -189,17 +402,39 @@ The Moon Conch can only listen.
 **Theme:** Forest Wisdom  
 **Series:** Whispers of Papa Bois
 
+**Role:** Gentle guardian of the forest
+
+Papa Bois helps forest beings notice the wisdom already present in nature.
+
+His stories discover patience, rest, direction, and belonging without stating their lessons directly.
+
 ### The Sea Turtle
+
+**Realm:** Caribbean waters
 
 **Theme:** Wonder and Belonging  
 **Series:** Whispers of Stars Beneath the Sea  
 **Role:** Keeper of Ocean Stories
 
+The Sea Turtle is a migratory, pan-Caribbean guardian whose journeys connect ocean stories without claiming the identity of a single island.
+
+Every Sea Turtle story must preserve the unique marine landscape and culture of the island or community it visits.
+
 ### La Diablesse
 
-**Island:** Grenada  
-**Theme:** Stillness and Reflection  
+**Canon form:** CariDream interpretation
+
+**Dreamworld home:** Grenada
+
+**Themes:** Stillness, reflection, letting go
+
 **Role:** Keeper of Quiet Paths
+
+This gentle CariDream interpretation transforms mystery into reflection and emotional safety.
+
+Her stories must acknowledge that La Diablesse traditions vary across the Caribbean and must not be presented as a universal or historically definitive version.
+
+She cares for quiet paths and inward reflection; she does not guide ordinary travel or control thresholds.
 
 ### Divi-Divi Spirits
 
@@ -207,102 +442,219 @@ The Moon Conch can only listen.
 **Theme:** Direction  
 **Role:** Guardians of Travelers
 
+The Divi-Divi Spirits express Aruba's relationship with the trade winds, landscape, and natural direction.
+
+They guide through local signs and patient observation.
+
+They do not control crossings, open supernatural gates, or duplicate the Gatekeeper's unresolved mystery.
+
 ### Cigua Spirits
 
+**Canon form:** CariDream interpretation inspired by Dominican folklore and landscape
+
 **Island:** Dominican Republic  
-**Theme:** Rest and Comfort  
+**Themes:** Rest, comfort, protection
+
 **Known for:** Orchid Blankets
+
+Cigua Spirit stories must be treated as Dreamworld adaptations rather than claims that Orchid Blankets are part of a historical tradition.
+
+Future development requires cultural review and must preserve Dominican specificity.
 
 ### Silver Ribbon Spirits
 
 **Island:** Grenada  
-**Theme:** Calm and Rhythm  
-**Role:** Caretakers of Waterfalls and Rivers
+**Themes:** Calm, rhythm, relaxation
 
-## Tier 5: Sacred Phenomena
+**Role:** Caretakers of rivers and waterfalls
+
+The Silver Ribbon Spirits care for the rhythms of moving water.
+
+Their role is distinct from La Diablesse:
+
+- La Diablesse tends quiet paths, inward reflection, and letting go.
+- Silver Ribbon Spirits tend water, rhythm, and bodily calm.
+
+Additional Guardians may enter the Lore Vault and become canon only after cultural and continuity review.
+
+## Tier 6: Folk Figures
+
+Folk Figures are recurring personalities who bring warmth, humor, humanity, and everyday wisdom to the Dreamworld.
+
+Unlike Celestial Figures, Great Spirits, and Guardians, Folk Figures do not maintain the balance of the Dreamworld.
+
+They simply live within it.
+
+### Felix
+
+**Title:** The Reluctant Helper
+
+**Also known as:** Sleepyhead
+
+**Traits:**
+
+- Loves naps
+- Avoids unnecessary work
+- Complains often
+- Loyal
+- Big-hearted
+
+Felix often insists:
+
+> Whatever it is, I'm not doing it.
+
+Yet somehow, he ends up helping anyway.
+
+**Boundaries:**
+
+- Felix provides warmth and gentle humor.
+- His reluctance must never become cruelty, neglect, or ridicule.
+- He does not possess guardian authority or supernatural responsibility.
+
+### Zim
+
+**Title:** The Unexpected Friend
+
+Zim is warm, wise, playful, and difficult to define.
+
+Zim may appear throughout the Caribbean in different places and forms, usually at the right moment.
+
+Zim offers perspective without taking control of the story.
+
+**Boundaries:**
+
+- Zim is a companion, not a rescuer or ruler.
+- Zim must not replace local characters or guardians.
+- No official connection between Zim and the Old Walker exists.
+- Stories may hint at a connection, but it must never be confirmed.
+
+## Tier 7: Sacred Phenomena
+
+Sacred Phenomena are rare events or places where the Dreamworld gently touches ordinary Caribbean life.
+
+They are not characters and do not command anyone.
 
 ### The Green Flash
 
-**Island:** Barbados  
+**Dreamworld location:** Barbados
+
 **Nature:** A brief doorway to the Realm of Rest  
-**Gift:** Those fortunate enough to witness it receive a night of peaceful sleep.  
 **Theme:** Sacred Rest
 
-## Tier 6: Island Legends
+Those fortunate enough to witness the Green Flash receive a night of peaceful sleep.
 
-Foundational stories that introduce future characters and lore.
+The doorway is brief, gentle, and never forced.
 
-Examples:
+The Green Flash may occur as a natural wonder elsewhere, but its role as a doorway to the Realm of Rest belongs specifically to Barbados within CariDream canon.
 
-- The Coquí
-- The Doctor Bird
-- The Sleeping Bamboo
-- The Bioluminescent Bay
+## Tier 8: Island Legends
 
-Future legends begin here.
+Island Legends are foundational stories that introduce future characters, lore, landscapes, and recurring whispers.
 
 Some remain standalone.
 
-Others evolve into recurring characters and series.
+Others may evolve into recurring characters or series after canon review.
 
-## Future Lore Categories
+### The Coquí
 
-- Sea Spirits
-- Volcanic Spirits
-- Ancient Taíno Lore
-- Maroon Wisdom Stories
-- Fisherman Legends
-- Hummingbird Tales
-- Silk Cotton Traditions
-- Caribbean Mermaid Traditions
+**Island identity:** Puerto Rico
 
-Each category must contribute a unique perspective.
+**Development status:** Foundational legend
 
-Specific discoveries and proposals within these categories must enter the [CariDream Lore Vault](./CARIDREAM-LORE-VAULT.md) before canon review.
+Future stories must preserve Puerto Rican cultural and ecological specificity.
 
-## Major Series
+### The Doctor Bird
 
-### Whispers of Papa Bois
+**Island identity:** Jamaica
+
+**Development status:** Foundational legend
+
+Future stories must preserve the Doctor Bird's Jamaican identity.
+
+### The Sleeping Bamboo
+
+**Development status:** Foundational nature legend
+
+**Established connection:** Whispers of Papa Bois
+
+The Sleeping Bamboo represents rest as part of natural growth without directly teaching that lesson.
+
+### The Bioluminescent Bay
+
+**Development status:** Foundational natural wonder
+
+Every story must identify and respect the specific island, bay, ecology, and cultural context being represented.
+
+---
+
+# Part IV: Major Series
+
+## Whispers of Papa Bois
+
+**Guardian:** Papa Bois
+
+**Primary home:** Trinidad & Tobago
 
 **Theme:** Forest Wisdom
 
-### Whispers of Stars Beneath the Sea
+Stories reveal wisdom through the rhythms, creatures, plants, and quiet mysteries of the forest.
+
+## Whispers of Stars Beneath the Sea
+
+**Guardian:** The Sea Turtle
+
+**Realm:** Caribbean waters
 
 **Theme:** Ocean Wonder
 
-### Whispers Beneath the Moonlight
+Each journey must retain the distinct marine identity of the island or community it visits.
+
+## Whispers Beneath the Moonlight
+
+**Connecting figure:** The Moonlight Wanderer
 
 **Theme:** Spiritual Wisdom
 
-The Moonlight Wanderer serves as the thread connecting the Dreamworld.
+This series explores whispers that connect memory, moonlight, compassion, mystery, and the Cycle itself.
 
-## Long-Term Vision
+The Wanderer remains the listener and guide, not the hero.
 
-The Caribbean Dreamworld grows one whisper at a time.
+---
 
-Every island contributes a voice.
+# Part V: Future Lore and Research
 
-Every legend contributes a lesson.
+## Recognized Research Directions
 
-Every story contributes a whisper.
+The following are approved areas for research, not fully established canon:
 
-The Moonlight Wanderer gathers them.
+- Haitian Sea Spirits
+- Sea Spirits from other specifically identified traditions
+- Volcanic Spirits
+- Coquí traditions
+- Soufrière folklore
+- Turtle legends
+- Hummingbird stories
+- Ancient Taíno traditions
+- Maroon oral traditions
+- Fisherman folklore
+- Caribbean mermaid traditions
+- Silk Cotton tree traditions
 
-The Moon Conch remembers them.
+Every discovery must enter the [CariDream Lore Vault](./CARIDREAM-LORE-VAULT.md) before canon promotion.
 
-Manman Mirwa preserves them.
+Listing a research direction here does not make a specific interpretation, character, belief, or cultural claim canonical.
 
-Through the Cycle of Whispers, Caribbean stories continue to live for generations beneath the moonlit sky.
+---
 
-## Canon Rule
+# Part VI: Canon Rule
 
-### Official Source of Truth
+## Official Source of Truth
 
 The CariDream World Bible is the official source of truth for the Caribbean Dreamworld.
 
-All stories, characters, guardians, spirits, locations, sacred phenomena, major events, series, and future lore expansions must respect the established canon.
+All stories, characters, guardians, spirits, locations, sacred phenomena, major events, series, and future lore expansions must respect established canon.
 
-### Expansion Without Contradiction
+## Expansion Without Contradiction
 
 The Dreamworld is designed to grow.
 
@@ -314,8 +666,10 @@ New stories may introduce:
 - New spirits
 - New traditions
 - New islands
+- New locations
+- New recurring characters
 - New cultural perspectives
-- New series and recurring characters
+- New series
 
 No story, character, event, or lore expansion may contradict established canon.
 
@@ -323,17 +677,9 @@ If a conflict exists between a story and the World Bible, the World Bible takes 
 
 The Dreamworld grows through expansion, not contradiction.
 
-### The Island Rule
+## Permanent Pillars
 
-Every island contributes something unique to the Dreamworld.
-
-No island should duplicate another.
-
-Every culture, landscape, tradition, and legend should add a distinct perspective to the larger Caribbean story.
-
-### Permanent Pillars
-
-The following foundations are protected:
+The following foundations are permanently protected:
 
 1. The Cycle of Whispers
 2. Manman Mirwa
@@ -344,7 +690,17 @@ The following foundations are protected:
 
 These pillars must remain consistent across every future story, series, character, guardian, spirit, sacred phenomenon, and lore expansion.
 
-### The Purpose of Canon
+## Protected Mysteries
+
+The following uncertainties are also protected:
+
+- The true identity and origin of the Old Walker
+- Whether the Gatekeeper exists as one being, several beings, or only a story
+- Whether the Old Walker, Gatekeeper, Zim, and unnamed travelers are connected
+
+No future story or canon document may provide a final answer.
+
+## The Purpose of Canon
 
 Canon preserves the identity of the Dreamworld while allowing it to grow.
 
@@ -354,47 +710,140 @@ Every new story should deepen the listener's sense of wonder.
 
 Every new legend should remain connected to the larger Caribbean journey.
 
+---
+
+# Part VII: Lore Vault Rule
+
+The CariDream Lore Vault is the official Research Archive.
+
+New folklore discoveries, cultural traditions, historical inspirations, creatures, symbols, characters, locations, and story concepts must enter the Lore Vault before becoming canon.
+
+Research remains non-canon until reviewed and explicitly approved.
+
+Promotion to canon requires:
+
+1. Cultural grounding and source review
+2. Island Rule review
+3. Story philosophy review
+4. Hierarchy and responsibility review
+5. Continuity review
+6. Explicit approval
+7. A World Bible version update
+8. A Lore Vault promotion record
+
+No research note may silently become established Dreamworld truth.
+
+---
+
+# Part VIII: Canon Governance
+
+## Story Approval Standard
+
+Every story must pass these checks before publication:
+
+- **Never Teach the Lesson:** Meaning emerges through story rather than instruction.
+- **Wonder Over Fear:** Mystery remains gentle and emotionally safe.
+- **Sleep First:** The ending restores calm, comfort, reflection, wonder, belonging, or rest.
+- **Caribbean First:** The story is rooted in a specific and respectful Caribbean perspective.
+- **The Island Rule:** The story adds something distinct without duplicating or overshadowing another island.
+- **Continuity:** No detail contradicts a Permanent Pillar, protected mystery, established role, or series identity.
+- **Role Boundaries:** No character takes over another figure's canonical responsibility.
+- **Cultural Care:** Adaptations are identified honestly and do not present invented Dreamworld details as historical fact.
+
+## Hierarchy Review
+
+Before adding a recurring figure, determine its proper place:
+
+- **Celestial Heart:** Preserves the Dreamworld at its spiritual center.
+- **Keeper of Whispers:** Gathers or remembers whispers within the Cycle.
+- **Great Mystery:** Deepens wonder through permanent uncertainty.
+- **Great Spirit:** Embodies a universal natural force.
+- **Regional Guardian:** Cares for a specific environment, island, tradition, or story realm.
+- **Folk Figure:** Lives within the world without maintaining its balance.
+- **Sacred Phenomenon:** A rare event or place, not a character.
+- **Island Legend:** A foundational story that may later develop through review.
+
+A new entry must not duplicate an existing responsibility.
+
+## Cultural Review
+
+When CariDream adapts folklore:
+
+1. Identify the island, community, or tradition as specifically as available research permits.
+2. Separate documented cultural tradition from original Dreamworld invention.
+3. Avoid combining distinct island traditions into a generic Caribbean mythology.
+4. Preserve local names, landscapes, language, ecology, and context carefully.
+5. Seek cultural consultation when material is sacred, living, contested, or sensitive.
+6. Record discoveries and unresolved questions in the Lore Vault.
+
+## Lore Intake and Promotion
+
+1. New material enters the Lore Vault.
+2. Sources, cultural context, island contribution, and story potential are documented.
+3. The proposal is checked against every Permanent Pillar and protected mystery.
+4. Overlapping responsibilities are resolved before approval.
+5. Promotion requires an explicit decision.
+6. The World Bible and Lore Vault promotion log are updated together.
+7. Rejected or deferred material remains non-canon.
+
+## Conflict Resolution
+
+When a proposed story conflicts with this document:
+
+1. Preserve the World Bible.
+2. Revise or remove the conflicting element.
+3. Record unresolved research in the Lore Vault.
+4. Expand canon only through explicit approval and a version update.
+
+When two canonical passages appear ambiguous:
+
+1. Preserve the Permanent Pillars.
+2. Preserve the Island Rule.
+3. Preserve established role boundaries.
+4. Prefer the interpretation that creates wonder without fear.
+5. Record the clarification in the next World Bible version.
+
+---
+
+# Part IX: Canon Consistency Declarations
+
+The following distinctions are binding:
+
+- Manman Mirwa preserves whispers; the Wanderer gathers them; the Moon Conch remembers them.
+- The Wanderer is the audience guide; the Old Walker is an unresolved traveler and may not replace that role.
+- The Gatekeeper represents uncertain thresholds; Divi-Divi Spirits provide specifically Aruban guidance.
+- Great Spirits are universal forces; Guardians are regional caretakers.
+- Guardians maintain care and balance; Folk Figures do not.
+- The Sea Turtle connects ocean stories without erasing island-specific marine identities.
+- La Diablesse tends quiet paths and reflection; Silver Ribbon Spirits tend Grenadian water and rhythm.
+- Zim offers companionship and perspective without solving the story.
+- Sacred Phenomena are events or places, not characters.
+- Island Legends are foundations for possible development, not automatic guardians.
+
+These distinctions prevent duplicate concepts, hierarchy conflicts, and overlapping responsibilities.
+
+---
+
+# Closing Principle
+
+Every story is a whisper.
+
+Every whisper matters.
+
 The Wanderer gathers.
 
 The Moon Conch remembers.
 
 Manman Mirwa preserves.
 
-The Cycle of Whispers continues.
+And beneath the moonlit Caribbean sky, the Cycle of Whispers continues forever.
 
-## Canon Governance
+---
 
-### Binding Rules for Future Stories
-
-Every story must pass these checks before publication:
-
-- **Never Teach the Lesson:** Meaning emerges through action, imagery, discovery, and reflection.
-- **Wonder Over Fear:** Mystery remains gentle and emotionally safe.
-- **Sleep First:** The ending restores calm, comfort, reflection, or rest.
-- **Caribbean First:** The setting and cultural perspective feel specific and respectfully grounded.
-- **The Island Rule:** The story adds a perspective that is distinct within the Dreamworld.
-- **Continuity:** No detail contradicts the Permanent Pillars or established character roles.
-
-### Lore Intake and Promotion
-
-1. New folklore research, cultural traditions, creatures, symbols, locations, and concepts enter the Lore Vault.
-2. Research remains non-canon while its sources, cultural context, island contribution, and story potential are reviewed.
-3. A proposal receives a canon compatibility review against this document.
-4. Promotion requires an explicit status change from `Research Archive` to `Canon`.
-5. Once promoted, the World Bible is updated with the approved entry and version history.
-6. Rejected or deferred material remains in the Lore Vault and must not appear as established fact in a published story.
-
-### Conflict Resolution
-
-When a proposed story conflicts with this document:
-
-1. Preserve the World Bible.
-2. Revise or remove the conflicting story element.
-3. Record unresolved research in the Lore Vault.
-4. Expand canon only through explicit approval and a World Bible version update.
-
-## Version History
+# Version History
 
 | Version | Date | Status | Summary |
 |---|---|---|---|
-| 2.1 | June 10, 2026 | Canon | Established the Cycle of Whispers, hierarchy, major series, Permanent Pillars, Canon Rule, and Lore Vault governance. |
+| 2.1 | June 10, 2026 | Superseded | Established the Cycle of Whispers, original hierarchy, Permanent Pillars, Canon Rule, and Lore Vault governance. |
+| 2.3 | June 11, 2026 | Merged beta | Expanded Manman Mirwa and the Cycle; proposed the Old Walker, Gatekeeper, Felix, Zim, Great Mysteries, and Folk Figures. |
+| 2.4 | June 11, 2026 | Canon | Unified v2.1 and v2.3, restored all protected lore, resolved hierarchy and role boundaries, strengthened cultural review, and promoted approved v2.3 additions. |

@@ -6,7 +6,7 @@ CariDream is a mobile-first relaxing storytelling PWA inspired by Caribbean cult
 
 All future CariDream stories and universe development are governed by:
 
-- [CariDream World Bible v2.1](docs/CARIDREAM-WORLD-BIBLE.md) - **Status: Canon**
+- [CariDream World Bible Canon Edition v2.4](docs/CARIDREAM-WORLD-BIBLE.md) - **Status: Canon**
 - [CariDream Lore Vault](docs/CARIDREAM-LORE-VAULT.md) - **Status: Research Archive**
 
 The World Bible is the official source of truth. New folklore discoveries, cultural research, locations, creatures, symbols, and story concepts must enter the Lore Vault before explicit canon review and promotion.
