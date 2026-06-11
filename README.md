@@ -9,6 +9,7 @@ All future CariDream stories and universe development are governed by:
 - [CariDream World Bible Canon Edition v2.4](docs/CARIDREAM-WORLD-BIBLE.md) - **Status: Canon**
 - [CariDream Lore Vault](docs/CARIDREAM-LORE-VAULT.md) - **Status: Research Archive**
 - [Story Identity Map - 43 Stories](docs/STORY-IDENTITY-MAP-43-STORIES-V2.4.md) - **Status: Story Governance Companion**
+- [P1/P2 Story Revision Plan](docs/STORY-REVISION-ACTION-PLAN-P1-P2-V2.4.md) - **Status: Canon Remediation Plan**
 
 The World Bible is the official source of truth. New folklore discoveries, cultural research, locations, creatures, symbols, and story concepts must enter the Lore Vault before explicit canon review and promotion.
 
