@@ -202,8 +202,8 @@ The official [Whispers of the Golden Rhythm Season 1 Bible](./WHISPERS-OF-THE-GO
 
 1. `The Twin Breezes`
 2. `The Lantern Path`
-3. `The Humming Shore`
-4. `The Mountain That Remembers`
+3. `The Humming Ridge`
+4. `The Doorway of Living Light`
 5. `The Driftwood Drum`
 6. `The Lantern of Jacmel`
 7. `The Moonlit Steps`
@@ -216,6 +216,8 @@ The season structure introduces the Marasa Winds, presents the first Lumi Spirit
 Episode 10's production title does not create a new Sacred Phenomenon. Its canonical event is the Silver Drum Tide. The use is approved for Season 1 but does not create a recurring finale requirement.
 
 Full scripts remain subject to episode-level cultural research, continuity review, and sleep-first approval.
+
+**Season structure amendment, June 12, 2026:** Episodes 3 and 4 were retitled to match their approved manuscripts. `The Doorway of Living Light` is governed as a symbolic, flat pattern of reflected light and is not a portal, threshold, gateway, entrance, invitation, transport mechanism, or realm transition.
 
 **Cultural review record:** The Marasa Winds are promoted only as an original CariDream Dreamworld interpretation. Internal cultural-boundary review was completed; no external consultation is claimed. Any future story drawing directly from living, sacred, or historically documented Haitian Marasa traditions requires specific sourcing and consultation before publication.
 

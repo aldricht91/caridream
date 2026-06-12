@@ -42,10 +42,10 @@ The season moves through:
 
 | Milestone | Development across Season 1 |
 |---|---|
-| Introduction of the Marasa Winds | Introduced in Episode 1, sensed selectively through the middle episodes, and brought into mature relationship in Episodes 9-10. |
+| Introduction of the Marasa Winds | Introduced in Episode 1, appearing selectively through the middle episodes, and brought into mature relationship in Episodes 9-10. |
 | First appearances of Lumi Spirits | First appear in Episode 2 through lantern light and living rhythm; later appearances remain selective and restrained. |
 | Growth of the Wanderer's understanding | The Wanderer progresses from noticing paired rhythms to protecting uncertainty and recognizing relationships without claiming authority or complete knowledge. |
-| Gradual awareness of the Golden Rhythm | Repeated patterns of wind, light, shore, mountain, craft, steps, reef, and silence create recognition without definition. |
+| Gradual awareness of the Golden Rhythm | Repeated patterns of wind, light, ridge, craft, steps, reef, and silence create recognition without definition. |
 | Golden Drum Tide finale | Episode 10 carries this poetic title while depicting the canonical Silver Drum Tide as a rare revelation of existing harmony. |
 
 ## Bedtime Tone
@@ -128,27 +128,29 @@ The Wanderer gathers the season's culminating whisper. The Moon Conch remembers 
 **Recurring symbols:** Lantern glow, footsteps, reflected light, quiet pauses  
 **Continuity requirement:** Lumi Spirits reveal rhythm but do not guide travel, store memory, open paths, or command light.
 
-## Episode 3: The Humming Shore
+## Episode 3: The Humming Ridge
 
-**Production status:** Planned  
-**Arc function:** Expands the season's rhythm from wind and lanterns to a living shoreline.  
-**Primary theme:** Belonging within a shared rhythm  
-**Emotional lesson:** A place may welcome many sounds without losing its own voice.  
-**Primary setting identity:** A specifically Haitian shore, community, and coastal soundscape  
-**Character appearances:** Moonlight Wanderer; local coastal characters; optional subtle Lumi Spirit presence  
-**Recurring symbols:** Humming water, boats at rest, shells, work songs remembered softly  
-**Continuity requirement:** The shore does not become a universal ocean realm, and the episode must not duplicate the Sea Turtle's role as Keeper of Ocean Stories.
+**Production status:** Canon-compliant manuscript approved
+**Manuscript:** [Episode 3 - The Humming Ridge](./golden-rhythm-season-1/EPISODE-03-THE-HUMMING-RIDGE.md)
+**Arc function:** Deepens the season's attention from lantern rhythm to resonance held in a Haitian mountain landscape.
+**Primary theme:** Memory carried through relationship with place
+**Emotional lesson:** A place may hold traces of those who cared for it without revealing every story.
+**Primary setting identity:** A named and culturally grounded Haitian mountain region selected during production research
+**Character appearances:** Moonlight Wanderer; Marasa Winds as companions in the landscape; local stonekeeper and family
+**Recurring symbols:** Humming stone, hand-shaped spiral, morning mist, answering vibration
+**Continuity requirement:** The Golden Rhythm remains undefined and without consciousness or intent. The ridge may evoke memory but cannot act as an objective archive. The Marasa Winds accompany without guiding, predicting, or directing travel.
 
-## Episode 4: The Mountain That Remembers
+## Episode 4: The Doorway of Living Light
 
-**Production status:** Planned  
-**Arc function:** Deepens the relationship between rhythm, landscape, resilience, and historical memory.  
-**Primary theme:** Memory carried by place  
-**Emotional lesson:** The past may be felt with tenderness without becoming a burden that prevents rest.  
-**Primary setting identity:** A named and culturally grounded Haitian mountain region selected during research  
-**Character appearances:** Moonlight Wanderer; local family or community keeper of memory  
-**Recurring symbols:** Mountain echoes, stone steps, night mist, distant song  
-**Continuity requirement:** The mountain may evoke memory but may not speak as an objective archive or reveal complete historical truth. Historical details require sourcing.
+**Production status:** Canon-compliant manuscript approved
+**Manuscript:** [Episode 4 - The Doorway of Living Light](./golden-rhythm-season-1/EPISODE-04-THE-DOORWAY-OF-LIVING-LIGHT.md)
+**Arc function:** Transforms recurring light and spiral imagery into a shared symbolic expression of memory and rhythm.
+**Primary theme:** Belonging remembered through communal symbols
+**Emotional lesson:** A symbol may help people recognize connection without becoming an answer or destination.
+**Primary setting identity:** A Haitian mountain clearing cared for by a local lantern-making family
+**Character appearances:** Moonlight Wanderer; local lantern maker and child; Marasa Winds as non-directive companions; restrained Lumi Spirit presence
+**Recurring symbols:** Woven light, lantern paper, spiral pattern, crushed leaves, shared humming
+**Continuity requirement:** The Doorway of Living Light is a poetic name for a flat, symbolic pattern of reflected light. It is not a portal, threshold, gateway, entrance, invitation, transport mechanism, or realm transition.
 
 ## Episode 5: The Driftwood Drum
 
