@@ -1,11 +1,11 @@
 # CariDream World Bible
 
-## Canon Edition v2.6
+## Canon Edition v2.7
 
 **Status:** Canon  
 **Authority:** Official source of truth for the Caribbean Dreamworld  
-**Effective:** June 11, 2026
-**Supersedes:** World Bible v2.5
+**Effective:** June 12, 2026
+**Supersedes:** World Bible v2.6
 
 ---
 
@@ -901,6 +901,21 @@ No single mythological element is required in every episode.
 
 The series must preserve the distinct identities of northern historical memory, Jacmel's artistic imagination, coastal life, mountains, rivers, families, neighborhoods, craft, silence, movement, and community.
 
+### Official Season 1
+
+**Title:** Whispers of the Golden Rhythm: Season 1
+**Status:** Official Canon Season
+**Episode count:** 10
+**Season Bible:** [Whispers of the Golden Rhythm - Official Season 1 Bible](./WHISPERS-OF-THE-GOLDEN-RHYTHM-SEASON-1-BIBLE.md)
+
+Season 1 introduces the Marasa Winds, presents the first restrained appearances of the Lumi Spirits, develops the Moonlight Wanderer's understanding through deeper listening, and builds gradual awareness of the Golden Rhythm without defining it.
+
+The season concludes with Episode 10, `The Golden Drum Tide`.
+
+`The Golden Drum Tide` is a poetic episode title. The canonical Sacred Phenomenon depicted in the finale is the Silver Drum Tide. No separate Golden Drum Tide phenomenon exists.
+
+The finale is an approved use of the rare Silver Drum Tide for this season only. It does not establish the phenomenon as a required ending for future seasons.
+
 ---
 
 # Part VI: Future Lore and Research
@@ -1138,4 +1153,5 @@ And beneath the moonlit Caribbean sky, the Cycle of Whispers continues forever.
 | 2.3 | June 11, 2026 | Merged beta | Expanded Manman Mirwa and the Cycle; proposed the Old Walker, Gatekeeper, Felix, Zim, Great Mysteries, and Folk Figures. |
 | 2.4 | June 11, 2026 | Superseded | Unified v2.1 and v2.3, restored all protected lore, resolved hierarchy and role boundaries, strengthened cultural review, and promoted approved v2.3 additions. |
 | 2.5 | June 11, 2026 | Superseded | Promoted Haiti Canon Boundaries v1.0; established Haiti-Bound Foundational Force and Regional Spirits; added the Golden Rhythm, Métrès Lumi, Marasa Winds, Lumi Spirits, Silver Drum Tide, Lantern of Jacmel, and Whispers of the Golden Rhythm. |
-| 2.6 | June 11, 2026 | Canon | Completed Haiti's official canon promotion; replaced the interim Foundational Force classification with protected Foundational Mysteries; retained Regional Spirits; added Haiti's official identity entry; and confirmed Whispers of the Golden Rhythm as an Official Canon Series. |
+| 2.6 | June 11, 2026 | Superseded | Completed Haiti's official canon promotion; replaced the interim Foundational Force classification with protected Foundational Mysteries; retained Regional Spirits; added Haiti's official identity entry; and confirmed Whispers of the Golden Rhythm as an Official Canon Series. |
+| 2.7 | June 12, 2026 | Canon | Added the official 10-episode Season 1 structure for Whispers of the Golden Rhythm, its production roadmap and continuity requirements, and the approved Silver Drum Tide finale safeguard. |

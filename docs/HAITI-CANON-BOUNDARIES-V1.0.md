@@ -6,7 +6,7 @@
 **Document type:** Canon governance and authority boundaries  
 **Status:** Canon; promoted June 11, 2026
 
-**Governed by:** [CariDream World Bible Canon Edition v2.6](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.7](./CARIDREAM-WORLD-BIBLE.md)
 
 **Related archive:** [CariDream Lore Vault](./CARIDREAM-LORE-VAULT.md)
 
@@ -751,6 +751,8 @@ Future stories should avoid:
 - Turning resilience into endless suffering.
 - Making Métrès Lumi's appearance a predictable reward.
 - Using the Silver Drum Tide as a season-ending requirement.
+
+Season 1's approved finale is a deliberate single-season use of the Silver Drum Tide. Episode 10's title, `The Golden Drum Tide`, is poetic and does not create a second Sacred Phenomenon. This approval must not become a required formula for later seasons.
 
 ## Geographic and Cultural Range
 

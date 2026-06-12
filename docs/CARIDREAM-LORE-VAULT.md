@@ -2,7 +2,7 @@
 
 **Status:** Research Archive  
 **Canon authority:** None until explicit promotion  
-**Governed by:** [CariDream World Bible Canon Edition v2.6](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.7](./CARIDREAM-WORLD-BIBLE.md)
 **Initialized:** June 10, 2026
 
 ## Purpose
@@ -170,10 +170,11 @@ New discoveries should be added below using the research entry template and the 
 | LV-P012 | Whispers of the Golden Rhythm | Promoted as Haiti's flagship Major Series | 2.5 | June 11, 2026 |
 | LV-P013 | The Golden Rhythm classification revision | Reclassified from the interim Haiti-Bound Foundational Force to a protected Foundational Mystery | 2.6 | June 11, 2026 |
 | LV-P014 | Haiti Official Canon Promotion | Confirmed the complete Haiti mythology, official island identity, authority boundaries, and Whispers of the Golden Rhythm as an Official Canon Series | 2.6 | June 11, 2026 |
+| LV-P015 | Whispers of the Golden Rhythm - Season 1 | Approved the 10-episode Season 1 structure, production roadmap, continuity checklist, and Silver Drum Tide finale safeguard | 2.7 | June 12, 2026 |
 
 These four entries were explicitly approved through the v2.1 and v2.3 canon merge. Their role boundaries and protected ambiguities are defined in World Bible v2.4.
 
-The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and World Bible v2.6.
+The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and the current World Bible v2.7.
 
 ## Haiti Lore Vault Promotion Record
 
@@ -194,6 +195,27 @@ The proposal was reviewed against the Permanent Pillars, the Cycle of Whispers, 
 World Bible v2.6 completes the promotion by classifying the Golden Rhythm as a Foundational Mystery, preserving Métrès Lumi as a Great Mystery, retaining the Marasa Winds as Regional Guardians, retaining the Lumi Spirits as Regional Spirits, retaining the Silver Drum Tide as a Sacred Phenomenon, retaining the Lantern of Jacmel as a Foundational Legend, and confirming `Whispers of the Golden Rhythm` as an Official Canon Series.
 
 The Golden Rhythm remains unexplained and unowned. Haiti remembers it more often than elsewhere, but does not define it for the wider Caribbean Dreamworld.
+
+## Season 1 Promotion Record
+
+The official [Whispers of the Golden Rhythm Season 1 Bible](./WHISPERS-OF-THE-GOLDEN-RHYTHM-SEASON-1-BIBLE.md) establishes ten episodes:
+
+1. `The Twin Breezes`
+2. `The Lantern Path`
+3. `The Humming Shore`
+4. `The Mountain That Remembers`
+5. `The Driftwood Drum`
+6. `The Lantern of Jacmel`
+7. `The Moonlit Steps`
+8. `The Rhythm Beneath the Reef`
+9. `The Night of Two Winds`
+10. `The Golden Drum Tide`
+
+The season structure introduces the Marasa Winds, presents the first Lumi Spirit appearances, develops the Wanderer's understanding through listening, and gradually increases awareness of the Golden Rhythm without defining it.
+
+Episode 10's production title does not create a new Sacred Phenomenon. Its canonical event is the Silver Drum Tide. The use is approved for Season 1 but does not create a recurring finale requirement.
+
+Full scripts remain subject to episode-level cultural research, continuity review, and sleep-first approval.
 
 **Cultural review record:** The Marasa Winds are promoted only as an original CariDream Dreamworld interpretation. Internal cultural-boundary review was completed; no external consultation is claimed. Any future story drawing directly from living, sacred, or historically documented Haitian Marasa traditions requires specific sourcing and consultation before publication.
 
