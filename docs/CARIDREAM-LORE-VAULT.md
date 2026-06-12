@@ -2,7 +2,7 @@
 
 **Status:** Research Archive  
 **Canon authority:** None until explicit promotion  
-**Governed by:** [CariDream World Bible Canon Edition v2.8](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.9](./CARIDREAM-WORLD-BIBLE.md)
 **Initialized:** June 10, 2026
 
 ## Purpose
@@ -172,10 +172,11 @@ New discoveries should be added below using the research entry template and the 
 | LV-P014 | Haiti Official Canon Promotion | Confirmed the complete Haiti mythology, official island identity, authority boundaries, and Whispers of the Golden Rhythm as an Official Canon Series | 2.6 | June 11, 2026 |
 | LV-P015 | Whispers of the Golden Rhythm - Season 1 | Approved the 10-episode Season 1 structure, production roadmap, continuity checklist, and Silver Drum Tide finale safeguard | 2.7 | June 12, 2026 |
 | LV-P016 | Golden Rhythm Season 1 mystery framework | Approved the Presence, bounded non-verbal invitations, symbolically responsive memory-rich locations, Golden Rhythm manifestation language, and the Episode 2-to-6 Lumi Spirit progression | 2.8 | June 12, 2026 |
+| LV-P017 | Golden Rhythm Season 1 final order | Superseded all prior Season 1 outlines with the final approved ten-episode order and retired three draft episode concepts | 2.9 | June 12, 2026 |
 
 These four entries were explicitly approved through the v2.1 and v2.3 canon merge. Their role boundaries and protected ambiguities are defined in World Bible v2.4.
 
-The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and the current World Bible v2.8.
+The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and the current World Bible v2.9.
 
 ## Haiti Lore Vault Promotion Record
 
@@ -207,20 +208,22 @@ The official [Whispers of the Golden Rhythm Season 1 Bible](./WHISPERS-OF-THE-GO
 4. `The Doorway of Living Light`
 5. `The Path Beyond Light`
 6. `The Lantern of Jacmel`
-7. `The Moonlit Steps`
-8. `The Rhythm Beneath the Reef`
-9. `The Night of Two Winds`
-10. `The Golden Drum Tide`
+7. `The Humming Shore`
+8. `The Night of Two Winds`
+9. `Memories Beneath the Silver Tide`
+10. `Whispers of the Golden Rhythm`
 
 The season structure introduces the Marasa Winds, presents the first Lumi Spirit appearances, develops the Wanderer's understanding through listening, and gradually increases awareness of the Golden Rhythm without defining it.
 
-Episode 10's production title does not create a new Sacred Phenomenon. Its canonical event is the Silver Drum Tide. The use is approved for Season 1 but does not create a recurring finale requirement.
+The final Season 1 order does not require the Silver Drum Tide. The Sacred Phenomenon remains canon independently of this season.
 
 Full scripts remain subject to episode-level cultural research, continuity review, and sleep-first approval.
 
 **Season structure amendment, June 12, 2026:** Episodes 3 and 4 were retitled to match their approved manuscripts. `The Doorway of Living Light` is governed as a symbolic, flat pattern of reflected light and is not a portal, threshold, gateway, entrance, invitation, transport mechanism, or realm transition.
 
 **Season mystery amendment, June 12, 2026:** Episode 5 introduces the unexplained Presence, which may offer bounded non-verbal invitations without guiding travel, predicting events, or compelling action. Memory-rich locations may respond symbolically without becoming conscious or authoritative. Lumi Spirits first appear subtly in Episode 2 and are encountered more clearly in Episode 6.
+
+**Final Season 1 supersession, June 12, 2026:** The approved order above replaces every prior draft Season 1 outline. `The Moonlit Steps`, `The Rhythm Beneath the Reef`, and `The Golden Drum Tide` are retired draft concepts and are not part of Official Season 1 canon. Their retirement does not remove unrelated world canon such as the Silver Drum Tide.
 
 **Cultural review record:** The Marasa Winds are promoted only as an original CariDream Dreamworld interpretation. Internal cultural-boundary review was completed; no external consultation is claimed. Any future story drawing directly from living, sacred, or historically documented Haitian Marasa traditions requires specific sourcing and consultation before publication.
 

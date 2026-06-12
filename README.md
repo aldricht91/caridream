@@ -6,7 +6,7 @@ CariDream is a mobile-first relaxing storytelling PWA inspired by Caribbean cult
 
 All future CariDream stories and universe development are governed by:
 
-- [CariDream World Bible Canon Edition v2.8](docs/CARIDREAM-WORLD-BIBLE.md) - **Status: Canon**
+- [CariDream World Bible Canon Edition v2.9](docs/CARIDREAM-WORLD-BIBLE.md) - **Status: Canon**
 - [CariDream Lore Vault](docs/CARIDREAM-LORE-VAULT.md) - **Status: Research Archive**
 - [Story Identity Map - 43 Stories](docs/STORY-IDENTITY-MAP-43-STORIES-V2.4.md) - **Status: Story Governance Companion**
 - [P1/P2 Story Revision Plan](docs/STORY-REVISION-ACTION-PLAN-P1-P2-V2.4.md) - **Status: Canon Remediation Plan**

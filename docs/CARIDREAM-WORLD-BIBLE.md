@@ -1,11 +1,11 @@
 # CariDream World Bible
 
-## Canon Edition v2.8
+## Canon Edition v2.9
 
 **Status:** Canon  
 **Authority:** Official source of truth for the Caribbean Dreamworld  
 **Effective:** June 12, 2026
-**Supersedes:** World Bible v2.7
+**Supersedes:** World Bible v2.8
 
 ---
 
@@ -916,6 +916,19 @@ Season 1 introduces the Marasa Winds, presents the first subtle appearances of t
 
 The Lumi Spirits first appear subtly in Episode 2 and are encountered more clearly in Episode 6. Increased clarity does not grant them additional authority or provide a definitive explanation of their nature.
 
+**Official Season 1 episode order:**
+
+1. `The Twin Breezes`
+2. `The Lantern Path`
+3. `The Humming Ridge`
+4. `The Doorway of Living Light`
+5. `The Path Beyond Light`
+6. `The Lantern of Jacmel`
+7. `The Humming Shore`
+8. `The Night of Two Winds`
+9. `Memories Beneath the Silver Tide`
+10. `Whispers of the Golden Rhythm`
+
 ### The Presence
 
 **Classification:** Protected Season Mystery
@@ -942,11 +955,11 @@ Such responses must remain observational and ambiguous. A location does not beco
 
 A symbolic response may deepen recognition or belonging. It may not guide travel, reveal complete history, grant powers, compel a decision, or perform a responsibility of the Cycle.
 
-The season concludes with Episode 10, `The Golden Drum Tide`.
+The season concludes with Episode 10, `Whispers of the Golden Rhythm`.
 
-`The Golden Drum Tide` is a poetic episode title. The canonical Sacred Phenomenon depicted in the finale is the Silver Drum Tide. No separate Golden Drum Tide phenomenon exists.
+`The Moonlit Steps`, `The Rhythm Beneath the Reef`, and `The Golden Drum Tide` are retired draft concepts. They are not part of Official Season 1 canon.
 
-The finale is an approved use of the rare Silver Drum Tide for this season only. It does not establish the phenomenon as a required ending for future seasons.
+The Silver Drum Tide remains a canonical Sacred Phenomenon, but it is not required to appear in Season 1 and is not the approved Season 1 finale.
 
 ---
 
@@ -1187,4 +1200,5 @@ And beneath the moonlit Caribbean sky, the Cycle of Whispers continues forever.
 | 2.5 | June 11, 2026 | Superseded | Promoted Haiti Canon Boundaries v1.0; established Haiti-Bound Foundational Force and Regional Spirits; added the Golden Rhythm, Métrès Lumi, Marasa Winds, Lumi Spirits, Silver Drum Tide, Lantern of Jacmel, and Whispers of the Golden Rhythm. |
 | 2.6 | June 11, 2026 | Superseded | Completed Haiti's official canon promotion; replaced the interim Foundational Force classification with protected Foundational Mysteries; retained Regional Spirits; added Haiti's official identity entry; and confirmed Whispers of the Golden Rhythm as an Official Canon Series. |
 | 2.7 | June 12, 2026 | Superseded | Added the official 10-episode Season 1 structure for Whispers of the Golden Rhythm, its production roadmap and continuity requirements, and the approved Silver Drum Tide finale safeguard. |
-| 2.8 | June 12, 2026 | Canon | Added the Presence as a protected Season 1 mystery; authorized bounded non-verbal invitations and symbolic responses from memory-rich locations; clarified Golden Rhythm manifestations; and established the subtle Episode 2 to clearer Episode 6 Lumi Spirit progression. |
+| 2.8 | June 12, 2026 | Superseded | Added the Presence as a protected Season 1 mystery; authorized bounded non-verbal invitations and symbolic responses from memory-rich locations; clarified Golden Rhythm manifestations; and established the subtle Episode 2 to clearer Episode 6 Lumi Spirit progression. |
+| 2.9 | June 12, 2026 | Canon | Superseded prior Season 1 outlines with the final approved episode order; retired The Moonlit Steps, The Rhythm Beneath the Reef, and The Golden Drum Tide from Season 1; and removed the Silver Drum Tide as the Season 1 finale requirement. |

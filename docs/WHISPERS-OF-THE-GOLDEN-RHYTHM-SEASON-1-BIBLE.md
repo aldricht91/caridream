@@ -3,7 +3,7 @@
 ## Official Season 1 Bible
 
 **Status:** Official Canon Season  
-**World Bible:** Canon Edition v2.8
+**World Bible:** Canon Edition v2.9
 **Primary home:** Haiti  
 **Episode count:** 10  
 **Format:** Peaceful episodic Dreamworld stories with a cumulative emotional arc  
@@ -46,7 +46,7 @@ The season moves through:
 | Lumi Spirit progression | First appear subtly in Episode 2 through lantern light and living rhythm; are encountered more clearly in Episode 6; later appearances remain selective and restrained. |
 | Growth of the Wanderer's understanding | The Wanderer progresses from noticing paired rhythms to protecting uncertainty and recognizing relationships without claiming authority or complete knowledge. |
 | Gradual awareness of the Golden Rhythm | Repeated patterns of wind, light, ridge, craft, steps, reef, and silence create recognition without definition. |
-| Golden Drum Tide finale | Episode 10 carries this poetic title while depicting the canonical Silver Drum Tide as a rare revelation of existing harmony. |
+| Season finale | Episode 10 gathers the season's patterns of wind, light, shore, memory, and mystery while opening wonder toward an unknown rhythm beyond the horizon. |
 
 ## Bedtime Tone
 
@@ -86,21 +86,19 @@ The Wanderer learns that listening is not the same as explaining. `The Lantern o
 
 **Episodes 7-9**
 
-Earlier symbols return in changed contexts. Human movement, coastal life, moonlight, and the Marasa Winds create increasingly visible patterns of relationship.
+Earlier symbols return in changed contexts. Coastal life, moonlight, collective memory, and the Marasa Winds create increasingly visible patterns of relationship.
 
 The Wanderer recognizes echoes among episodes but does not claim to understand the Golden Rhythm. The Marasa Winds remain caretakers, not commanders.
 
-## Movement IV: Harmony Revealed
+## Movement IV: Wonder Beyond the Horizon
 
 **Episode 10**
 
-The season finale depicts the canonical Silver Drum Tide.
+The season finale gathers the emotional and symbolic relationships developed across Haiti without defining the Golden Rhythm.
 
-`The Golden Drum Tide` is the episode's poetic production title. It does not name a second Sacred Phenomenon and must never be treated as a separate canon entity.
+The final horizon may suggest an unknown rhythm beyond the Wanderer's present understanding. It must remain a possibility rather than a confirmed entity, force, destination, command, or expansion of the Golden Rhythm's authority.
 
-The Silver Drum Tide is not summoned, predicted, controlled, or caused by the Wanderer, the Marasa Winds, the Lumi Spirits, a drum, a lantern, or a community ritual. It appears rarely and briefly, revealing harmony already present.
-
-The Wanderer gathers the season's culminating whisper. The Moon Conch remembers it. The episode ends in peace rather than explanation.
+The Wanderer gathers the season's culminating whisper. The Moon Conch remembers it. The episode ends in wonder, peace, and unanswered possibility.
 
 ---
 
@@ -178,50 +176,49 @@ The Wanderer gathers the season's culminating whisper. The Moon Conch remembers 
 
 The Lumi Spirits may be encountered more clearly than in Episode 2 but remain unexplained. They may not guide, store complete memory, reveal objective history, command water or light, or grant certainty.
 
-## Episode 7: The Moonlit Steps
+## Episode 7: The Humming Shore
 
-**Production status:** Planned  
-**Arc function:** Shows the Wanderer recognizing relationships among movement, repetition, care, and memory.  
-**Primary theme:** Progress through gentle repetition  
-**Emotional lesson:** A journey may be held in the steps themselves rather than only its destination.  
-**Primary setting identity:** A researched Haitian town, hillside, or neighborhood with locally grounded architecture  
-**Character appearances:** Moonlight Wanderer; local residents; optional Marasa Winds presence sensed rather than announced  
-**Recurring symbols:** Steps, alternating feet, moonlit stone, breath, repeated melody  
-**Continuity requirement:** The steps are not a supernatural crossing, portal, or Gatekeeper domain.
+**Production status:** Official title; manuscript requires final episode-level validation
+**Arc function:** Carries remembered rhythm from mountain and lantern spaces into a Haiti-specific shoreline.
+**Primary theme:** Memory carried through water and place
+**Emotional lesson:** Different places may hold memory in different forms without becoming archives or authorities.
+**Primary setting identity:** A researched Haitian shoreline connected geographically and culturally to the Jacmel journey
+**Character appearances:** Moonlight Wanderer; local coastal characters; Marasa Winds as non-directive companions; selective unexplained lights
+**Recurring symbols:** Humming shore, tide patterns, lantern reflections, salt breeze
+**Continuity requirement:** The sea and its lights may respond symbolically but are not conscious, deliberate, guiding, or complete memory archives. The Golden Rhythm remains undefined and without intent.
 
-## Episode 8: The Rhythm Beneath the Reef
+## Episode 8: The Night of Two Winds
 
-**Production status:** Planned  
-**Arc function:** Reveals rhythm through a Haiti-specific coastal ecosystem while widening the season's sensory range.  
-**Primary theme:** Quiet relationships beneath the visible surface  
-**Emotional lesson:** Harmony may continue even when it cannot be heard from above.  
-**Primary setting identity:** A specifically researched Haitian reef and coastal community  
-**Character appearances:** Moonlight Wanderer as listener from the human world; local coastal characters; optional Lumi Spirit reflections  
-**Recurring symbols:** Reef pulse, moonlit shallows, coral shadows, bubbles, resting boats  
-**Continuity requirement:** No underwater realm travel, supernatural breathing, universal ocean authority, or duplication of `Whispers of Stars Beneath the Sea`.
+**Production status:** Official title; manuscript requires final episode-level validation
+**Arc function:** Brings the Marasa Winds' companionship and balance themes into mature focus.
+**Primary theme:** Difference held in relationship
+**Emotional lesson:** Joy and longing may coexist without either being erased.
+**Primary setting identity:** A Haiti-specific meeting of mountain and coastal air grounded in real geography
+**Character appearances:** Moonlight Wanderer; Marasa Winds; local characters
+**Recurring symbols:** Paired wind, two-part rhythm, cliffs, silence between notes
+**Continuity requirement:** The Marasa Winds do not possess competing intentions, guard against threats, require the Wanderer to balance them, predict events, guide travel, or force harmony.
 
-## Episode 9: The Night of Two Winds
+## Episode 9: Memories Beneath the Silver Tide
 
-**Production status:** Planned  
-**Arc function:** Brings the Marasa Winds' season arc to maturity and prepares the emotional conditions for the finale.  
-**Primary theme:** Balance through listening and response  
-**Emotional lesson:** Harmony can return when each presence leaves room for the other.  
-**Primary setting identity:** A Haiti-specific meeting of mountain and coastal air grounded in real geography  
-**Character appearances:** Moonlight Wanderer; Marasa Winds; local characters; limited Lumi Spirits  
-**Recurring symbols:** Paired wind, lanterns responding at different moments, two-part rhythm, silence between notes  
-**Continuity requirement:** The Marasa Winds do not cause the finale, predict it with certainty, command weather, or force people into harmony.
+**Production status:** Official title; manuscript requires final episode-level validation
+**Arc function:** Explores collective coastal remembrance while protecting the Moon Conch's exclusive memory role.
+**Primary theme:** Memory shared across generations and shores
+**Emotional lesson:** Collective memory may be honored without becoming complete, objective, or owned.
+**Primary setting identity:** A researched Haitian coastal community and its relationship with departure, return, lanterns, and sea
+**Character appearances:** Moonlight Wanderer; local families or storytellers; Marasa Winds; unexplained silver lights
+**Recurring symbols:** Silver water, lantern motes, boats, departure, return
+**Continuity requirement:** `Silver Tide` is poetic episode imagery, not a new Sacred Phenomenon and not the Silver Drum Tide. The sea is not a conscious memory archive, and its lights do not guide, bless, speak objective truth, or replace the Moon Conch.
 
-## Episode 10: The Golden Drum Tide
+## Episode 10: Whispers of the Golden Rhythm
 
-**Production status:** Planned  
-**Canonical event depicted:** The Silver Drum Tide  
-**Arc function:** Completes the season through a rare revelation of harmony already present.  
-**Primary theme:** Wonder shared without possession  
-**Emotional lesson:** Harmony may be recognized, received, and remembered without being controlled.  
-**Primary setting identity:** A Haiti-specific convergence of sea, mountain, lantern light, community, and memory  
-**Character appearances:** Moonlight Wanderer; Marasa Winds; Lumi Spirits; returning local perspectives where appropriate  
-**Recurring symbols:** Heartbeat-like sea, humming mountains, lanterns flickering in relationship, communal stillness  
-**Continuity requirement:** The Silver Drum Tide remains rare, brief, non-repeatable by command, and free of powers, portals, prophecy, reality alteration, or definitive answers about the Golden Rhythm.
+**Production status:** Official title; manuscript requires final episode-level validation
+**Arc function:** Completes Season 1 through belonging, reflection, and wonder directed toward an unresolved horizon.
+**Primary theme:** Belonging without possession or explanation
+**Emotional lesson:** Wonder may deepen when a mystery remains open.
+**Primary setting identity:** A Haiti-specific convergence of the season's mountains, coast, communities, craft, light, wind, and memory
+**Character appearances:** Moonlight Wanderer; Marasa Winds; returning local perspectives where appropriate; the Presence only if still unexplained
+**Recurring symbols:** Familiar stone, spiral, horizon light, answering rhythm, quiet continuation
+**Continuity requirement:** The Golden Rhythm is not alive, awake, welcoming, speaking, listening, recognizing, or acting through intent. Any distant rhythm remains an unconfirmed possibility and enters the Lore Vault before future canon development.
 
 ---
 
@@ -230,8 +227,8 @@ The Lumi Spirits may be encountered more clearly than in Episode 2 but remain un
 | Figure | Season function | Required episodes | Optional episodes | Prohibited use |
 |---|---|---|---|---|
 | Moonlight Wanderer | Audience guide whose listening becomes more precise | 1-10 | None | Heroic solver, restorer of harmony, authority over Haiti |
-| Marasa Winds | Regional Guardians who care for Haiti-specific harmony | 1, 9, 10 | 3, 7 | Weather controllers, travel guides, universal balance |
-| Lumi Spirits | Regional Spirits revealing living remembered rhythm | 2, 6, 10 | 3, 8, 9 | Memory archive, Great Spirits, guides, commanders |
+| Marasa Winds | Regional Guardians who care for Haiti-specific harmony | 1, 8 | 3, 5, 6, 7, 9, 10 | Weather controllers, travel guides, universal balance |
+| Lumi Spirits | Regional Spirits revealing living remembered rhythm | 2, 6 | 3, 7, 9, 10 | Memory archive, Great Spirits, guides, commanders |
 | The Presence | Protected Season Mystery offering bounded non-verbal invitations | 5 | 6 and later reviewed episodes | Travel guide, prophet, commander, identified established entity |
 | Métrès Lumi | Protected Great Mystery | None | 6 only as ambiguous possibility | Explanation, intervention, guidance, confirmed appearance |
 | Local Haitian characters | Emotional center and agents of relationship within each episode | 1-10 | None | Decorative witnesses displaced by the Wanderer |
@@ -326,13 +323,12 @@ Every outline, script, recording, illustration, and episode description must pas
 - [ ] Symbolic response does not make a place conscious, sentient, prophetic, authoritative, or an objective memory archive.
 - [ ] A location does not guide travel, reveal complete history, grant powers, compel decisions, or perform Cycle responsibilities.
 
-## Sacred Phenomenon
+## Sea and Silver Imagery
 
-- [ ] The finale's event is named canonically as the Silver Drum Tide within story documentation.
-- [ ] `The Golden Drum Tide` remains only the Episode 10 title.
-- [ ] The Silver Drum Tide is rare, brief, unsummoned, and uncontrolled.
-- [ ] It reveals harmony already present.
-- [ ] It grants no powers, opens no realms, changes no reality by authority, and creates no whispers.
+- [ ] `Silver Tide` remains poetic imagery and is not promoted as a Sacred Phenomenon.
+- [ ] It is not another name for the Silver Drum Tide.
+- [ ] Sea, tide, and lights do not become conscious memory archives or replace the Moon Conch.
+- [ ] Symbolic coastal responses grant no powers, provide no prophecy, compel no action, and create no whispers.
 
 ## Protected Mysteries and Legends
 
@@ -411,7 +407,7 @@ Different Jacmel storytellers may remember the Lantern legend differently. These
 
 ## The Silver Drum Tide
 
-The phenomenon may be remembered after Season 1, but it must not become a predictable seasonal finale, repeatable ritual, franchise mechanism, or routine spectacle.
+The Sacred Phenomenon remains available for future explicitly reviewed canon. It is not part of the approved Season 1 outline and must not be retroactively inserted into its finale.
 
 ---
 
@@ -419,9 +415,9 @@ The phenomenon may be remembered after Season 1, but it must not become a predic
 
 **Approved structure:** 10 episodes  
 **Completed episode:** Episode 1, `The Twin Breezes`  
-**Finale title:** Episode 10, `The Golden Drum Tide`  
-**Canonical finale phenomenon:** The Silver Drum Tide  
-**Canon authority:** CariDream World Bible v2.8 and Haiti Canon Boundaries v1.0
+**Finale title:** Episode 10, `Whispers of the Golden Rhythm`
+**Retired Season 1 drafts:** `The Moonlit Steps`, `The Rhythm Beneath the Reef`, `The Golden Drum Tide`
+**Canon authority:** CariDream World Bible v2.9 and Haiti Canon Boundaries v1.0
 **Production state:** Approved for outlining and cultural research; full scripts require episode-level continuity review.
 
 The Wanderer listens.
