@@ -1,15 +1,101 @@
 # Whispers of the Golden Rhythm
 
-## Official Season 1 Bible
+## Official Season Bible — Season 1 Canon v1.0
 
 **Status:** Official Canon Season  
-**World Bible:** Canon Edition v2.9
+**World Bible:** Canon Edition v2.10
 **Primary home:** Haiti  
 **Episode count:** 10  
 **Format:** Peaceful episodic Dreamworld stories with a cumulative emotional arc  
 **Series purpose:** Explore how rhythm, harmony, resilience, and memory are experienced throughout Haiti's Dreamworld.
 
 This document defines production structure, episode intent, continuity, recurring imagery, and future-facing story hooks. It does not contain full episode scripts.
+
+This edition supersedes all previous draft outlines, prototype season orders, working titles, and retired Season 1 concepts.
+
+## Series Identity
+
+`Whispers of the Golden Rhythm` is a mythic Caribbean-inspired journey of memory, belonging, and remembrance.
+
+The series follows the Moonlight Wanderer through Haitian landscapes shaped by memory, light, wind, water, community, and story.
+
+The Dreamworld is not governed by conventional magic. The Golden Rhythm is experienced as an ancient, enduring, mysterious, and symbolic Foundational Mystery connecting the season's relationships among memory, place, belonging, and remembrance.
+
+`Ancient force`, when used poetically in season materials, does not change the Golden Rhythm's classification or grant it consciousness, intent, or authority.
+
+## Core Themes
+
+### Memory
+
+Memories are not possessions. They are living connections among people, places, stories, and time.
+
+`Living` describes relationship and emotional continuity. It does not establish sentience or create an objective memory archive.
+
+### Belonging
+
+Home is not merely a destination. Home is a relationship.
+
+### Remembrance
+
+Nothing is truly lost while it is remembered within people, community, story, and the Cycle of Whispers.
+
+### Balance
+
+Joy and longing. Departure and return. Warmth and coolness. Distinct experiences may belong together without becoming identical.
+
+## Season Canon Principles
+
+### The Golden Rhythm
+
+The Golden Rhythm is ancient, enduring, mysterious, and symbolic.
+
+It is not a god, ruler, character, or direct narrator.
+
+It may be felt, remembered, and reflected through places, symbols, nature, memory, water, wind, light, and experiences.
+
+It does not directly command events and remains fully governed by its Foundational Mystery boundaries.
+
+### The Wanderer
+
+The Moonlight Wanderer is the season's central viewpoint and audience guide.
+
+The Wanderer represents curiosity, discovery, reflection, and belonging.
+
+The Wanderer has no specified age, gender, or appearance, allowing listeners to see themselves within the journey.
+
+The Wanderer remains a listener rather than a heroic solver and does not replace local Haitian characters as the emotional center of individual stories.
+
+### The Marasa Winds
+
+The Marasa Winds are companion presences throughout Season 1.
+
+Their warm and cool breezes embody balance, offer companionship, and may reflect emotional shifts.
+
+They accompany, witness, and care for relational harmony.
+
+They do not guide, command, speak, control outcomes, predict events, or determine destinations.
+
+### The Spiral Symbol
+
+First revealed during the mountain journey, the spiral represents memory, continuity, connection, and the season's relationship to the Golden Rhythm.
+
+It is a recurring visual motif, not a magical key, command, map, or source of power.
+
+### The Presence
+
+The Presence is ancient in feeling, gentle, mysterious, and undefined.
+
+It is not confirmed as a spirit, deity, person, Guardian, Métrès Lumi, or another established entity.
+
+Its nature remains unknown and governed by the Presence boundaries in World Bible v2.10.
+
+### Lumi Spirits
+
+The Lumi Spirits are small luminous presences associated with memory and light.
+
+They may appear gentle, curious, playful, and symbolic.
+
+They reveal manifestations of remembrance rather than functioning as independent protagonists, guides, authorities, or memory archives.
 
 ---
 
@@ -267,6 +353,52 @@ Silence is an active part of the season's emotional rhythm. It provides rest, ro
 
 ---
 
+# Recurring Locations
+
+## The Lantern Path
+
+A pathway illuminated by lanterns through which memory and relationship may be experienced.
+
+The lanterns are not complete memory vessels, guides, or authorities.
+
+## The Humming Ridge
+
+A mountain ridge resonating through stone, wind, human humming, and remembered care.
+
+Its resonance is symbolic and naturalistic within Dreamworld wonder. The ridge is not conscious and does not reveal objective history.
+
+## The Doorway of Living Light
+
+A woven visual symbol of memory and possibility.
+
+`Doorway` is a poetic name. It is not a portal, threshold, gateway, entrance, crossing, or transport mechanism.
+
+## The Lantern Pool of Jacmel
+
+A hidden mountain pool where light, water, community memory, and Lumi Spirit imagery may meet.
+
+The pool is not a conscious memory archive, and any memories perceived there remain partial, symbolic, and non-authoritative.
+
+## The Humming Shore
+
+A Haitian shoreline where wind, water, community, and remembered rhythm meet.
+
+The sea may carry symbolic echoes of remembrance without recognizing, greeting, guiding, or intentionally responding to the Wanderer.
+
+## The Silver Tide
+
+Poetic imagery for ancient collective memory associated with the sea.
+
+The Silver Tide is not a separate Sacred Phenomenon, is not another name for the Silver Drum Tide, and is not a conscious archive or authority.
+
+## The Golden Clearing
+
+The setting of the Season 1 finale and the season's deepest known symbolic convergence of recurring images and relationships.
+
+It is not the origin, source, home, container, or complete explanation of the Golden Rhythm.
+
+---
+
 # Canon Continuity Checklist
 
 Every outline, script, recording, illustration, and episode description must pass this checklist.
@@ -411,13 +543,45 @@ The Sacred Phenomenon remains available for future explicitly reviewed canon. It
 
 ---
 
+# Season 1 Ending Status
+
+At the conclusion of Season 1:
+
+- The Wanderer continues onward.
+- The Golden Rhythm endures as an undefined Foundational Mystery.
+- The Presence remains unexplained.
+- The Dreamworld remains larger than what has been discovered.
+- New mysteries may exist beyond the horizon.
+- The journey continues.
+
+Any distant unknown rhythm remains an unresolved possibility rather than a confirmed entity or force. Future development must enter the Lore Vault before canon promotion.
+
+# Official Canon Declaration
+
+`Whispers of the Golden Rhythm — Season 1 Canon v1.0` is the official Season 1 canon.
+
+This document supersedes all previous draft outlines, prototype season orders, working titles, and retired concepts.
+
+Retired Season 1 draft titles:
+
+- `The Moonlit Steps`
+- `The Rhythm Beneath the Reef`
+- `The Golden Drum Tide`
+
+These concepts are not part of the approved Season 1 canon.
+
+The approved Season 1 canon consists of Episodes 1–10 in the order defined in this document.
+
+---
+
 # Season Approval Record
 
 **Approved structure:** 10 episodes  
 **Completed episode:** Episode 1, `The Twin Breezes`  
 **Finale title:** Episode 10, `Whispers of the Golden Rhythm`
 **Retired Season 1 drafts:** `The Moonlit Steps`, `The Rhythm Beneath the Reef`, `The Golden Drum Tide`
-**Canon authority:** CariDream World Bible v2.9 and Haiti Canon Boundaries v1.0
+**Season canon:** Season 1 Canon v1.0
+**Canon authority:** CariDream World Bible v2.10 and Haiti Canon Boundaries v1.0
 **Production state:** Approved for outlining and cultural research; full scripts require episode-level continuity review.
 
 The Wanderer listens.

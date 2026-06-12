@@ -6,7 +6,7 @@
 **Document type:** Canon governance and authority boundaries  
 **Status:** Canon; promoted June 11, 2026
 
-**Governed by:** [CariDream World Bible Canon Edition v2.9](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.10](./CARIDREAM-WORLD-BIBLE.md)
 
 **Related archive:** [CariDream Lore Vault](./CARIDREAM-LORE-VAULT.md)
 

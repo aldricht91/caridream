@@ -2,7 +2,7 @@
 
 **Status:** Research Archive  
 **Canon authority:** None until explicit promotion  
-**Governed by:** [CariDream World Bible Canon Edition v2.9](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.10](./CARIDREAM-WORLD-BIBLE.md)
 **Initialized:** June 10, 2026
 
 ## Purpose
@@ -173,10 +173,11 @@ New discoveries should be added below using the research entry template and the 
 | LV-P015 | Whispers of the Golden Rhythm - Season 1 | Approved the 10-episode Season 1 structure, production roadmap, continuity checklist, and Silver Drum Tide finale safeguard | 2.7 | June 12, 2026 |
 | LV-P016 | Golden Rhythm Season 1 mystery framework | Approved the Presence, bounded non-verbal invitations, symbolically responsive memory-rich locations, Golden Rhythm manifestation language, and the Episode 2-to-6 Lumi Spirit progression | 2.8 | June 12, 2026 |
 | LV-P017 | Golden Rhythm Season 1 final order | Superseded all prior Season 1 outlines with the final approved ten-episode order and retired three draft episode concepts | 2.9 | June 12, 2026 |
+| LV-P018 | Whispers of the Golden Rhythm Season 1 Canon v1.0 | Adopted the official season identity, core themes, canon principles, recurring locations, ending status, and final canon declaration with World Bible interpretation safeguards | 2.10 | June 12, 2026 |
 
 These four entries were explicitly approved through the v2.1 and v2.3 canon merge. Their role boundaries and protected ambiguities are defined in World Bible v2.4.
 
-The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and the current World Bible v2.9.
+The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and the current World Bible v2.10.
 
 ## Haiti Lore Vault Promotion Record
 
@@ -224,6 +225,8 @@ Full scripts remain subject to episode-level cultural research, continuity revie
 **Season mystery amendment, June 12, 2026:** Episode 5 introduces the unexplained Presence, which may offer bounded non-verbal invitations without guiding travel, predicting events, or compelling action. Memory-rich locations may respond symbolically without becoming conscious or authoritative. Lumi Spirits first appear subtly in Episode 2 and are encountered more clearly in Episode 6.
 
 **Final Season 1 supersession, June 12, 2026:** The approved order above replaces every prior draft Season 1 outline. `The Moonlit Steps`, `The Rhythm Beneath the Reef`, and `The Golden Drum Tide` are retired draft concepts and are not part of Official Season 1 canon. Their retirement does not remove unrelated world canon such as the Silver Drum Tide.
+
+**Season 1 Canon v1.0 adoption, June 12, 2026:** The official season identity, themes, character principles, recurring locations, and ending status were adopted under World Bible v2.10. Poetic references to force, living memory, thresholds, vessels, and source are governed by the World Bible interpretation safeguards and do not alter established classifications or authority boundaries.
 
 **Cultural review record:** The Marasa Winds are promoted only as an original CariDream Dreamworld interpretation. Internal cultural-boundary review was completed; no external consultation is claimed. Any future story drawing directly from living, sacred, or historically documented Haitian Marasa traditions requires specific sourcing and consultation before publication.
 
