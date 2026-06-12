@@ -106,7 +106,8 @@ The Wanderer gathers the season's culminating whisper. The Moon Conch remembers 
 
 ## Episode 1: The Twin Breezes
 
-**Production status:** Complete  
+**Production status:** Complete; canon-compliant manuscript approved
+**Manuscript:** [Episode 1 - The Twin Breezes](./golden-rhythm-season-1/EPISODE-01-THE-TWIN-BREEZES.md)
 **Arc function:** Introduces the Marasa Winds and the season's principle that harmony does not require sameness.  
 **Primary theme:** Balance through companionship  
 **Emotional lesson:** Two distinct voices may move together without becoming identical.  
@@ -117,7 +118,8 @@ The Wanderer gathers the season's culminating whisper. The Moon Conch remembers 
 
 ## Episode 2: The Lantern Path
 
-**Production status:** Planned  
+**Production status:** Canon-compliant manuscript approved
+**Manuscript:** [Episode 2 - The Lantern Path](./golden-rhythm-season-1/EPISODE-02-THE-LANTERN-PATH.md)
 **Arc function:** Introduces the Lumi Spirits through lantern light and living rhythm.  
 **Primary theme:** Memory revealed through patient attention  
 **Emotional lesson:** A familiar path may feel new when its small lights are noticed.  
