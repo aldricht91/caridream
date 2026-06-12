@@ -2,7 +2,7 @@
 
 **Status:** Research Archive  
 **Canon authority:** None until explicit promotion  
-**Governed by:** [CariDream World Bible Canon Edition v2.4](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.5](./CARIDREAM-WORLD-BIBLE.md)
 **Initialized:** June 10, 2026
 
 ## Purpose
@@ -160,8 +160,20 @@ New discoveries should be added below using the research entry template and the 
 | LV-P002 | The Gatekeeper | Promoted as a protected Great Mystery | 2.4 | June 11, 2026 |
 | LV-P003 | Felix, the Reluctant Helper | Promoted as a Folk Figure | 2.4 | June 11, 2026 |
 | LV-P004 | Zim, the Unexpected Friend | Promoted as a Folk Figure with an unresolved connection to the Old Walker | 2.4 | June 11, 2026 |
+| LV-P005 | Haiti Canon Boundaries v1.0 | Promoted as the binding authority framework for Haiti's Dreamworld mythology | 2.5 | June 11, 2026 |
+| LV-P006 | The Golden Rhythm | Promoted as a Haiti-Bound Foundational Force | 2.5 | June 11, 2026 |
+| LV-P007 | Métrès Lumi | Promoted as a protected Great Mystery | 2.5 | June 11, 2026 |
+| LV-P008 | The Marasa Winds | Promoted as Haiti-specific Regional Guardians with cultural guardrails | 2.5 | June 11, 2026 |
+| LV-P009 | The Lumi Spirits | Promoted as the first Regional Spirits | 2.5 | June 11, 2026 |
+| LV-P010 | The Silver Drum Tide | Promoted as a Haiti-specific Sacred Phenomenon | 2.5 | June 11, 2026 |
+| LV-P011 | The Lantern of Jacmel | Promoted as a Haiti-specific Foundational Legend | 2.5 | June 11, 2026 |
+| LV-P012 | Whispers of the Golden Rhythm | Promoted as Haiti's flagship Major Series | 2.5 | June 11, 2026 |
 
 These four entries were explicitly approved through the v2.1 and v2.3 canon merge. Their role boundaries and protected ambiguities are defined in World Bible v2.4.
+
+The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and World Bible v2.5.
+
+**Cultural review record:** The Marasa Winds are promoted only as an original CariDream Dreamworld interpretation. Internal cultural-boundary review was completed; no external consultation is claimed. Any future story drawing directly from living, sacred, or historically documented Haitian Marasa traditions requires specific sourcing and consultation before publication.
 
 ## Archive Principle
 

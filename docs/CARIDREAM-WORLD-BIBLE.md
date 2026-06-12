@@ -1,11 +1,11 @@
 # CariDream World Bible
 
-## Canon Edition v2.4
+## Canon Edition v2.5
 
 **Status:** Canon  
 **Authority:** Official source of truth for the Caribbean Dreamworld  
 **Effective:** June 11, 2026
-**Supersedes:** World Bible v2.1 and proposed Active Canon Beta v2.3
+**Supersedes:** World Bible v2.4
 
 ---
 
@@ -334,6 +334,26 @@ Nobody knows whether these names describe one figure, several figures, a spirit,
 - The Gatekeeper must not duplicate the Divi-Divi Spirits, who offer local guidance to travelers in Aruba.
 - The Gatekeeper's existence and identity must never receive a final official answer.
 
+### Métrès Lumi
+
+**Title:** The Luminous Mystery
+
+Métrès Lumi is a luminous feminine presence sometimes seen where forgotten rhythms are about to be remembered.
+
+She appears briefly and gently.
+
+She does not command, guide, preserve, gather, remember for the Cycle, or intervene.
+
+Her appearance may deepen wonder around rhythm and memory, but it does not cause the memory, create the rhythm, restore harmony, or produce a whisper by authority.
+
+**Boundaries:**
+
+- Métrès Lumi does not replace Manman Mirwa, the Moonlight Wanderer, the Moon Conch, the Gatekeeper, the Old Walker, or a Great Spirit.
+- She does not open thresholds, determine destinations, reveal hidden truth as an authority, or solve a story's central problem.
+- Her origin, true nature, reason for appearing, and relationship to the Golden Rhythm must never receive an official explanation.
+- Stories may suggest whether she follows the Golden Rhythm or the Golden Rhythm follows her. No suggestion may become definitive.
+- Different witnesses and islands may remember her differently without one account becoming authoritative.
+
 ### The Unresolved Mystery
 
 Stories may occasionally connect:
@@ -353,7 +373,43 @@ No official answer should ever exist.
 
 The uncertainty is intentional and permanently protected.
 
-## Tier 4: Great Spirits
+## Tier 4: Haiti-Bound Foundational Force
+
+Foundational Force is a regional ontological classification reserved for a force that establishes an island's Dreamworld identity without governing the wider Caribbean Dreamworld.
+
+A Foundational Force is not a character, spirit, Guardian, deity, artifact, Sacred Phenomenon, Keeper of Whispers, or Permanent Pillar.
+
+It has no administrative authority over the Cycle, Great Spirits, other islands, or universal Dreamworld functions.
+
+### The Golden Rhythm
+
+**Island:** Haiti
+
+**Nature:** Ancient, majestic, eternal, and unowned
+
+**Themes:** Rhythm, harmony, balance, resilience, memory
+
+**Series:** Whispers of the Golden Rhythm
+
+The Golden Rhythm is the foundational force through which Haiti's Dreamworld identity experiences rhythm and memory.
+
+It may be sensed, heard, reflected, interrupted, remembered, or restored within Haitian stories.
+
+It may be perceived through drums, waves, lantern light, memory, silence, movement, and other Haiti-specific expressions.
+
+**Boundaries:**
+
+- The Golden Rhythm is foundational to Haiti's Dreamworld identity only.
+- It is not the universal heartbeat of CariDream; the Cycle of Whispers remains the Dreamworld's heartbeat.
+- It does not gather, remember for the Cycle, preserve, judge, own, summon, or command whispers.
+- It does not create stories, dreams, paths, or possibilities through Manman Mirwa's function.
+- It does not command people, spirits, Guardians, Great Spirits, nature, or events.
+- It does not determine fate, compel harmony, open portals, permit realm travel, or grant powers.
+- It does not govern time, dreams, memory, moonlight, water, wind, or fire.
+- It does not supply the hidden origin of another island's culture, rhythm, memory, or Dreamworld identity.
+- It may accompany circumstances in which a whisper is born, but the Wanderer gathers, the Moon Conch remembers, and Manman Mirwa preserves.
+
+## Tier 5: Great Spirits
 
 Great Spirits are universal forces expressed through nature.
 
@@ -390,7 +446,7 @@ They may be experienced differently from island to island, but their universal d
 - They do not command people, creatures, or other spirits.
 - Their appearances should reflect the landscape and culture of the island in which a story occurs.
 
-## Tier 5: Regional Guardians
+## Tier 6: Regional Guardians
 
 Guardians are caretakers connected to particular environments, islands, traditions, or recurring story realms.
 
@@ -477,7 +533,72 @@ Their role is distinct from La Diablesse:
 
 Additional Guardians may enter the Lore Vault and become canon only after cultural and continuity review.
 
-## Tier 6: Folk Figures
+### The Marasa Winds
+
+**Canon form:** Original CariDream Dreamworld interpretation; not a claim of a documented or universal Haitian religious tradition
+
+**Island:** Haiti
+
+**Themes:** Balance, harmony, companionship, rhythm
+
+**Role:** Guardians of harmony
+
+**Series:** Whispers of the Golden Rhythm
+
+The Marasa Winds care for balance and harmony within Haiti's Dreamworld stories, places, and relationships.
+
+They may sense changes within the Golden Rhythm and recognize Métrès Lumi without understanding her.
+
+They protect space in which distinct rhythms may return to relationship without becoming identical.
+
+**Boundaries:**
+
+- The Marasa Winds do not command the Golden Rhythm or manufacture harmony.
+- They do not force reconciliation, control ordinary weather, govern all wind, guide travel by direction, open crossings, or determine fate.
+- They do not command Lumi Spirits or explain Métrès Lumi.
+- They do not gather, remember for the Cycle, preserve, or create whispers.
+- They remain Haiti-specific and do not replace the Divi-Divi Spirits, Gatekeeper, Great Spirits, or Moonlight Wanderer.
+- Harmony must emerge through people, place, memory, community, or natural relationships rather than Guardian authority.
+
+**Cultural boundary note:** Internal continuity and cultural-boundary review was completed for promotion. No external cultural consultation is claimed. Any future story drawing directly from living, sacred, or historically documented Haitian Marasa traditions requires specific sourcing and consultation before publication.
+
+## Tier 7: Regional Spirits
+
+Regional Spirits are local presences that respond to an island or region's established Dreamworld identity.
+
+Unlike Great Spirits, they do not embody universal forces.
+
+Unlike Regional Guardians, they do not maintain care or balance across a story realm.
+
+They may reveal a local presence, pattern, or relationship without owning, governing, or commanding it.
+
+### The Lumi Spirits
+
+**Title:** Children of the Moonlit Glow
+
+**Island:** Haiti
+
+**Role:** Spirits of remembered rhythm
+
+**Series:** Whispers of the Golden Rhythm
+
+The Lumi Spirits awaken when moonlight touches a living rhythm.
+
+They may rise from lantern light, mountain breezes, moonlit shores, rivers, and quiet places where memories gather.
+
+They follow and reveal rhythm. They do not create or own it.
+
+**Boundaries:**
+
+- The Lumi Spirits do not create, govern, direct, or complete the Golden Rhythm.
+- They do not govern moonlight, lanterns, mountains, rivers, shores, wind, memory, or universal natural domains.
+- They do not maintain harmony as Guardians.
+- They do not command people, nature, other spirits, or one another.
+- They do not gather, permanently remember, preserve, or create whispers.
+- They do not grant powers, open portals, transport characters between realms, or replace the Great Spirits, Marasa Winds, Moon Conch, or Manman Mirwa.
+- They may reveal the felt presence of remembered rhythm but are not memory archives.
+
+## Tier 8: Folk Figures
 
 Folk Figures are recurring personalities who bring warmth, humor, humanity, and everyday wisdom to the Dreamworld.
 
@@ -528,7 +649,7 @@ Zim offers perspective without taking control of the story.
 - No official connection between Zim and the Old Walker exists.
 - Stories may hint at a connection, but it must never be confirmed.
 
-## Tier 7: Sacred Phenomena
+## Tier 9: Sacred Phenomena
 
 Sacred Phenomena are rare events or places where the Dreamworld gently touches ordinary Caribbean life.
 
@@ -547,7 +668,28 @@ The doorway is brief, gentle, and never forced.
 
 The Green Flash may occur as a natural wonder elsewhere, but its role as a doorway to the Realm of Rest belongs specifically to Barbados within CariDream canon.
 
-## Tier 8: Island Legends
+### The Silver Drum Tide
+
+**Dreamworld location:** Haiti
+
+**Nature:** A rare sacred manifestation of the Golden Rhythm
+
+**Theme:** Revealed harmony
+
+During the Silver Drum Tide, the sea moves like a heartbeat, the mountains hum, lanterns flicker in harmony, and the Marasa Winds grow quiet.
+
+The phenomenon reveals harmony already present.
+
+**Boundaries:**
+
+- The Silver Drum Tide does not grant powers, change reality by authority, create harmony, or create the Golden Rhythm.
+- It does not create, collect, remember, preserve, or command whispers.
+- It does not open the Realm of Rest, open any portal, enable realm travel, carry characters into dreams, or control sleep.
+- It does not restore the dead, recreate the past, reveal objective answers, summon Métrès Lumi, or command Spirits or Guardians.
+- It must remain rare, uncontrolled, and unnecessary to the resolution of most stories.
+- It is a manifestation of the Golden Rhythm, not its source, container, owner, or complete expression.
+
+## Tier 10: Island Legends
 
 Island Legends are foundational stories that introduce future characters, lore, landscapes, and recurring whispers.
 
@@ -585,6 +727,34 @@ The Sleeping Bamboo represents rest as part of natural growth without directly t
 
 Every story must identify and respect the specific island, bay, ecology, and cultural context being represented.
 
+### The Lantern of Jacmel
+
+**Island identity:** Haiti
+
+**Location:** Jacmel
+
+**Development status:** Foundational legend
+
+**Related series:** Whispers of the Golden Rhythm
+
+The Lantern of Jacmel is the first legend associated with the Golden Rhythm.
+
+Some believe an artisan created a lantern whose glow reflected Métrès Lumi.
+
+Some believe the lantern reflected the Golden Rhythm itself.
+
+Others believe the entire story began as a dream.
+
+No version is definitive.
+
+**Boundaries:**
+
+- The Lantern belongs specifically to Jacmel's artistic, communal, coastal, and memory-centered Dreamworld identity.
+- It does not contain, create, control, or grant access to the Golden Rhythm.
+- It does not prove that Métrès Lumi created it, was summoned by it, resides within it, or appears whenever it glows.
+- It is not a universal Dreamworld artifact, travel guide, threshold, portal, objective truth-teller, complete memory vessel, or controller of Spirits and Guardians.
+- No official version may determine its origin, the nature of its glow, or whether any surviving lantern is the original.
+
 ---
 
 # Part IV: Major Series
@@ -618,6 +788,36 @@ Each journey must retain the distinct marine identity of the island or community
 This series explores whispers that connect memory, moonlight, compassion, mystery, and the Cycle itself.
 
 The Wanderer remains the listener and guide, not the hero.
+
+## Whispers of the Golden Rhythm
+
+**Primary home:** Haiti
+
+**Foundational Force:** The Golden Rhythm
+
+**Regional Guardians:** The Marasa Winds
+
+**Regional Spirits:** The Lumi Spirits
+
+**Great Mystery:** Métrès Lumi
+
+**Theme:** Rhythm, harmony, balance, resilience, and memory
+
+This is Haiti's flagship Dreamworld series.
+
+Stories explore a rhythm forgotten, interrupted, changed, or waiting to return.
+
+The Marasa Winds may sense imbalance.
+
+The Lumi Spirits may reveal a hidden living rhythm.
+
+The Moonlight Wanderer may listen and gather the whisper that emerges.
+
+Harmony returns through local people, place, memory, community, or natural relationship rather than through the Wanderer's authority or supernatural force.
+
+No single mythological element is required in every episode.
+
+The series must preserve the distinct identities of northern historical memory, Jacmel's artistic imagination, coastal life, mountains, rivers, families, neighborhoods, craft, silence, movement, and community.
 
 ---
 
@@ -757,8 +957,10 @@ Before adding a recurring figure, determine its proper place:
 - **Celestial Heart:** Preserves the Dreamworld at its spiritual center.
 - **Keeper of Whispers:** Gathers or remembers whispers within the Cycle.
 - **Great Mystery:** Deepens wonder through permanent uncertainty.
+- **Haiti-Bound Foundational Force:** Establishes Haiti's regional Dreamworld identity without governing the Cycle, universal forces, or other islands.
 - **Great Spirit:** Embodies a universal natural force.
 - **Regional Guardian:** Cares for a specific environment, island, tradition, or story realm.
+- **Regional Spirit:** Reveals a local presence or pattern without embodying a universal force or maintaining Guardian authority.
 - **Folk Figure:** Lives within the world without maintaining its balance.
 - **Sacred Phenomenon:** A rare event or place, not a character.
 - **Island Legend:** A foundational story that may later develop through review.
@@ -813,6 +1015,12 @@ The following distinctions are binding:
 - The Wanderer is the audience guide; the Old Walker is an unresolved traveler and may not replace that role.
 - The Gatekeeper represents uncertain thresholds; Divi-Divi Spirits provide specifically Aruban guidance.
 - Great Spirits are universal forces; Guardians are regional caretakers.
+- The Golden Rhythm is foundational to Haiti only; the Cycle of Whispers remains the universal heartbeat of CariDream.
+- Métrès Lumi appears without guiding, gathering, remembering, preserving, intervening, or explaining.
+- The Marasa Winds care for Haiti-specific harmony; they do not control wind, travel, crossings, fate, or universal balance.
+- Lumi Spirits reveal remembered rhythm; they are not Great Spirits, Guardians, or memory archives.
+- The Silver Drum Tide reveals existing harmony; it does not grant powers, alter reality, open realms, or create whispers.
+- The Lantern of Jacmel is a regional foundational legend, not a universal artifact or threshold.
 - Guardians maintain care and balance; Folk Figures do not.
 - The Sea Turtle connects ocean stories without erasing island-specific marine identities.
 - La Diablesse tends quiet paths and reflection; Silver Ribbon Spirits tend Grenadian water and rhythm.
@@ -846,4 +1054,5 @@ And beneath the moonlit Caribbean sky, the Cycle of Whispers continues forever.
 |---|---|---|---|
 | 2.1 | June 10, 2026 | Superseded | Established the Cycle of Whispers, original hierarchy, Permanent Pillars, Canon Rule, and Lore Vault governance. |
 | 2.3 | June 11, 2026 | Merged beta | Expanded Manman Mirwa and the Cycle; proposed the Old Walker, Gatekeeper, Felix, Zim, Great Mysteries, and Folk Figures. |
-| 2.4 | June 11, 2026 | Canon | Unified v2.1 and v2.3, restored all protected lore, resolved hierarchy and role boundaries, strengthened cultural review, and promoted approved v2.3 additions. |
+| 2.4 | June 11, 2026 | Superseded | Unified v2.1 and v2.3, restored all protected lore, resolved hierarchy and role boundaries, strengthened cultural review, and promoted approved v2.3 additions. |
+| 2.5 | June 11, 2026 | Canon | Promoted Haiti Canon Boundaries v1.0; established Haiti-Bound Foundational Force and Regional Spirits; added the Golden Rhythm, Métrès Lumi, Marasa Winds, Lumi Spirits, Silver Drum Tide, Lantern of Jacmel, and Whispers of the Golden Rhythm. |

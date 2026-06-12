@@ -4,11 +4,13 @@
 
 **Applies to:** `Whispers of the Golden Rhythm`  
 **Document type:** Canon governance and authority boundaries  
-**Status:** Approved boundary framework; effective upon explicit canon promotion  
-**Governed by:** [CariDream World Bible Canon Edition v2.4](./CARIDREAM-WORLD-BIBLE.md)  
+**Status:** Canon; promoted June 11, 2026
+
+**Governed by:** [CariDream World Bible Canon Edition v2.5](./CARIDREAM-WORLD-BIBLE.md)
+
 **Related archive:** [CariDream Lore Vault](./CARIDREAM-LORE-VAULT.md)
 
-This document defines authority limits, continuity protections, and protected uncertainties for Haiti's proposed Dreamworld mythology. It does not independently promote the proposal to canon, create new mythology, or replace the World Bible.
+This document defines the binding authority limits, continuity protections, and protected uncertainties for Haiti's canonical Dreamworld mythology. The World Bible remains the final source of truth.
 
 The mythology governed here consists only of:
 
@@ -725,7 +727,7 @@ No future crossover, finale, reference guide, marketing summary, or character di
 
 # Part VI: Canon Readiness
 
-## Readiness Assessment
+## Post-Promotion Assessment
 
 | Area | Assessment |
 |---|---:|
@@ -735,29 +737,30 @@ No future crossover, finale, reference guide, marketing summary, or character di
 | Overlap prevention | 9/10 |
 | Mystery protection | 9.5/10 |
 | Long-term sustainability | 9.5/10 |
-| Cultural promotion readiness | 8/10 |
+| Cultural boundary documentation | 9/10 |
+| Promotion amendment completion | 10/10 |
 
-**Final Canon Readiness Score:** **9.3/10**
+**Final Canon Governance Score:** **9.5/10**
 
-## Remaining Minor Amendments
+## Promotion Completion
 
-Before canon promotion:
+Completed June 11, 2026:
 
-1. Add **Haiti-bound Foundational Force** to the World Bible classification framework without placing it above the Permanent Pillars or Great Spirits.
-2. Add **Regional Spirits** as a responsibility class distinct from Great Spirits, Guardians, and Folk Figures.
-3. Record a cultural review or consultation note for the Marasa Winds and any use of living or sacred Haitian traditions.
-4. Add `Whispers of the Golden Rhythm` to the Major Series section.
-5. Add all six concepts to the appropriate World Bible hierarchy and regional sections using these boundaries.
-6. Add a Lore Vault promotion record and World Bible version-history entry.
-7. Explicitly approve the canon promotion.
+1. **Haiti-Bound Foundational Force** was added to the World Bible classification framework.
+2. **Regional Spirits** was added as a responsibility class distinct from Great Spirits, Guardians, and Folk Figures.
+3. A cultural-boundary review note was recorded for the Marasa Winds. No external consultation is claimed.
+4. `Whispers of the Golden Rhythm` was added to the Major Series section.
+5. All six concepts were placed within the official World Bible hierarchy.
+6. Lore Vault promotion records and a World Bible v2.5 version-history entry were added.
+7. Canon promotion was explicitly approved.
 
 ## Recommendation
 
-**Ready for Canon with Minor Amendments**
+**Promoted to Canon**
 
 The mythology's authority limits are now sufficiently defined to prevent functional overlap with the Permanent Pillars, Great Mysteries, Great Spirits, existing Guardians, Sacred Phenomena, and current Haitian stories.
 
-Promotion remains incomplete until the World Bible and Lore Vault are updated together, cultural review is recorded, and explicit approval is given.
+The World Bible and Lore Vault were updated together. These boundaries are now active canon governance.
 
 The Dreamworld grows through expansion, not contradiction.
 
