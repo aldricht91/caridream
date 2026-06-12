@@ -6,7 +6,7 @@
 **Document type:** Canon governance and authority boundaries  
 **Status:** Canon; promoted June 11, 2026
 
-**Governed by:** [CariDream World Bible Canon Edition v2.7](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.8](./CARIDREAM-WORLD-BIBLE.md)
 
 **Related archive:** [CariDream Lore Vault](./CARIDREAM-LORE-VAULT.md)
 
@@ -377,6 +377,37 @@ Their presence confirms that a rhythm is living within the story; it does not de
 ### Relationship to Memory
 
 The Lumi Spirits may reveal the felt presence of remembered rhythm.
+
+## The Presence
+
+**Classification:** Protected Season Mystery
+**Scope:** `Whispers of the Golden Rhythm` Season 1 and later explicitly reviewed appearances
+**Protected status:** Identity and nature remain unresolved
+
+The Presence may appear ambiguously through silhouette, mist, stillness, gesture, reflected light, or felt nearness.
+
+It may provide a non-verbal invitation to notice, listen, reflect, remember, or continue by free choice.
+
+The Presence may not:
+
+- Guide travel or identify a route.
+- Determine or reveal a destination.
+- Predict future events.
+- Reveal a required next step.
+- Compel action or solve a story problem.
+- Function as a map, command, summons, prophecy, portal, threshold, crossing, or transport mechanism.
+- Explain, embody, own, direct, or speak for the Golden Rhythm.
+- Be confirmed as Métrès Lumi, the Old Walker, the Gatekeeper, a Lumi Spirit, Guardian, Great Spirit, or other established entity.
+
+No official answer may establish its origin, identity, nature, purpose, memory, or relationship to another protected mystery.
+
+## Symbolically Responsive Places
+
+Memory-rich locations may appear to respond symbolically through resonance, reflection, ripples, shifting light, wind, scent, echo, or remembered imagery.
+
+Such a response is a story relationship perceived by characters. It does not establish that the location is alive, conscious, sentient, intentional, prophetic, or authoritative.
+
+A symbolic response may deepen recognition, memory, or belonging. It may not guide travel, reveal complete history, grant powers, compel decisions, function as an objective memory archive, or perform any responsibility of the Cycle.
 
 They are not memory archives.
 

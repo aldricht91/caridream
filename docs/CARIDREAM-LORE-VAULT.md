@@ -2,7 +2,7 @@
 
 **Status:** Research Archive  
 **Canon authority:** None until explicit promotion  
-**Governed by:** [CariDream World Bible Canon Edition v2.7](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.8](./CARIDREAM-WORLD-BIBLE.md)
 **Initialized:** June 10, 2026
 
 ## Purpose
@@ -171,10 +171,11 @@ New discoveries should be added below using the research entry template and the 
 | LV-P013 | The Golden Rhythm classification revision | Reclassified from the interim Haiti-Bound Foundational Force to a protected Foundational Mystery | 2.6 | June 11, 2026 |
 | LV-P014 | Haiti Official Canon Promotion | Confirmed the complete Haiti mythology, official island identity, authority boundaries, and Whispers of the Golden Rhythm as an Official Canon Series | 2.6 | June 11, 2026 |
 | LV-P015 | Whispers of the Golden Rhythm - Season 1 | Approved the 10-episode Season 1 structure, production roadmap, continuity checklist, and Silver Drum Tide finale safeguard | 2.7 | June 12, 2026 |
+| LV-P016 | Golden Rhythm Season 1 mystery framework | Approved the Presence, bounded non-verbal invitations, symbolically responsive memory-rich locations, Golden Rhythm manifestation language, and the Episode 2-to-6 Lumi Spirit progression | 2.8 | June 12, 2026 |
 
 These four entries were explicitly approved through the v2.1 and v2.3 canon merge. Their role boundaries and protected ambiguities are defined in World Bible v2.4.
 
-The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and the current World Bible v2.7.
+The Haiti entries were explicitly approved on June 11, 2026. Their binding authority limits and overlap protections are defined in [Haiti Canon Boundaries v1.0](./HAITI-CANON-BOUNDARIES-V1.0.md) and the current World Bible v2.8.
 
 ## Haiti Lore Vault Promotion Record
 
@@ -204,7 +205,7 @@ The official [Whispers of the Golden Rhythm Season 1 Bible](./WHISPERS-OF-THE-GO
 2. `The Lantern Path`
 3. `The Humming Ridge`
 4. `The Doorway of Living Light`
-5. `The Driftwood Drum`
+5. `The Path Beyond Light`
 6. `The Lantern of Jacmel`
 7. `The Moonlit Steps`
 8. `The Rhythm Beneath the Reef`
@@ -218,6 +219,8 @@ Episode 10's production title does not create a new Sacred Phenomenon. Its canon
 Full scripts remain subject to episode-level cultural research, continuity review, and sleep-first approval.
 
 **Season structure amendment, June 12, 2026:** Episodes 3 and 4 were retitled to match their approved manuscripts. `The Doorway of Living Light` is governed as a symbolic, flat pattern of reflected light and is not a portal, threshold, gateway, entrance, invitation, transport mechanism, or realm transition.
+
+**Season mystery amendment, June 12, 2026:** Episode 5 introduces the unexplained Presence, which may offer bounded non-verbal invitations without guiding travel, predicting events, or compelling action. Memory-rich locations may respond symbolically without becoming conscious or authoritative. Lumi Spirits first appear subtly in Episode 2 and are encountered more clearly in Episode 6.
 
 **Cultural review record:** The Marasa Winds are promoted only as an original CariDream Dreamworld interpretation. Internal cultural-boundary review was completed; no external consultation is claimed. Any future story drawing directly from living, sacred, or historically documented Haitian Marasa traditions requires specific sourcing and consultation before publication.
 

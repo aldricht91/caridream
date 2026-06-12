@@ -3,7 +3,7 @@
 ## Official Season 1 Bible
 
 **Status:** Official Canon Season  
-**World Bible:** Canon Edition v2.7  
+**World Bible:** Canon Edition v2.8
 **Primary home:** Haiti  
 **Episode count:** 10  
 **Format:** Peaceful episodic Dreamworld stories with a cumulative emotional arc  
@@ -43,7 +43,7 @@ The season moves through:
 | Milestone | Development across Season 1 |
 |---|---|
 | Introduction of the Marasa Winds | Introduced in Episode 1, appearing selectively through the middle episodes, and brought into mature relationship in Episodes 9-10. |
-| First appearances of Lumi Spirits | First appear in Episode 2 through lantern light and living rhythm; later appearances remain selective and restrained. |
+| Lumi Spirit progression | First appear subtly in Episode 2 through lantern light and living rhythm; are encountered more clearly in Episode 6; later appearances remain selective and restrained. |
 | Growth of the Wanderer's understanding | The Wanderer progresses from noticing paired rhythms to protecting uncertainty and recognizing relationships without claiming authority or complete knowledge. |
 | Gradual awareness of the Golden Rhythm | Repeated patterns of wind, light, ridge, craft, steps, reef, and silence create recognition without definition. |
 | Golden Drum Tide finale | Episode 10 carries this poetic title while depicting the canonical Silver Drum Tide as a rare revelation of existing harmony. |
@@ -68,7 +68,7 @@ Every episode must remain:
 
 **Episodes 1-3**
 
-The Marasa Winds are introduced as Haiti-specific Regional Guardians. The Wanderer first notices that harmony does not require sameness. The Lumi Spirits make their first restrained appearances when moonlight touches living rhythm.
+The Marasa Winds are introduced as Haiti-specific Regional Guardians. The Wanderer first notices that harmony does not require sameness. The Lumi Spirits make their first subtle appearances when moonlight touches living rhythm.
 
 The Golden Rhythm is not named as an answer. Its presence is only suggested through repeated patterns of sound, light, memory, and response.
 
@@ -77,6 +77,8 @@ The Golden Rhythm is not named as an answer. Its presence is only suggested thro
 **Episodes 4-6**
 
 The season moves from immediate sound toward deeper relationships among landscape, craft, inherited memory, and local storytelling.
+
+Episode 5 introduces the Presence as a protected recurring mystery capable of non-verbal invitations to notice, listen, reflect, remember, or continue by free choice. Episode 6 brings the Lumi Spirits into clearer view without explaining or expanding their authority.
 
 The Wanderer learns that listening is not the same as explaining. `The Lantern of Jacmel` presents multiple remembered versions without selecting an authoritative one.
 
@@ -152,27 +154,29 @@ The Wanderer gathers the season's culminating whisper. The Moon Conch remembers 
 **Recurring symbols:** Woven light, lantern paper, spiral pattern, crushed leaves, shared humming
 **Continuity requirement:** The Doorway of Living Light is a poetic name for a flat, symbolic pattern of reflected light. It is not a portal, threshold, gateway, entrance, invitation, transport mechanism, or realm transition.
 
-## Episode 5: The Driftwood Drum
+## Episode 5: The Path Beyond Light
 
-**Production status:** Planned  
-**Arc function:** Connects resilience, craft, and renewed purpose without magical ownership.  
-**Primary theme:** Renewal through attentive making  
-**Emotional lesson:** Something weathered may still join a beautiful rhythm.  
-**Primary setting identity:** Haitian coastal craft and community relationship, subject to cultural research  
-**Character appearances:** Moonlight Wanderer; local maker; family or neighborhood listeners  
-**Recurring symbols:** Driftwood, hand-shaped craft, low drumbeat, tide marks  
-**Continuity requirement:** The drum does not create, contain, control, or summon the Golden Rhythm or Silver Drum Tide.
+**Production status:** Planned; manuscript requires final episode-level validation
+**Arc function:** Introduces the Presence and deepens the Wanderer's relationship with symbolic manifestations of memory and rhythm.
+**Primary theme:** Companionship within uncertainty
+**Emotional lesson:** An invitation may be received without becoming a command or an answer.
+**Primary setting identity:** A Haitian mountain clearing connected to the established ridge and lantern-making community
+**Character appearances:** Moonlight Wanderer; the Presence as a protected mystery; Marasa Winds as non-directive companions; local continuity characters
+**Recurring symbols:** Woven light, mist, ancient stone, quiet gesture, softened hum
+**Continuity requirement:** The Presence may offer a non-verbal invitation to notice, listen, reflect, remember, or freely continue. It may not guide a route, identify a destination, predict events, reveal a required next step, compel action, or be identified as Métrès Lumi or another established entity. The Doorway remains symbolic and non-portal.
 
 ## Episode 6: The Lantern of Jacmel
 
-**Production status:** Planned  
-**Arc function:** Presents the Foundational Legend and teaches the Wanderer to protect uncertainty.  
-**Primary theme:** Wonder preserved through many remembered versions  
-**Emotional lesson:** A story can remain meaningful without one final explanation.  
-**Primary setting identity:** Jacmel's artistic, communal, coastal, and memory-centered Dreamworld identity  
-**Character appearances:** Moonlight Wanderer; Jacmel artisans or storytellers; possible ambiguous reflection associated with Métrès Lumi  
-**Recurring symbols:** Painted lanterns, balconies, moonlit color, reflected glow  
+**Production status:** Planned; manuscript requires final episode-level validation
+**Arc function:** Presents the Foundational Legend, brings the Lumi Spirits into clearer view, and teaches the Wanderer to protect uncertainty.
+**Primary theme:** Wonder preserved through many remembered versions
+**Emotional lesson:** A story can remain meaningful without one final explanation.
+**Primary setting identity:** Jacmel's artistic, communal, coastal, and memory-centered Dreamworld identity
+**Character appearances:** Moonlight Wanderer; Jacmel artisans or storytellers; clearer but unexplained encounter with Lumi Spirits; possible ambiguous reflection associated with Métrès Lumi
+**Recurring symbols:** Painted lanterns, balconies, mountain water, sugar cane hills, moonlit color, lights beneath water, reflected glow
 **Continuity requirement:** No version may confirm the Lantern's origin, whether it reflected Métrès Lumi, whether it reflected the Golden Rhythm, or whether the story began as a dream.
+
+The Lumi Spirits may be encountered more clearly than in Episode 2 but remain unexplained. They may not guide, store complete memory, reveal objective history, command water or light, or grant certainty.
 
 ## Episode 7: The Moonlit Steps
 
@@ -227,7 +231,8 @@ The Wanderer gathers the season's culminating whisper. The Moon Conch remembers 
 |---|---|---|---|---|
 | Moonlight Wanderer | Audience guide whose listening becomes more precise | 1-10 | None | Heroic solver, restorer of harmony, authority over Haiti |
 | Marasa Winds | Regional Guardians who care for Haiti-specific harmony | 1, 9, 10 | 3, 7 | Weather controllers, travel guides, universal balance |
-| Lumi Spirits | Regional Spirits revealing living remembered rhythm | 2, 10 | 3, 6, 8, 9 | Memory archive, Great Spirits, guides, commanders |
+| Lumi Spirits | Regional Spirits revealing living remembered rhythm | 2, 6, 10 | 3, 8, 9 | Memory archive, Great Spirits, guides, commanders |
+| The Presence | Protected Season Mystery offering bounded non-verbal invitations | 5 | 6 and later reviewed episodes | Travel guide, prophet, commander, identified established entity |
 | Métrès Lumi | Protected Great Mystery | None | 6 only as ambiguous possibility | Explanation, intervention, guidance, confirmed appearance |
 | Local Haitian characters | Emotional center and agents of relationship within each episode | 1-10 | None | Decorative witnesses displaced by the Wanderer |
 | Moon Conch | Remembers gathered whispers | Season framing or Episode 10 closing | Select transitions | Active solver, source of the Golden Rhythm |
@@ -280,6 +285,7 @@ Every outline, script, recording, illustration, and episode description must pas
 
 - [ ] The Golden Rhythm remains a Foundational Mystery.
 - [ ] It is experienced, heard, remembered, reflected, or encountered without being defined.
+- [ ] Symbolic manifestations in nature, memory, water, wind, or light do not imply consciousness, intention, ownership, or control.
 - [ ] No origin, owner, governing purpose, or definitive explanation is established.
 - [ ] Haiti remembers it more often but does not own it or define it for other islands.
 - [ ] It does not gather, remember, preserve, command, grant powers, determine fate, or perform Cycle responsibilities.
@@ -302,9 +308,23 @@ Every outline, script, recording, illustration, and episode description must pas
 ## Lumi Spirits
 
 - [ ] They reveal or follow living remembered rhythm.
+- [ ] Their Episode 2 appearance remains subtle; Episode 6 may present them more clearly without explaining them.
 - [ ] They do not create the Golden Rhythm.
 - [ ] They are not Great Spirits, Guardians, memory archives, guides, or authorities.
 - [ ] Their appearances remain selective rather than routine decoration.
+
+## The Presence
+
+- [ ] The Presence remains unexplained and is not identified as Métrès Lumi, the Old Walker, the Gatekeeper, a Lumi Spirit, a Guardian, or another established entity.
+- [ ] It may offer non-verbal invitations to notice, listen, reflect, remember, or continue by free choice.
+- [ ] It does not identify a route or destination, predict events, reveal a required next step, compel action, or solve a story problem.
+- [ ] Its gestures do not function as maps, commands, summons, prophecies, portals, thresholds, or transport mechanisms.
+
+## Memory-Rich Locations
+
+- [ ] A place may respond symbolically through resonance, reflection, ripples, light, wind, scent, echo, or remembered imagery.
+- [ ] Symbolic response does not make a place conscious, sentient, prophetic, authoritative, or an objective memory archive.
+- [ ] A location does not guide travel, reveal complete history, grant powers, compel decisions, or perform Cycle responsibilities.
 
 ## Sacred Phenomenon
 
@@ -401,7 +421,7 @@ The phenomenon may be remembered after Season 1, but it must not become a predic
 **Completed episode:** Episode 1, `The Twin Breezes`  
 **Finale title:** Episode 10, `The Golden Drum Tide`  
 **Canonical finale phenomenon:** The Silver Drum Tide  
-**Canon authority:** CariDream World Bible v2.7 and Haiti Canon Boundaries v1.0  
+**Canon authority:** CariDream World Bible v2.8 and Haiti Canon Boundaries v1.0
 **Production state:** Approved for outlining and cultural research; full scripts require episode-level continuity review.
 
 The Wanderer listens.

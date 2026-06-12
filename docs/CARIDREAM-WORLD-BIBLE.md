@@ -1,11 +1,11 @@
 # CariDream World Bible
 
-## Canon Edition v2.7
+## Canon Edition v2.8
 
 **Status:** Canon  
 **Authority:** Official source of truth for the Caribbean Dreamworld  
 **Effective:** June 12, 2026
-**Supersedes:** World Bible v2.6
+**Supersedes:** World Bible v2.7
 
 ---
 
@@ -400,6 +400,10 @@ The Golden Rhythm may be heard.
 The Golden Rhythm may be remembered.
 
 The Golden Rhythm may be reflected through stories, dreams, music, wind, water, lantern light, or silence.
+
+The Golden Rhythm may also be experienced through symbolic manifestations in nature, memory-rich locations, water, wind, and light.
+
+These manifestations are perceptions and relationships within a story. They do not prove that the Golden Rhythm is alive, conscious, sentient, intentional, or acting upon the world.
 
 The Golden Rhythm must never be fully defined.
 
@@ -908,7 +912,35 @@ The series must preserve the distinct identities of northern historical memory, 
 **Episode count:** 10
 **Season Bible:** [Whispers of the Golden Rhythm - Official Season 1 Bible](./WHISPERS-OF-THE-GOLDEN-RHYTHM-SEASON-1-BIBLE.md)
 
-Season 1 introduces the Marasa Winds, presents the first restrained appearances of the Lumi Spirits, develops the Moonlight Wanderer's understanding through deeper listening, and builds gradual awareness of the Golden Rhythm without defining it.
+Season 1 introduces the Marasa Winds, presents the first subtle appearances of the Lumi Spirits, develops the Moonlight Wanderer's understanding through deeper listening, and builds gradual awareness of the Golden Rhythm without defining it.
+
+The Lumi Spirits first appear subtly in Episode 2 and are encountered more clearly in Episode 6. Increased clarity does not grant them additional authority or provide a definitive explanation of their nature.
+
+### The Presence
+
+**Classification:** Protected Season Mystery
+
+The Presence is an unexplained recurring mystery introduced in Season 1.
+
+It may appear ambiguously through silhouette, mist, stillness, gesture, reflected light, or a felt nearness.
+
+It may provide a non-verbal invitation to notice, listen, reflect, remember, or continue by free choice.
+
+**Boundaries:**
+
+- The Presence does not guide travel, identify a route, determine a destination, predict future events, reveal required next steps, or compel action.
+- A gesture or invitation from the Presence may create emotional openness but cannot function as a map, command, summons, prophecy, portal, threshold, or transport mechanism.
+- The Presence does not explain, embody, own, direct, or speak for the Golden Rhythm.
+- The Presence is not confirmed as Métrès Lumi, the Old Walker, the Gatekeeper, a Lumi Spirit, a Guardian, or any other established entity.
+- Its origin, identity, nature, purpose, memory, and relationship to other mysteries remain unresolved.
+
+### Symbolically Responsive Places
+
+Memory-rich locations may appear to respond symbolically to the Wanderer through resonance, reflection, ripples, shifting light, wind, scent, echo, or remembered imagery.
+
+Such responses must remain observational and ambiguous. A location does not become conscious, sentient, prophetic, authoritative, or an objective memory archive.
+
+A symbolic response may deepen recognition or belonging. It may not guide travel, reveal complete history, grant powers, compel a decision, or perform a responsibility of the Cycle.
 
 The season concludes with Episode 10, `The Golden Drum Tide`.
 
@@ -1154,4 +1186,5 @@ And beneath the moonlit Caribbean sky, the Cycle of Whispers continues forever.
 | 2.4 | June 11, 2026 | Superseded | Unified v2.1 and v2.3, restored all protected lore, resolved hierarchy and role boundaries, strengthened cultural review, and promoted approved v2.3 additions. |
 | 2.5 | June 11, 2026 | Superseded | Promoted Haiti Canon Boundaries v1.0; established Haiti-Bound Foundational Force and Regional Spirits; added the Golden Rhythm, Métrès Lumi, Marasa Winds, Lumi Spirits, Silver Drum Tide, Lantern of Jacmel, and Whispers of the Golden Rhythm. |
 | 2.6 | June 11, 2026 | Superseded | Completed Haiti's official canon promotion; replaced the interim Foundational Force classification with protected Foundational Mysteries; retained Regional Spirits; added Haiti's official identity entry; and confirmed Whispers of the Golden Rhythm as an Official Canon Series. |
-| 2.7 | June 12, 2026 | Canon | Added the official 10-episode Season 1 structure for Whispers of the Golden Rhythm, its production roadmap and continuity requirements, and the approved Silver Drum Tide finale safeguard. |
+| 2.7 | June 12, 2026 | Superseded | Added the official 10-episode Season 1 structure for Whispers of the Golden Rhythm, its production roadmap and continuity requirements, and the approved Silver Drum Tide finale safeguard. |
+| 2.8 | June 12, 2026 | Canon | Added the Presence as a protected Season 1 mystery; authorized bounded non-verbal invitations and symbolic responses from memory-rich locations; clarified Golden Rhythm manifestations; and established the subtle Episode 2 to clearer Episode 6 Lumi Spirit progression. |
