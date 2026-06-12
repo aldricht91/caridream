@@ -6,7 +6,7 @@
 **Document type:** Canon governance and authority boundaries  
 **Status:** Canon; promoted June 11, 2026
 
-**Governed by:** [CariDream World Bible Canon Edition v2.5](./CARIDREAM-WORLD-BIBLE.md)
+**Governed by:** [CariDream World Bible Canon Edition v2.6](./CARIDREAM-WORLD-BIBLE.md)
 
 **Related archive:** [CariDream Lore Vault](./CARIDREAM-LORE-VAULT.md)
 
@@ -25,7 +25,7 @@ The mythology governed here consists only of:
 ## Governing Principles
 
 1. The Cycle of Whispers remains the heartbeat of the entire CariDream Dreamworld.
-2. The Golden Rhythm is foundational to Haiti's Dreamworld identity only.
+2. The Golden Rhythm is an unowned Foundational Mystery remembered more often within Haiti's Dreamworld than elsewhere.
 3. Manman Mirwa, the Moonlight Wanderer, and the Moon Conch retain their fixed and exclusive responsibilities.
 4. Haitian concepts may reveal, express, sense, or respond to rhythm and memory. They may not gather, universally remember, or preserve whispers.
 5. No Haitian concept governs the Great Spirits or supplies the hidden source of another island's identity.
@@ -57,7 +57,9 @@ The mythology governed here consists only of:
 
 ## Unique Contribution
 
-Haiti's Dreamworld identity understands rhythm as a living way that memory may be felt, shared, interrupted, answered, and renewed.
+Haiti remembers the Golden Rhythm woven throughout the Caribbean Dreamworld.
+
+This contribution describes Haiti's distinct relationship to the mystery. It does not establish ownership, origin, authority, or a claim that other islands derive their identity from the Golden Rhythm.
 
 This contribution is distinct from:
 
@@ -73,17 +75,27 @@ Haiti may recognize echoes of rhythm across the Caribbean. It may not claim that
 
 ## The Golden Rhythm
 
-**Classification:** Foundational Force  
-**Scope:** Haiti's Dreamworld identity  
-**Nature:** Ancient, majestic, eternal, and unowned
+**Classification:** Foundational Mystery
+**Scope:** A protected mystery remembered more often within Haiti's Dreamworld
+**Nature:** Protected Mystery
 
 ### What It Is
 
-The Golden Rhythm is the foundational force through which Haiti's Dreamworld identity experiences rhythm, harmony, resilience, balance, and memory.
+The Golden Rhythm may be experienced.
 
-It may be perceived through drums, waves, lantern light, memory, silence, movement, or other expressions already established by the mythology.
+The Golden Rhythm may be heard.
 
-It exists without a known creator or owner.
+The Golden Rhythm may be remembered.
+
+The Golden Rhythm may be reflected through stories, dreams, music, wind, water, lantern light, or silence.
+
+The Golden Rhythm must never be fully defined.
+
+No character possesses complete knowledge of it.
+
+No official explanation exists.
+
+No official explanation will ever exist.
 
 ### What It Is Not
 
@@ -98,16 +110,17 @@ The Golden Rhythm is not:
 - A conscious ruler
 - A source of commands
 - A replacement for the Cycle
-- The universal heartbeat of CariDream
+- A confirmed universal heartbeat of CariDream
 - The origin of every island's rhythm, memory, or identity
+- The property of Haiti or any other island
 
 ### Authority It Has
 
 The Golden Rhythm may:
 
-- Serve as Haiti's foundational Dreamworld identity.
-- Be sensed, heard, reflected, remembered, interrupted, or restored within Haitian stories.
-- Provide the shared thematic foundation for Haitian Guardians, Regional Spirits, Sacred Phenomena, legends, and stories.
+- Be experienced, heard, remembered, reflected, or encountered.
+- Be remembered more often within Haiti than elsewhere.
+- Provide a protected thematic relationship among Haitian Guardians, Regional Spirits, Sacred Phenomena, legends, and stories.
 - Be present without acting as a conscious being.
 - Allow harmony already present within a Haitian story to become perceptible.
 
@@ -127,6 +140,7 @@ The Golden Rhythm may not:
 - Govern time, dreams, memory, moonlight, water, wind, or fire.
 - Explain or resolve any Great Mystery.
 - Replace an island's distinct cultural or spiritual identity.
+- Reveal its true origin, full nature, or definitive meaning.
 
 ### Relationship to the Cycle of Whispers
 
@@ -134,7 +148,7 @@ The Golden Rhythm exists within the Dreamworld governed by the Cycle.
 
 The Cycle remains universal.
 
-The Golden Rhythm provides a Haiti-specific way through which an experience may become meaningful enough to form a whisper. It does not perform any fixed responsibility of the Cycle.
+Haiti's relationship to the Golden Rhythm may shape how an experience becomes meaningful enough to form a whisper. The Golden Rhythm does not perform any fixed responsibility of the Cycle.
 
 When a whisper emerges:
 
@@ -154,13 +168,47 @@ It does not own, summon, collect, store, judge, or preserve the resulting whispe
 
 ### Relationship to Memory
 
-The Golden Rhythm allows memory to be experienced through rhythm.
+The Golden Rhythm may allow memory to be experienced through rhythm.
 
 It does not contain a complete archive of memory.
 
 It does not restore every forgotten fact or guarantee perfect recollection.
 
 It does not replace the Moon Conch's responsibility as the Living Memory of the Dreamworld.
+
+### Relationship to Haiti
+
+Within Haiti's Dreamworld, the Golden Rhythm is remembered more often than it is elsewhere.
+
+Some hear it in the sea.
+
+Some hear it in mountain winds.
+
+Some hear it in lantern-lit streets.
+
+Some hear it in distant drums.
+
+Some hear it only in silence.
+
+The Marasa Winds recognize its presence.
+
+The Lumi Spirits awaken when its memory stirs.
+
+Métrès Lumi sometimes appears near its echoes.
+
+Yet none understand it fully.
+
+### Protected Theories
+
+Some believe it is the first whisper ever remembered.
+
+Some believe it is older than memory itself.
+
+Some believe it is the heartbeat beneath all stories.
+
+Some believe it is simply the world listening to itself.
+
+No theory is confirmed. No theory may become an official answer.
 
 ## Métrès Lumi
 
@@ -476,7 +524,7 @@ flowchart TD
     Mirwa["Manman Mirwa<br/>Preserves"]
 
     Haiti["Haiti Dreamworld Identity<br/>Rhythm, harmony, balance, resilience, memory"]
-    Golden["Golden Rhythm<br/>Haiti-bound Foundational Force"]
+    Golden["Golden Rhythm<br/>Foundational Mystery"]
     Metres["Métrès Lumi<br/>Great Mystery"]
     Marasa["Marasa Winds<br/>Regional Guardians"]
     Lumi["Lumi Spirits<br/>Regional Spirits"]
@@ -508,7 +556,7 @@ flowchart TD
 
 | Concept | May | May Not |
 |---|---|---|
-| Golden Rhythm | Found Haiti's regional identity; be sensed or expressed | Govern the Dreamworld; perform Cycle responsibilities |
+| Golden Rhythm | Be experienced, heard, remembered, reflected, or encountered | Be fully defined; govern the Dreamworld; perform Cycle responsibilities |
 | Métrès Lumi | Appear and deepen uncertainty | Guide, intervene, explain, gather, remember, or preserve |
 | Marasa Winds | Care for Haiti-specific harmony | Control wind, force balance, guide travel, or command |
 | Lumi Spirits | Reveal living remembered rhythm | Act as Great Spirits, Guardians, memory archives, or authorities |
@@ -588,7 +636,7 @@ Métrès Lumi is associated with remembered rhythm. The Old Walker remains assoc
 
 **Protected responsibility:** Universal natural forces expressed consistently throughout the Dreamworld.
 
-The Golden Rhythm is Haiti-bound and does not become a sixth Great Spirit.
+The Golden Rhythm is a protected Foundational Mystery and does not become a sixth Great Spirit.
 
 The Lumi Spirits are regional presences and do not embody universal domains.
 
@@ -746,12 +794,12 @@ No future crossover, finale, reference guide, marketing summary, or character di
 
 Completed June 11, 2026:
 
-1. **Haiti-Bound Foundational Force** was added to the World Bible classification framework.
+1. **Foundational Mysteries** was added to the World Bible classification framework, with the Golden Rhythm as its initial protected entry.
 2. **Regional Spirits** was added as a responsibility class distinct from Great Spirits, Guardians, and Folk Figures.
 3. A cultural-boundary review note was recorded for the Marasa Winds. No external consultation is claimed.
 4. `Whispers of the Golden Rhythm` was added to the Major Series section.
 5. All six concepts were placed within the official World Bible hierarchy.
-6. Lore Vault promotion records and a World Bible v2.5 version-history entry were added.
+6. Lore Vault promotion records and a World Bible v2.6 version-history entry were added.
 7. Canon promotion was explicitly approved.
 
 ## Recommendation

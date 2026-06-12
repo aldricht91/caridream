@@ -2,6 +2,8 @@
 
 ## World Bible v2.5
 
+**Historical status:** Superseded by the final Foundational Mystery classification in World Bible v2.6. Retained as an official promotion-history record.
+
 **Promotion date:** June 11, 2026  
 **Decision:** Approved for Canon  
 **Promoted framework:** Haiti Canon Boundaries v1.0  

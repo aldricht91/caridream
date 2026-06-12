@@ -1,11 +1,11 @@
 # CariDream World Bible
 
-## Canon Edition v2.5
+## Canon Edition v2.6
 
 **Status:** Canon  
 **Authority:** Official source of truth for the Caribbean Dreamworld  
 **Effective:** June 11, 2026
-**Supersedes:** World Bible v2.4
+**Supersedes:** World Bible v2.5
 
 ---
 
@@ -373,34 +373,48 @@ No official answer should ever exist.
 
 The uncertainty is intentional and permanently protected.
 
-## Tier 4: Haiti-Bound Foundational Force
+## Tier 4: Foundational Mysteries
 
-Foundational Force is a regional ontological classification reserved for a force that establishes an island's Dreamworld identity without governing the wider Caribbean Dreamworld.
+Foundational Mysteries are protected mysteries that may be experienced, remembered, reflected, or encountered but may never be fully defined.
 
-A Foundational Force is not a character, spirit, Guardian, deity, artifact, Sacred Phenomenon, Keeper of Whispers, or Permanent Pillar.
+A Foundational Mystery is not a character, spirit, Guardian, deity, artifact, Sacred Phenomenon, Keeper of Whispers, Permanent Pillar, or universal governing domain.
 
-It has no administrative authority over the Cycle, Great Spirits, other islands, or universal Dreamworld functions.
+No character possesses complete knowledge of a Foundational Mystery. No official explanation may resolve its origin, full nature, or ultimate meaning.
 
 ### The Golden Rhythm
 
 **Island:** Haiti
 
-**Nature:** Ancient, majestic, eternal, and unowned
+**Classification:** Foundational Mystery
+
+**Nature:** Protected Mystery
 
 **Themes:** Rhythm, harmony, balance, resilience, memory
 
 **Series:** Whispers of the Golden Rhythm
 
-The Golden Rhythm is the foundational force through which Haiti's Dreamworld identity experiences rhythm and memory.
+The Golden Rhythm may be experienced.
 
-It may be sensed, heard, reflected, interrupted, remembered, or restored within Haitian stories.
+The Golden Rhythm may be heard.
 
-It may be perceived through drums, waves, lantern light, memory, silence, movement, and other Haiti-specific expressions.
+The Golden Rhythm may be remembered.
+
+The Golden Rhythm may be reflected through stories, dreams, music, wind, water, lantern light, or silence.
+
+The Golden Rhythm must never be fully defined.
+
+No character possesses complete knowledge of it.
+
+No official explanation exists.
+
+No official explanation will ever exist.
 
 **Boundaries:**
 
-- The Golden Rhythm is foundational to Haiti's Dreamworld identity only.
-- It is not the universal heartbeat of CariDream; the Cycle of Whispers remains the Dreamworld's heartbeat.
+- The Golden Rhythm is not a spirit, Guardian, deity, artifact, Sacred Phenomenon, Keeper of Whispers, Great Spirit, or Permanent Pillar.
+- The Golden Rhythm is not owned by Haiti or any other island.
+- Within Haiti's Dreamworld, it is remembered more often than it is elsewhere.
+- It is not a confirmed universal heartbeat; the Cycle of Whispers remains the Dreamworld's canonical heartbeat.
 - It does not gather, remember for the Cycle, preserve, judge, own, summon, or command whispers.
 - It does not create stories, dreams, paths, or possibilities through Manman Mirwa's function.
 - It does not command people, spirits, Guardians, Great Spirits, nature, or events.
@@ -408,6 +422,38 @@ It may be perceived through drums, waves, lantern light, memory, silence, moveme
 - It does not govern time, dreams, memory, moonlight, water, wind, or fire.
 - It does not supply the hidden origin of another island's culture, rhythm, memory, or Dreamworld identity.
 - It may accompany circumstances in which a whisper is born, but the Wanderer gathers, the Moon Conch remembers, and Manman Mirwa preserves.
+- No story may reveal its true origin or provide a definitive explanation.
+
+**Relationship to Haiti:**
+
+Within Haiti's Dreamworld, the Golden Rhythm is remembered more often than it is elsewhere.
+
+Some hear it in the sea.
+
+Some hear it in mountain winds.
+
+Some hear it in lantern-lit streets.
+
+Some hear it in distant drums.
+
+Some hear it only in silence.
+
+The Marasa Winds recognize its presence.
+
+The Lumi Spirits awaken when its memory stirs.
+
+Métrès Lumi sometimes appears near its echoes.
+
+Yet none understand it fully.
+
+**Protected theories:**
+
+- Some believe it is the first whisper ever remembered.
+- Some believe it is older than memory itself.
+- Some believe it is the heartbeat beneath all stories.
+- Some believe it is simply the world listening to itself.
+
+These are theories within the Dreamworld. None are confirmed, and none may become an official answer.
 
 ## Tier 5: Great Spirits
 
@@ -564,7 +610,7 @@ They protect space in which distinct rhythms may return to relationship without 
 
 ## Tier 7: Regional Spirits
 
-Regional Spirits are local presences that respond to an island or region's established Dreamworld identity.
+Regional Spirits are local spiritual presences that emerge from a region's identity without embodying universal domains.
 
 Unlike Great Spirits, they do not embody universal forces.
 
@@ -757,7 +803,39 @@ No version is definitive.
 
 ---
 
-# Part IV: Major Series
+# Part IV: Island Canon Identities
+
+## Haiti
+
+### Core Whisper
+
+> Every rhythm carries a memory.
+
+### Core Themes
+
+- Rhythm
+- Harmony
+- Balance
+- Resilience
+- Memory
+
+### Dreamworld Voice
+
+- Reflective
+- Moonlit
+- Musical
+- Gentle
+- Emotionally Grounding
+
+### Unique Contribution
+
+Haiti remembers the Golden Rhythm woven throughout the Caribbean Dreamworld.
+
+This describes Haiti's distinctive relationship to the mystery, not ownership, origin, or authority. Haiti does not define the Golden Rhythm for other islands, and no other island's identity is derived from it.
+
+---
+
+# Part V: Major Series
 
 ## Whispers of Papa Bois
 
@@ -793,7 +871,7 @@ The Wanderer remains the listener and guide, not the hero.
 
 **Primary home:** Haiti
 
-**Foundational Force:** The Golden Rhythm
+**Foundational Mystery:** The Golden Rhythm
 
 **Regional Guardians:** The Marasa Winds
 
@@ -802,6 +880,10 @@ The Wanderer remains the listener and guide, not the hero.
 **Great Mystery:** Métrès Lumi
 
 **Theme:** Rhythm, harmony, balance, resilience, and memory
+
+**Purpose:** To explore how rhythm, harmony, resilience, and memory are experienced throughout Haiti's Dreamworld.
+
+**Status:** Official Canon Series
 
 This is Haiti's flagship Dreamworld series.
 
@@ -821,7 +903,7 @@ The series must preserve the distinct identities of northern historical memory, 
 
 ---
 
-# Part V: Future Lore and Research
+# Part VI: Future Lore and Research
 
 ## Recognized Research Directions
 
@@ -846,7 +928,7 @@ Listing a research direction here does not make a specific interpretation, chara
 
 ---
 
-# Part VI: Canon Rule
+# Part VII: Canon Rule
 
 ## Official Source of Truth
 
@@ -912,7 +994,7 @@ Every new legend should remain connected to the larger Caribbean journey.
 
 ---
 
-# Part VII: Lore Vault Rule
+# Part VIII: Lore Vault Rule
 
 The CariDream Lore Vault is the official Research Archive.
 
@@ -935,7 +1017,7 @@ No research note may silently become established Dreamworld truth.
 
 ---
 
-# Part VIII: Canon Governance
+# Part IX: Canon Governance
 
 ## Story Approval Standard
 
@@ -957,7 +1039,7 @@ Before adding a recurring figure, determine its proper place:
 - **Celestial Heart:** Preserves the Dreamworld at its spiritual center.
 - **Keeper of Whispers:** Gathers or remembers whispers within the Cycle.
 - **Great Mystery:** Deepens wonder through permanent uncertainty.
-- **Haiti-Bound Foundational Force:** Establishes Haiti's regional Dreamworld identity without governing the Cycle, universal forces, or other islands.
+- **Foundational Mystery:** May be experienced, remembered, reflected, or encountered but never fully defined or granted governing authority.
 - **Great Spirit:** Embodies a universal natural force.
 - **Regional Guardian:** Cares for a specific environment, island, tradition, or story realm.
 - **Regional Spirit:** Reveals a local presence or pattern without embodying a universal force or maintaining Guardian authority.
@@ -1007,7 +1089,7 @@ When two canonical passages appear ambiguous:
 
 ---
 
-# Part IX: Canon Consistency Declarations
+# Part X: Canon Consistency Declarations
 
 The following distinctions are binding:
 
@@ -1015,7 +1097,7 @@ The following distinctions are binding:
 - The Wanderer is the audience guide; the Old Walker is an unresolved traveler and may not replace that role.
 - The Gatekeeper represents uncertain thresholds; Divi-Divi Spirits provide specifically Aruban guidance.
 - Great Spirits are universal forces; Guardians are regional caretakers.
-- The Golden Rhythm is foundational to Haiti only; the Cycle of Whispers remains the universal heartbeat of CariDream.
+- The Golden Rhythm is an unowned Foundational Mystery remembered more often in Haiti; the Cycle of Whispers remains the canonical heartbeat of CariDream.
 - Métrès Lumi appears without guiding, gathering, remembering, preserving, intervening, or explaining.
 - The Marasa Winds care for Haiti-specific harmony; they do not control wind, travel, crossings, fate, or universal balance.
 - Lumi Spirits reveal remembered rhythm; they are not Great Spirits, Guardians, or memory archives.
@@ -1055,4 +1137,5 @@ And beneath the moonlit Caribbean sky, the Cycle of Whispers continues forever.
 | 2.1 | June 10, 2026 | Superseded | Established the Cycle of Whispers, original hierarchy, Permanent Pillars, Canon Rule, and Lore Vault governance. |
 | 2.3 | June 11, 2026 | Merged beta | Expanded Manman Mirwa and the Cycle; proposed the Old Walker, Gatekeeper, Felix, Zim, Great Mysteries, and Folk Figures. |
 | 2.4 | June 11, 2026 | Superseded | Unified v2.1 and v2.3, restored all protected lore, resolved hierarchy and role boundaries, strengthened cultural review, and promoted approved v2.3 additions. |
-| 2.5 | June 11, 2026 | Canon | Promoted Haiti Canon Boundaries v1.0; established Haiti-Bound Foundational Force and Regional Spirits; added the Golden Rhythm, Métrès Lumi, Marasa Winds, Lumi Spirits, Silver Drum Tide, Lantern of Jacmel, and Whispers of the Golden Rhythm. |
+| 2.5 | June 11, 2026 | Superseded | Promoted Haiti Canon Boundaries v1.0; established Haiti-Bound Foundational Force and Regional Spirits; added the Golden Rhythm, Métrès Lumi, Marasa Winds, Lumi Spirits, Silver Drum Tide, Lantern of Jacmel, and Whispers of the Golden Rhythm. |
+| 2.6 | June 11, 2026 | Canon | Completed Haiti's official canon promotion; replaced the interim Foundational Force classification with protected Foundational Mysteries; retained Regional Spirits; added Haiti's official identity entry; and confirmed Whispers of the Golden Rhythm as an Official Canon Series. |
